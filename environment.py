@@ -18,10 +18,10 @@ class Apra_env(gym.Env):
         self.reserve_price = reserve_price
         self.reimbursement_rates = reimbursement_rates
         self.bid_cost = bid_cost
-        self.highest_bid = 0.0
+        self.max_bid = 0.0
+        self.max_bid_index = -1
         self.agent_signal = 0.0
         self.opp_signals = np.zeros(self.num_opponents)
-        self.agent_tot_reward = 0.0
         self.render_mode = render_mode
 
         # define action and observation spaces
@@ -36,8 +36,8 @@ class Apra_env(gym.Env):
     def reset(self, seed = None, options = None):
 
         # reset to both to 0, no need to scale round if 0
-        self.current_round = 0r
-        self.highest_bid = 0.0
+        self.current_round = 0
+        self.max_bid = 0.0
 
         # seed for rng
         super().reset(seed = seed)
@@ -52,7 +52,7 @@ class Apra_env(gym.Env):
         self.opp_signals = self.np_random.uniform(0.0, 1.0, size = self.num_opponents)
 
         # make observation space to give to the agent
-        observation = np.array([self.agent_signal, self.highest_bid, self.current_round], dtype = np.float32)
+        observation = np.array([self.agent_signal, self.max_bid, self.current_round], dtype = np.float32)
 
         # extra info for debugging
         info = {
@@ -68,8 +68,59 @@ class Apra_env(gym.Env):
             print(f"Round Number: {int(self.current_round * self.num_rounds)}")
             print(f"Agent Signal: {self.agent_signal}")
             print(f"Opponent Signals: {self.opp_signals}")
-            print(f"Highest Bid: {self.highest_bid}")
+            print(f"Highest Bid: {self.max_bid}")
             print(f"Agent Reward: {self.agent_tot_reward}")
+
+    # step function, running the logic for a round of bidding
+    # how does this work with the action and observation spaces?
+    def step(self, agent_bid, opp_bids, agent_val, opp_vals):
+        
+        # find max bid out of everyone and store index
+        all_bids = [agent_bid] + opp_bids
+        round_max_bid = max(bid for bid in all_bids if bid is not None)
+        round_max_bid_index = all_bids.index(round_max_bid)
+        all_vals = [agent_val] + opp_vals
+
+        # ensure it is greater than last round, and find reimbursement
+        reimbursements = [0] * (self.num_opponents + 1)
+        if round_max_bid > self.max_bid:
+            reimbursements[round_max_bid_index] = (round_max_bid - self.max_bid) * self.reimbursement_rates[self.current_round]
+            self.max_bid = round_max_bid
+            self.max_bid_index = round_max_bid_index
+
+        # if last round, check if bid is over reserve price for allocation
+        last_round = self.current_round + 1 == self.num_rounds
+        won = last_round and (self.max_bid >= self.reserve_price)
+        
+        # calculate rewards for all
+        rewards = [0] * (self.num_opponents + 1)
+        for bidder in range(self.num_opponents + 1):
+            rewards [bidder] = self.reward(all_bids[bidder], reimbursements[bidder], last_round, won, all_vals[bidder])
+
+        # game updates
+        self.current_round += 1
+        
+        # return agent reward, opponent rewards, last round flag
+        return rewards[0], rewards[1:], last_round
+
+    # reward function based on round number and win status
+    # valuation is determined in agent class--assumed to be a constant for now
+    def reward(self, bid, reimbursement, last_round, won, valuation):
+        
+        # check if they won the round or not, and if not, check if they abstained
+        if reimbursement == 0:
+            if bid is None:
+                return 0
+            else: 
+                return -(self.bid_cost)
+            
+        # if won, update utility if it is the last round
+        else:
+            if last_round and won: 
+                return valuation - bid + reimbursement - self.bid_cost
+            else:
+                return reimbursement - self.bid_cost
+    
 
 
 
