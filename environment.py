@@ -23,11 +23,12 @@ class Apra_env(gym.Env):
         self.agent_signal = 0.0
         self.opp_signals = np.zeros(self.num_opponents)
         self.render_mode = render_mode
+        self.agent_max_bid_holder = False
 
         # define action and observation spaces
             # all already 0, 1 except round # which we normalize
             # Box: all valid cartesian products
-            # action: bid // observation: signal, highest bid, round #
+            # action: bid // observation: max_bid, agent_win_loss, round_num
         self.action_space = spaces.Box(low = 0.0, high = 1.0, shape = (1,), dtype = np.float32)
         self.observation_space = spaces.Box(low = 0.0, high = 1.0, shape = (3,), dtype = np.float32)
 
@@ -82,26 +83,35 @@ class Apra_env(gym.Env):
         all_vals = [agent_val] + opp_vals
 
         # ensure it is greater than last round, and find reimbursement
+        # also check if agent is leading
         reimbursements = [0] * (self.num_opponents + 1)
         if round_max_bid > self.max_bid:
             reimbursements[round_max_bid_index] = (round_max_bid - self.max_bid) * self.reimbursement_rates[self.current_round]
             self.max_bid = round_max_bid
             self.max_bid_index = round_max_bid_index
+            self.agent_max_bid_holder = self.max_bid_index == 0
 
         # if last round, check if bid is over reserve price for allocation
         last_round = self.current_round + 1 == self.num_rounds
         won = last_round and (self.max_bid >= self.reserve_price)
         
-        # calculate rewards for all
+        # calculate rewards for all (maybe only need agent)
         rewards = [0] * (self.num_opponents + 1)
         for bidder in range(self.num_opponents + 1):
             rewards [bidder] = self.reward(all_bids[bidder], reimbursements[bidder], last_round, won, all_vals[bidder])
 
-        # game updates
+        # create the observation space (standardize round number to [0, 1] first)
+        std_round = self.current_round / self.num_rounds
+        observation = np.array([self.max_bid, self.agent_max_bid_holder, std_round], dtype = np.float32)
+
+        # game updates and info dict (can always add more)
         self.current_round += 1
+        extra_info = {
+            "Other Agent Rewards" : rewards[1:]
+        }
         
-        # return agent reward, opponent rewards, last round flag
-        return rewards[0], rewards[1:], last_round
+        # return the observation space, reward, if last round, truncated = False, and auxillary info 
+        return observation, rewards[0], last_round, False, extra_info
 
     # reward function based on round number and win status
     # valuation is determined in agent class--assumed to be a constant for now
