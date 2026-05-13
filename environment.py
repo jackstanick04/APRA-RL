@@ -28,17 +28,19 @@ class Apra_env(gym.Env):
         # define action and observation spaces
             # all already 0, 1 except round # which we normalize
             # Box: all valid cartesian products
-            # action: bid // observation: max_bid, agent_win_loss, round_num
+            # action: bid // observation: agent_signal, max_bid, agent_win_loss, round_num
         self.action_space = spaces.Box(low = 0.0, high = 1.0, shape = (1,), dtype = np.float32)
-        self.observation_space = spaces.Box(low = 0.0, high = 1.0, shape = (3,), dtype = np.float32)
+        self.observation_space = spaces.Box(low = 0.0, high = 1.0, shape = (4,), dtype = np.float32)
 
 
     # reset method to start from scratch
     def reset(self, seed = None, options = None):
 
-        # reset to both to 0, no need to scale round if 0
+        # reset auction-specific variables
         self.current_round = 0
         self.max_bid = 0.0
+        self.max_bid_index = -1
+        self.agent_max_bid_holder = False
 
         # seed for rng
         super().reset(seed = seed)
@@ -53,7 +55,7 @@ class Apra_env(gym.Env):
         self.opp_signals = self.np_random.uniform(0.0, 1.0, size = self.num_opponents)
 
         # make observation space to give to the agent
-        observation = np.array([self.agent_signal, self.max_bid, self.current_round], dtype = np.float32)
+        observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), 0.0], dtype = np.float32)
 
         # extra info for debugging
         info = {
@@ -62,25 +64,22 @@ class Apra_env(gym.Env):
         }
 
         return observation, info
-    
-    # render basic text to the terminal for tracking when we choose to
-    def render(self):
-        if self.render_mode == "human":
-            print(f"Round Number: {int(self.current_round * self.num_rounds)}")
-            print(f"Agent Signal: {self.agent_signal}")
-            print(f"Opponent Signals: {self.opp_signals}")
-            print(f"Highest Bid: {self.max_bid}")
-            print(f"Agent Reward: {self.agent_tot_reward}")
 
     # step function, running the logic for a round of bidding
-    # how does this work with the action and observation spaces?
-    def step(self, agent_bid, opp_bids, agent_val, opp_vals):
+    def step(self, action):
         
+        # ensure not abstaining
+        agent_bid = None if action[0] < 0.01 else action[0]
+
         # find max bid out of everyone and store index
+        opp_bids = self.opp_bids()
         all_bids = [agent_bid] + opp_bids
-        round_max_bid = max(bid for bid in all_bids if bid is not None)
-        round_max_bid_index = all_bids.index(round_max_bid)
-        all_vals = [agent_val] + opp_vals
+        round_max_bid = max((bid for bid in all_bids if bid is not None), default = 0.0)
+        round_max_bid_index = all_bids.index(round_max_bid) # if everyone abstains there is an error here (don't worry about it now)
+
+        # find all valuations (again, agent is index 0)
+        all_signals = [self.agent_signal] + list(self.opp_signals)
+        all_vals = [self.valuation(all_signals, i) for i in range(self.num_opponents + 1)]
 
         # ensure it is greater than last round, and find reimbursement
         # also check if agent is leading
@@ -102,7 +101,7 @@ class Apra_env(gym.Env):
 
         # create the observation space (standardize round number to [0, 1] first)
         std_round = self.current_round / self.num_rounds
-        observation = np.array([self.max_bid, self.agent_max_bid_holder, std_round], dtype = np.float32)
+        observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), std_round], dtype = np.float32)
 
         # game updates and info dict (can always add more)
         self.current_round += 1
@@ -130,6 +129,47 @@ class Apra_env(gym.Env):
                 return valuation - bid + reimbursement - self.bid_cost
             else:
                 return reimbursement - self.bid_cost
+            
+    # opponent bid function, include abstention
+    def opp_bids(self): 
+
+        # check if they are already leading or they are not bidding large enough
+        opp_bids = []
+        for i in range(self.num_opponents):
+
+            bid = self.opp_signals[i] * 0.75
+            leader = self.max_bid_index == i + 1 # max bid index includes the agent at 0
+
+            if bid > self.max_bid and not leader:
+                opp_bids.append(bid)
+            else: 
+                opp_bids.append(None)
+
+        return opp_bids
+
+    # valuation (for both) function 
+    def valuation(self, signals, bidder_num): 
+        # simple method, weighing everyone equally and yourself 50% (can be updated)
+        opp_weight = 0.5 / self.num_opponents
+        agent_weight = 0.5
+        
+        sum_opp_sig = 0
+        for i in range(self.num_opponents + 1):
+            if i != bidder_num:
+                sum_opp_sig += signals[i] * opp_weight
+
+        return agent_weight * signals[bidder_num] + sum_opp_sig
+    
+    # render basic text to the terminal for tracking when we choose to
+    def render(self):
+        if self.render_mode == "human":
+            print(f"Round Number: {int(self.current_round * self.num_rounds)}")
+            print(f"Agent Signal: {self.agent_signal}")
+            print(f"Opponent Signals: {self.opp_signals}")
+            print(f"Highest Bid: {self.max_bid}")
+        
+
+
     
 
 
