@@ -45,14 +45,15 @@ class Apra_env(gym.Env):
         # seed for rng
         super().reset(seed = seed)
 
+        # make a base value, then add some noise to each person (keep between 0 and 1)
+        true_value = self.np_random.uniform(0.0, 1.0)
+        self.opp_signals = np.clip(true_value + self.np_random.standard_normal(self.num_opponents) * 0.1, 0.0, 1.0)
+
         # check if special fixed signal for agent (for debugging)
         if options and options.get("fixed_signal") is not None:
             self.agent_signal = options["fixed_signal"]
-        else:
-            self.agent_signal = self.np_random.uniform(0.0, 1.0)
-
-        # randomized opponent signals
-        self.opp_signals = self.np_random.uniform(0.0, 1.0, size = self.num_opponents)
+        else: 
+            self.agent_signal = np.clip(true_value + self.np_random.standard_normal() * 0.1, 0.0, 1.0)
 
         # make observation space to give to the agent
         observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), 0.0], dtype = np.float32)
@@ -79,7 +80,7 @@ class Apra_env(gym.Env):
 
         # find all valuations (again, agent is index 0)
         all_signals = [self.agent_signal] + list(self.opp_signals)
-        all_vals = [self.valuation(all_signals, i) for i in range(self.num_opponents + 1)]
+        all_vals = [self.valuation(all_signals, i, self.max_bid) for i in range(self.num_opponents + 1)]
 
         # ensure it is greater than last round, and find reimbursement
         # also check if agent is leading
@@ -147,19 +148,11 @@ class Apra_env(gym.Env):
 
         return opp_bids
 
-    # valuation (for both) function 
-    def valuation(self, signals, bidder_num): 
-        # simple method, weighing everyone equally and yourself 50% (can be updated)
-        opp_weight = 0.5 / self.num_opponents
-        agent_weight = 0.5
-        
-        sum_opp_sig = 0
-        for i in range(self.num_opponents + 1):
-            if i != bidder_num:
-                sum_opp_sig += signals[i] * opp_weight
+    # valuation (for both) function based on max bid
+    def valuation(self, signals, bidder_num, stat): 
+        # 0.05 is a parameter we can change; no randomness because the valuation function is deterministic?
+        return np.clip(signals[bidder_num] + (stat * 0.05), 0.0, 1.0)
 
-        return agent_weight * signals[bidder_num] + sum_opp_sig
-    
     # render basic text to the terminal for tracking when we choose to
     def render(self):
         if self.render_mode == "human":
