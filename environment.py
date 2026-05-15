@@ -138,7 +138,7 @@ class Apra_env(gym.Env):
         opp_bids = []
         for i in range(self.num_opponents):
 
-            bid = self.opp_signals[i] * 0.75
+            bid = round(self.opp_signals[i] * 0.75, 2)
             leader = self.max_bid_index == i + 1 # max bid index includes the agent at 0
 
             if bid > self.max_bid and not leader:

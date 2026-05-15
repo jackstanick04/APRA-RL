@@ -26,7 +26,7 @@ class QNetwork(nn.Module):
         return self.network(inputs)
 
 # agent (brain) class
-class distinguished_agent:
+class Distinguished_agent:
 
     # constructor taking in hyperparameters and setting up the replay buffer
     # can add more parameters to tweak as it gets more complex
