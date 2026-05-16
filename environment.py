@@ -8,7 +8,7 @@ from gymnasium import spaces
 class Apra_env(gym.Env):
     
     # constructor method, inheriting environment
-    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, render_mode = None):
+    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, render_mode = None):
         super().__init__()
 
         # auction-env specific variables, as well as the agent signals and reward tracker
@@ -21,16 +21,19 @@ class Apra_env(gym.Env):
         self.max_bid = 0.0
         self.max_bid_index = -1
         self.agent_signal = 0.0
-        self.opp_signals = np.zeros(self.num_opponents)
-        self.render_mode = render_mode
         self.agent_max_bid_holder = False
+        self.opp_signals = np.zeros(self.num_opponents)
+        self.signal_noise = signal_noise
+        self.valuation_weight = valuation_weight
+        self.obs_size = obs_size
+        self.render_mode = render_mode
 
         # define action and observation spaces
             # all already 0, 1 except round # which we normalize
             # Box: all valid cartesian products
             # action: bid // observation: agent_signal, max_bid, agent_win_loss, round_num
         self.action_space = spaces.Box(low = 0.0, high = 1.0, shape = (1,), dtype = np.float32)
-        self.observation_space = spaces.Box(low = 0.0, high = 1.0, shape = (4,), dtype = np.float32)
+        self.observation_space = spaces.Box(low = 0.0, high = 1.0, shape = (self.obs_size,), dtype = np.float32)
 
 
     # reset method to start from scratch
@@ -47,13 +50,13 @@ class Apra_env(gym.Env):
 
         # make a base value, then add some noise to each person (keep between 0 and 1)
         true_value = self.np_random.uniform(0.0, 1.0)
-        self.opp_signals = np.clip(true_value + self.np_random.standard_normal(self.num_opponents) * 0.1, 0.0, 1.0)
+        self.opp_signals = np.clip(true_value + self.np_random.standard_normal(self.num_opponents) * self.signal_noise, 0.0, 1.0)
 
         # check if special fixed signal for agent (for debugging)
         if options and options.get("fixed_signal") is not None:
             self.agent_signal = options["fixed_signal"]
         else: 
-            self.agent_signal = np.clip(true_value + self.np_random.standard_normal() * 0.1, 0.0, 1.0)
+            self.agent_signal = np.clip(true_value + self.np_random.standard_normal() * self.signal_noise, 0.0, 1.0)
 
         # make observation space to give to the agent
         observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), 0.0], dtype = np.float32)
@@ -76,7 +79,8 @@ class Apra_env(gym.Env):
         opp_bids = self.opp_bids()
         all_bids = [agent_bid] + opp_bids
         round_max_bid = max((bid for bid in all_bids if bid is not None), default = 0.0)
-        round_max_bid_index = all_bids.index(round_max_bid) # if everyone abstains there is an error here (don't worry about it now)
+        # if everyone asbtains all bids are 0, so nobody should have the max bid or get reimbursed (stay -1)
+        round_max_bid_index = all_bids.index(round_max_bid) if round_max_bid > 0.0 else -1
 
         # find all valuations (again, agent is index 0)
         all_signals = [self.agent_signal] + list(self.opp_signals)
@@ -131,7 +135,8 @@ class Apra_env(gym.Env):
             else:
                 return reimbursement - self.bid_cost
             
-    # opponent bid function, include abstention
+    # opponent bid function
+    # NEEDS TO BE UPDATED BIG TIME DOWNT THE ROAD
     def opp_bids(self): 
 
         # check if they are already leading or they are not bidding large enough
@@ -148,15 +153,16 @@ class Apra_env(gym.Env):
 
         return opp_bids
 
-    # valuation (for both) function based on max bid
+    # valuation (for agent and opponents) function based on max bid
+    # this function may be updated to be more complex!!
     def valuation(self, signals, bidder_num, stat): 
-        # 0.05 is a parameter we can change; no randomness because the valuation function is deterministic?
-        return np.clip(signals[bidder_num] + (stat * 0.05), 0.0, 1.0)
+        # no randomness because we want our value function to be deterministic--if it's not, what's the point of a signal?
+        return np.clip(signals[bidder_num] + (stat * self.valuation_weight), 0.0, 1.0)
 
     # render basic text to the terminal for tracking when we choose to
     def render(self):
         if self.render_mode == "human":
-            print(f"Round Number: {int(self.current_round * self.num_rounds)}")
+            print(f"Round Number: {int(self.current_round)}")
             print(f"Agent Signal: {self.agent_signal}")
             print(f"Opponent Signals: {self.opp_signals}")
             print(f"Highest Bid: {self.max_bid}")
