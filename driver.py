@@ -3,25 +3,28 @@ import numpy as np
 from environment import Apra_env
 from distinguished_agent import Distinguished_agent
     
-# HYPERPARAMETERS
+# HYPERPARAMETERS (can obviously all be tweaked)
 
 # environment
-NUM_ROUNDS = -1
-NUM_OPPONENTS = -1  
-RESERVE_PRICE = -1
-REIMBURSEMENT_RATES = # one per round
-BID_COST = -1
+NUM_ROUNDS = 5
+NUM_OPPONENTS = 3  
+RESERVE_PRICE = 0.2
+REIMBURSEMENT_RATES = [0.25] * NUM_ROUNDS # need one per round
+BID_COST = 0.05
+SIGNAL_NOISE = 0.1
+VALUATION_WEIGHT = 0.05
 
 # agent
-LEARNING_RATE = -1
-DISCOUNT_RATE = -1
-REPLAY_BUFF_SIZE = -1
-BATCH_PULL_SIZE = -1
-NUM_AVAILABLE_BIDS = -1 # ex. 100 => 0.00, 0.01, ... 1.0
+LEARNING_RATE = 0.001
+DISCOUNT_RATE = 0.95
+REPLAY_BUFF_SIZE = 10000
+BATCH_PULL_SIZE = 64
+NUM_AVAILABLE_BIDS = 101 # ex. 101 => 0.00, 0.01, ... 1.0; we need the extra 1 for 1.00
+OBS_SIZE = 4 # also for environment
 
 # main training
-NUM_EPISODES = -1
-TARGET_UPDATE_FREQ = -1
+NUM_EPISODES = 100 # should be 20000
+TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
     # can include different number of opponents, rounds, etc.
 
@@ -32,8 +35,8 @@ win_log = [] # binary
 reward_log = []
 
 # instatiate the agent and environment
-agent = Distinguished_agent(LEARNING_RATE, DISCOUNT_RATE, REPLAY_BUFF_SIZE, BATCH_PULL_SIZE, NUM_AVAILABLE_BIDS)
-env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST)
+agent = Distinguished_agent(LEARNING_RATE, DISCOUNT_RATE, REPLAY_BUFF_SIZE, BATCH_PULL_SIZE, NUM_AVAILABLE_BIDS, OBS_SIZE)
+env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE)
 
 # LOOP PORTION
 
@@ -56,21 +59,23 @@ for episode in range(1, NUM_EPISODES + 1):
         agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
 
         # update policy and move to the next state
-        agent.update_policy()
+        agent.update_policy() # able to be called with unfull buffer, because the agent class handles it
         observation = next_observation
         total_reward += reward
 
         # check if the game is done
         if terminated or truncated:
-            won = env.agent_max_bid_holder and env.max_bid > RESERVE_PRICE
+            won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE
             break
 
-    # update the logs and decay epislon every 10th episode
+    # update the logs and decay epislon every 10th episode 
     win_log.append(won)
     reward_log.append(total_reward)
     if episode % TARGET_UPDATE_FREQ == 0:
-        agent.decay_eps()
+        agent.decay_eps() # also able to be called with unfull buffer, because the agent class handles it
         agent.update_target()
+
+    print(episode)
 
     
 
