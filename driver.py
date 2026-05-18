@@ -1,4 +1,3 @@
-# import agent and environment
 import numpy as np
 from environment import Apra_env
 from distinguished_agent import Distinguished_agent
@@ -20,59 +19,51 @@ DISCOUNT_RATE = 0.95
 REPLAY_BUFF_SIZE = 10000
 BATCH_PULL_SIZE = 64
 NUM_AVAILABLE_BIDS = 101 # ex. 101 => 0.00, 0.01, ... 1.0; we need the extra 1 for 1.00
-OBS_SIZE = 4 # also for environment
+OBS_SIZE = 4 # for agent and environment
 
-# main training
+# training
 NUM_EPISODES = 100 # should be 20000
 TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
-    # can include different number of opponents, rounds, etc.
+    # can include different number of opponents, rounds, etc. in each stage
 
 # BOOKKEEPING AND INSTANTIATION
 
-# general bookkeeping--we can always add more
+# general bookkeeping--can always add more
 win_log = [] # binary
 reward_log = []
 
-# instatiate the agent and environment
 agent = Distinguished_agent(LEARNING_RATE, DISCOUNT_RATE, REPLAY_BUFF_SIZE, BATCH_PULL_SIZE, NUM_AVAILABLE_BIDS, OBS_SIZE)
 env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE)
 
 # LOOP PORTION
 
-# loop every episode, reseting the environment each time
 for episode in range(1, NUM_EPISODES + 1):
     observation, info = env.reset() # info is optional for debugging
-    # total reward and win flag for bookkeeping
+    
     total_reward = 0
     won = False
 
-    # loop through each round of the auction (pretty logical)
     for round in range(NUM_ROUNDS):
         
-        # get the discretized bid
         action_raw_index = agent.choose_action(observation)
         action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
 
-        # step the environment based on this bid and store transition to the buffer
         next_observation, reward, terminated, truncated, info = env.step(np.array([action_discrete]))
         agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
 
-        # update policy and move to the next state
         agent.update_policy() # able to be called with unfull buffer, because the agent class handles it
         observation = next_observation
         total_reward += reward
 
-        # check if the game is done
         if terminated or truncated:
-            won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE
+            won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
             break
 
-    # update the logs and decay epislon every 10th episode 
     win_log.append(won)
     reward_log.append(total_reward)
     if episode % TARGET_UPDATE_FREQ == 0:
-        agent.decay_eps() # also able to be called with unfull buffer, because the agent class handles it
+        agent.decay_eps() # only decays after warmup (agent class handles this)
         agent.update_target()
 
     print(episode)
