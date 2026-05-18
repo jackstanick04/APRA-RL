@@ -25,6 +25,7 @@ class Apra_env(gym.Env):
         self.agent_max_bid_holder = False
         self.agent_signal = 0.0
         self.opp_signals = np.zeros(self.num_opponents)
+        self.opponents = [] # for debugging
 
         # Box spaces ensure that all observation and action values are in [0,1] range
         self.action_space = spaces.Box(low = 0.0, high = 1.0, shape = (1,), dtype = np.float32) # action: bid
@@ -94,7 +95,7 @@ class Apra_env(gym.Env):
             "Other Agent Rewards" : rewards[1:] # for debugging?
         }
         
-        return observation, rewards[0], last_round,False, extra_info # false is truncated
+        return observation, rewards[0], last_round, False, extra_info # false is truncated
 
     def reward(self, bid, reimbursement, last_round, won, valuation): # is reward = utility?
         
@@ -118,14 +119,15 @@ class Apra_env(gym.Env):
         opp_bids = []
         for i in range(self.num_opponents):
 
-            bid = round(self.opp_signals[i] * 0.75, 2) # arbitrary opponent bidding strategy
+            bid = self.valuation(self.opp_signals, i, self.max_bid) # arbitrary opponent bidding strategy, based on the max bid
             leader = self.max_bid_index == i + 1 # max bid index already includes the agent at 0
 
-            if bid > self.max_bid and not leader:
+            if not leader: # step already ensures that the bid is a valid size
                 opp_bids.append(bid)
             else: 
                 opp_bids.append(None)
 
+        self.opponents = opp_bids
         return opp_bids
 
     # this function may be updated to be more complex!!
