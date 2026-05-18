@@ -11,7 +11,7 @@ RESERVE_PRICE = 0.2
 REIMBURSEMENT_RATES = [0.25] * NUM_ROUNDS # need one per round
 BID_COST = 0.05
 SIGNAL_NOISE = 0.1
-VALUATION_WEIGHT = 0.05
+VALUATION_WEIGHT = 0.25
 
 # agent
 LEARNING_RATE = 0.001
@@ -22,7 +22,7 @@ NUM_AVAILABLE_BIDS = 101 # ex. 101 => 0.00, 0.01, ... 1.0; we need the extra 1 f
 OBS_SIZE = 4 # for agent and environment
 
 # training
-NUM_EPISODES = 100 # should be 20000
+NUM_EPISODES = 12000
 TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
     # can include different number of opponents, rounds, etc. in each stage
@@ -38,37 +38,42 @@ env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BI
 
 # LOOP PORTION
 
-for episode in range(1, NUM_EPISODES + 1):
-    observation, info = env.reset() # info is optional for debugging
-    
-    total_reward = 0
-    won = False
+with open("training_log.txt", "w") as f:
 
-    for round in range(NUM_ROUNDS):
+    for episode in range(1, NUM_EPISODES + 1):
+        observation, info = env.reset() # info is optional for debugging
         
-        action_raw_index = agent.choose_action(observation)
-        action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
+        total_reward = 0
+        won = False
 
-        next_observation, reward, terminated, truncated, info = env.step(np.array([action_discrete]))
-        agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
+        for round in range(NUM_ROUNDS):
+            
+            action_raw_index = agent.choose_action(observation)
+            action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
 
-        agent.update_policy() # able to be called with unfull buffer, because the agent class handles it
-        observation = next_observation
-        total_reward += reward
+            next_observation, reward, terminated, truncated, info = env.step(np.array([action_discrete]))
+            agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
 
-        if terminated or truncated:
-            won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
-            break
+            agent.update_policy() # able to be called with unfull buffer, because the agent class handles it
+            observation = next_observation
+            total_reward += reward
 
-    win_log.append(won)
-    reward_log.append(total_reward)
-    if episode % TARGET_UPDATE_FREQ == 0:
-        agent.decay_eps() # only decays after warmup (agent class handles this)
-        agent.update_target()
+            if terminated or truncated:
+                won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
 
-    print(episode)
+            # print(f"episode: {episode} | round: {round} | won: {won} | reward: {total_reward:.4f} | agent_signal: {action_discrete:.3f} | opp_bids: {env.opponents}")
+            if episode % 100 == 0:
+                opp_str = [f"{b:.3f}" if b is not None else "None" for b in env.opponents]
+                f.write(f"episode: {episode} | round: {round} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f}\n")
 
-    
+        win_log.append(won)
+        reward_log.append(total_reward)
+        if episode % TARGET_UPDATE_FREQ == 0:
+            agent.decay_eps() # only decays after warmup (agent class handles this)
+            agent.update_target()
+
+        
+        
 
 
 
