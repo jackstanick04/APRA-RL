@@ -85,7 +85,7 @@ class Apra_env(gym.Env):
         # do we need all rewards or just agent?
         rewards = [0] * (self.num_opponents + 1)
         for bidder in range(self.num_opponents + 1):
-            rewards [bidder] = self.reward(all_bids[bidder], reimbursements[bidder], last_round, won, all_vals[bidder])
+            rewards [bidder] = self.reward(all_bids[bidder], reimbursements[bidder], last_round, won, all_vals[bidder], self.max_bid)
 
         std_round = self.current_round / self.num_rounds # standardized round number for observation
         observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), std_round], dtype = np.float32)
@@ -97,21 +97,24 @@ class Apra_env(gym.Env):
         
         return observation, rewards[0], last_round, False, extra_info # false is truncated
 
-    def reward(self, bid, reimbursement, last_round, won, valuation): # is reward = utility?
+    def reward(self, bid, reimbursement, last_round, won, valuation, winning_bid): # is reward = utility?
         
-        # based on round winning, abstention, and valuation (val is constant)
+        # based on round winning, abstention, and valuation (val is a constant)
 
-        if reimbursement == 0:
+        if last_round:
+            if won:
+                return valuation - winning_bid + reimbursement - (self.bid_cost if bid is not None else 0)
+            else:
+                if bid is None:
+                    return 0
+                else:
+                    return -(self.bid_cost)
+        else:
             if bid is None:
                 return 0
-            else: 
-                return -(self.bid_cost)
-            
-        else:
-            if last_round and won: 
-                return valuation - bid + reimbursement - self.bid_cost
             else:
                 return reimbursement - self.bid_cost
+
             
     # NEEDS TO BE UPDATED BIG TIME DOWNT THE ROAD!!!
     def opp_bids(self): 
