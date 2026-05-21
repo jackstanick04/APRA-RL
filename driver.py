@@ -65,7 +65,7 @@ with open("training_log.txt", "w") as f:
             # print(f"episode: {episode} | round: {round} | won: {won} | reward: {total_reward:.4f} | agent_signal: {action_discrete:.3f} | opp_bids: {env.opponents}")
             if episode % 100 == 0:
                 opp_str = [f"{b:.3f}" if b is not None else "None" for b in env.opponents]
-                f.write(f"episode: {episode} | round: {round + 1} | strat: {agent.strat} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f}\n")
+                f.write(f"episode: {episode} | round: {round + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f}\n")
 
         win_log.append(won)
         reward_log.append(total_reward)
