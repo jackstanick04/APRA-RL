@@ -4,7 +4,7 @@ from gymnasium import spaces
 
 class Apra_env(gym.Env):
     
-    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, render_mode = None):
+    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, loss_addition, render_mode = None):
         super().__init__()
 
         # auction parameters (fixed)
@@ -16,6 +16,7 @@ class Apra_env(gym.Env):
         self.signal_noise = signal_noise
         self.valuation_weight = valuation_weight
         self.obs_size = obs_size
+        self.loss_addition = loss_addition
         self.render_mode = render_mode
 
         # auction states (reset per episode)
@@ -25,6 +26,7 @@ class Apra_env(gym.Env):
         self.agent_max_bid_holder = False
         self.agent_signal = 0.0
         self.opp_signals = np.zeros(self.num_opponents)
+        self.opp_loss_streaks = np.zeros(self.num_opponents)
         self.opponents = [] # for debugging
 
         # Box spaces ensure that all observation and action values are in [0,1] range
@@ -38,6 +40,7 @@ class Apra_env(gym.Env):
         self.max_bid = 0.0
         self.max_bid_index = -1
         self.agent_max_bid_holder = False
+        self.opp_loss_streaks = np.zeros(self.num_opponents)
         super().reset(seed = seed) # seed for agent signal debugging
 
         # make a base value, then add some noise to each person (keep between 0 and 1)
@@ -82,24 +85,17 @@ class Apra_env(gym.Env):
         last_round = self.current_round + 1 == self.num_rounds # because we increment at the end anyway
         won = last_round and (self.max_bid >= self.reserve_price)
         
-        # do we need all rewards or just agent?
-        rewards = [0] * (self.num_opponents + 1)
-        for bidder in range(self.num_opponents + 1):
-            rewards [bidder] = self.reward(all_bids[bidder], reimbursements[bidder], last_round, won, all_vals[bidder], self.max_bid)
+        # only agent's reward, because the opponents aren't learning
+        reward = self.reward(all_bids[0], reimbursements[0], last_round, won, all_vals[0], self.max_bid)
 
         std_round = self.current_round / self.num_rounds # standardized round number for observation
         observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), std_round], dtype = np.float32)
 
         self.current_round += 1
-        extra_info = { 
-            "Other Agent Rewards" : rewards[1:] # for debugging?
-        }
         
-        return observation, rewards[0], last_round, False, extra_info # false is truncated
+        return observation, reward, last_round, False # false is truncated
 
-    def reward(self, bid, reimbursement, last_round, won, valuation, winning_bid): # is reward = utility?
-        
-        # based on round winning, abstention, and valuation (val is a constant)
+    def reward(self, bid, reimbursement, last_round, won, valuation, winning_bid):
 
         if last_round:
             if won:
@@ -117,18 +113,28 @@ class Apra_env(gym.Env):
 
             
     # NEEDS TO BE UPDATED BIG TIME DOWNT THE ROAD!!!
+    # SHOULD BE SHADING, BUT DOING IT WITHOUT TO BE EVEN STRICTER ON MONKEE
     def opp_bids(self): 
 
         opp_bids = []
         for i in range(self.num_opponents):
 
-            bid = self.valuation(self.opp_signals, i, self.max_bid) # arbitrary opponent bidding strategy, based on the max bid
             leader = self.max_bid_index == i + 1 # max bid index already includes the agent at 0
 
+            value = self.valuation(self.opp_signals, i, self.max_bid)
+            loss_boost = self.loss_addition * self.opp_loss_streaks[i] # if max bid is the same and they have been losing, we need to bid more
+            bid = np.clip(value + loss_boost, 0.0, 1.0)
+
             if not leader: # step already ensures that the bid is a valid size
-                opp_bids.append(bid)
+                if bid <= self.max_bid:
+                    opp_bids.append(None) # don't increment loss because we've given up. we aren't losing, we're just done 
+                else:
+                    opp_bids.append(bid)
+                    self.opp_loss_streaks[i] += 1 # assume we lose, if we win the next iteration fixes this
+
             else: 
                 opp_bids.append(None)
+                self.opp_loss_streaks[i] = 0
 
         self.opponents = opp_bids
         return opp_bids
