@@ -13,6 +13,7 @@ BID_COST = 0.05
 SIGNAL_NOISE = 0.1
 VALUATION_WEIGHT = 0.25
 LOSS_ADDITION = 0.05
+BID_THRESH = 0.1
 
 # agent
 LEARNING_RATE = 0.001
@@ -23,7 +24,7 @@ NUM_AVAILABLE_BIDS = 101 # ex. 101 => 0.00, 0.01, ... 1.0; we need the extra 1 f
 OBS_SIZE = 4 # for agent and environment
 
 # training
-NUM_EPISODES = 12000
+NUM_EPISODES = 20000
 TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
     # can include different number of opponents, rounds, etc. in each stage
@@ -35,7 +36,7 @@ win_log = [] # binary
 reward_log = []
 
 agent = Distinguished_agent(LEARNING_RATE, DISCOUNT_RATE, REPLAY_BUFF_SIZE, BATCH_PULL_SIZE, NUM_AVAILABLE_BIDS, OBS_SIZE)
-env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE, LOSS_ADDITION)
+env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE, LOSS_ADDITION, BID_THRESH)
 
 # LOOP PORTION
 
@@ -52,7 +53,7 @@ with open("training_log.txt", "w") as f:
             action_raw_index = agent.choose_action(observation)
             action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
 
-            next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]))
+            next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]), round)
             agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
 
             agent.update_policy() # able to be called with unfull buffer, because the agent class handles it
