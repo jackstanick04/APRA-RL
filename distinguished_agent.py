@@ -34,6 +34,7 @@ class Distinguished_agent:
         self.epsilon = 1.0 # want to always explore at first
         self.obs_size = obs_size
         self.replay_buffer = deque(maxlen=replay_buff_size) # should replace a lot of Miriam's bookkeeping?
+        self.strat = "" # debugging exploration v. exploitation
 
         self.policy_net = QNetwork(self.obs_size, self.action_size)
         self.target_net = QNetwork(self.obs_size, self.action_size)
@@ -50,12 +51,14 @@ class Distinguished_agent:
 
         # explore
         if choice <= self.epsilon:
+            self.strat = "explore"
             return np.random.randint(0, self.action_size)
 
         # exploit
         obser_tens = torch.FloatTensor(observation) # neural networks need tensors, not arrays
         with torch.no_grad(): # do not need to track the gradients when only calculating outputs 
             q_values = self.policy_net(obser_tens)
+        self.strat = "exploit"
         return q_values.argmax().item() 
 
     def store_transition(self, state, action, reward, next_state, done):
