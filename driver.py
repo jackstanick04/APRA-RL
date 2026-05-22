@@ -13,7 +13,7 @@ BID_COST = 0.05
 SIGNAL_NOISE = 0.1
 VALUATION_WEIGHT = 0.25
 LOSS_ADDITION = 0.05
-BID_THRESH = 0.1
+BID_THRESH = 0.15
 
 # agent
 LEARNING_RATE = 0.001
@@ -44,16 +44,19 @@ with open("training_log.txt", "w") as f:
 
     for episode in range(1, NUM_EPISODES + 1):
         observation, info = env.reset() # info is optional for debugging
+
+        if episode % 100 == 0:
+            f.write(f"{env.agent_signal:.3f}\n")
         
         total_reward = 0
         won = False
 
-        for round in range(NUM_ROUNDS):
+        for round_num in range(NUM_ROUNDS):
             
             action_raw_index = agent.choose_action(observation)
             action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
 
-            next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]), round)
+            next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]), round_num)
             agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
 
             agent.update_policy() # able to be called with unfull buffer, because the agent class handles it
@@ -63,10 +66,10 @@ with open("training_log.txt", "w") as f:
             if terminated or truncated:
                 won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
 
-            # print(f"episode: {episode} | round: {round} | won: {won} | reward: {total_reward:.4f} | agent_signal: {action_discrete:.3f} | opp_bids: {env.opponents}")
+            # print(f"episode: {episode} | round: {round_num} | won: {won} | reward: {total_reward:.4f} | agent_signal: {action_discrete:.3f} | opp_bids: {env.opponents}")
             if episode % 100 == 0:
                 opp_str = [f"{b:.3f}" if b is not None else "None" for b in env.opponents]
-                f.write(f"episode: {episode} | round: {round + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f}\n")
+                f.write(f"episode: {episode} | round: {round_num + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f}\n")
 
         win_log.append(won)
         reward_log.append(total_reward)
