@@ -26,6 +26,7 @@ class Apra_env(gym.Env):
         self.agent_signal = 0.0
         self.opp_signals = np.zeros(self.num_opponents)
         self.opp_loss_streaks = np.zeros(self.num_opponents)
+        self.total_reimbursement = 0.0
         self.opponents = [] # for debugging
         self.age_val = 0.0 # for debugging
 
@@ -35,7 +36,6 @@ class Apra_env(gym.Env):
         self.not_abs_penalty = not_abs_penalty # bidding when leader--negative value
         self.no_bid_penalty = no_bid_penalty # small or abstaining bid when he has a chance--negative value
         self.overbid_weight = overbid_weight
-
 
         # Box spaces ensure that all observation and action values are in [0,1] range
         self.action_space = spaces.Box(low = 0.0, high = 1.0, shape = (1,), dtype = np.float32) # action: bid
@@ -49,6 +49,7 @@ class Apra_env(gym.Env):
         self.max_bid_index = -1
         self.agent_max_bid_holder = False
         self.opp_loss_streaks = np.zeros(self.num_opponents)
+        self.total_reimbursement = 0.0
         super().reset(seed = seed) # seed for agent signal debugging
 
         # make a base value, then add some noise to each person (keep between 0 and 1)
@@ -88,7 +89,10 @@ class Apra_env(gym.Env):
         prev_max_bid = self.max_bid
         reimbursements = [0] * (self.num_opponents + 1)
         if round_max_bid > self.max_bid: # need to see if the price actually increased this round to be reimbursed
-            reimbursements[round_max_bid_index] = (round_max_bid - self.max_bid) * self.reimbursement_rates[self.current_round]
+            reimburse = (round_max_bid - self.max_bid) * self.reimbursement_rates[self.current_round]
+            reimbursements[round_max_bid_index] = reimburse
+            self.total_reimbursement += reimburse
+
             self.max_bid = round_max_bid
             self.max_bid_index = round_max_bid_index
             self.agent_max_bid_holder = self.max_bid_index == 0
