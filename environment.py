@@ -4,7 +4,7 @@ from gymnasium import spaces
 
 class Apra_env(gym.Env):
     
-    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, loss_addition, bid_thresh, render_mode = None):
+    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, loss_addition, bid_thresh, not_abs_penalty, no_bid_penalty, overbid_weight, render_mode = None):
         super().__init__()
 
         # auction parameters (fixed)
@@ -16,9 +16,7 @@ class Apra_env(gym.Env):
         self.signal_noise = signal_noise
         self.valuation_weight = valuation_weight
         self.obs_size = obs_size
-        self.loss_addition = loss_addition
         self.render_mode = render_mode
-        self.bid_thresh = bid_thresh
 
         # auction states (reset per episode)
         self.current_round = 0
@@ -30,6 +28,14 @@ class Apra_env(gym.Env):
         self.opp_loss_streaks = np.zeros(self.num_opponents)
         self.opponents = [] # for debugging
         self.age_val = 0.0 # for debugging
+
+        # opponent bidding and agent reward
+        self.loss_addition = loss_addition # for opponents
+        self.bid_thresh = bid_thresh
+        self.not_abs_penalty = not_abs_penalty # bidding when leader--negative value
+        self.no_bid_penalty = no_bid_penalty # small or abstaining bid when he has a chance--negative value
+        self.overbid_weight = overbid_weight
+
 
         # Box spaces ensure that all observation and action values are in [0,1] range
         self.action_space = spaces.Box(low = 0.0, high = 1.0, shape = (1,), dtype = np.float32) # action: bid
@@ -92,7 +98,7 @@ class Apra_env(gym.Env):
         agent_won = won and self.agent_max_bid_holder
         
         # only agent's reward, because the opponents aren't learning
-        reward = self.reward(round_num, last_round, agent_won, self.max_bid, agent_bid, all_vals[0], reimbursements[0], self.agent_max_bid_holder, was_leader, self.bid_thresh, prev_max_bid)
+        reward = self.reward(round_num, last_round, agent_won, self.max_bid, agent_bid, all_vals[0], reimbursements[0], self.agent_max_bid_holder, was_leader, prev_max_bid)
 
         std_round = self.current_round / self.num_rounds # standardized round number for observation
         observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), std_round], dtype = np.float32)
@@ -134,25 +140,25 @@ class Apra_env(gym.Env):
         return opp_bids
 
     # reward function depends on subfunctions per round number
-    def reward(self, round_num, last_round, agent_won, winning_bid, agent_bid, valuation, reimbursement, agent_leader, was_leader, bid_thresh, prev_max_bid):
+    def reward(self, round_num, last_round, agent_won, winning_bid, agent_bid, valuation, reimbursement, agent_leader, was_leader, prev_max_bid):
         if round_num == 0:
             return self.first_round_rew(agent_bid, valuation, reimbursement)
         elif last_round:
-            return self.last_round_rew(agent_won, was_leader, winning_bid, agent_bid, valuation, reimbursement, bid_thresh, prev_max_bid)
+            return self.last_round_rew(agent_won, was_leader, winning_bid, agent_bid, valuation, reimbursement, prev_max_bid)
         else:
-            return self.other_round_rew(agent_leader, was_leader, winning_bid, agent_bid, valuation, reimbursement, bid_thresh, prev_max_bid)
+            return self.other_round_rew(agent_leader, was_leader, winning_bid, agent_bid, valuation, reimbursement, prev_max_bid)
 
     def first_round_rew(self, agent_bid, valuation, reimbursement):
         if agent_bid is None:
-            return -.2 # agent must be penalized for abstaining in round 1, as it is never gto
+            return self.no_bid_penalty # agent must be penalized for abstaining in round 1, as it is never gto
         
-        return reimbursement - self.bid_cost - (3 * max(agent_bid - valuation, 0)) # punishes for bidding > valuation; 3 just scales
+        return reimbursement - self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0)) # punishes for bidding > valuation; 3 just scales
 
     # there's probably a cleaner way to make this if skeleton
-    def last_round_rew(self, agent_won, was_leader, winning_bid, agent_bid, valuation, reimbursement, bid_thresh, prev_max_bid):
+    def last_round_rew(self, agent_won, was_leader, winning_bid, agent_bid, valuation, reimbursement, prev_max_bid):
         if was_leader:
             if agent_bid is not None:
-                return -.2 # agent needs to be penalized for not abiding gto abstention
+                return self.not_abs_penalty # agent needs to be penalized for not abiding gto abstention
             elif agent_won:
                 return valuation - winning_bid # no reimbursement or bid cost because that happened last round
             else:
@@ -160,41 +166,41 @@ class Apra_env(gym.Env):
             
         else:
             if agent_won: 
-                return valuation - winning_bid + reimbursement - self.bid_cost
+                return self.overbid_weight * (valuation - winning_bid) + reimbursement - self.bid_cost # note that the overbid weight here does deviate this from the notes' official reward definition
             else: # if he wasn't leading and lost, he is rewarded based on his action and if he had a chance
-                if np.abs(valuation - winning_bid) > bid_thresh or winning_bid == 1.0: # check if auction already won
+                if np.abs(valuation - winning_bid) > self.bid_thresh or winning_bid == 1.0: # check if auction already won
                     if agent_bid is None:
                         return 0
                     else:
-                        return -self.bid_cost - (5 * max(agent_bid - valuation, 0))
+                        return -self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
                 else:
                     if agent_bid is None or agent_bid <= prev_max_bid:
-                        return -.2 # agent must be punished for abstaining when he had a chance
+                        return self.no_bid_penalty # agent must be punished for abstaining when he had a chance
                     else:
-                        return -self.bid_cost - (5 *max(agent_bid - valuation, 0))
+                        return -self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
 
     # very similar to the last round function
-    def other_round_rew(self, agent_leader, was_leader, winning_bid, agent_bid, valuation, reimbursement, bid_thresh, prev_max_bid):
+    def other_round_rew(self, agent_leader, was_leader, winning_bid, agent_bid, valuation, reimbursement, prev_max_bid):
         if was_leader:
             if agent_bid is not None:
-                return -.2 # agent needs to be penalized for not abiding gto abstention
+                return self.not_abs_penalty # agent needs to be penalized for not abiding gto abstention
             else:
                 return 0
             
         else:
             if agent_leader:
-                return reimbursement - self.bid_cost - (5 * max(agent_bid - valuation, 0))
+                return reimbursement - self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
             else: # if he wasn't leading and lost, he is rewarded based on his action and if he had a chance
-                if np.abs(valuation - winning_bid) > bid_thresh or winning_bid == 1.0: # if auction is won, he should abstain
+                if np.abs(valuation - winning_bid) > self.bid_thresh or winning_bid == 1.0: # if auction is won, he should abstain
                     if agent_bid is None:
                         return 0
                     else:
-                        return -self.bid_cost - (5 * max(agent_bid - valuation, 0))
+                        return -self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
                 else:
                     if agent_bid is None or agent_bid <= prev_max_bid:
-                        return -.2 # agent must be punished for abstaining when he had a chance
+                        return self.no_bid_penalty # agent must be punished for abstaining when he had a chance
                     else:
-                        return -self.bid_cost - (5 *max(agent_bid - valuation, 0))
+                        return -self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
 
     # delete or overwrite this?
     def render(self):

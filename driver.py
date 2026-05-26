@@ -12,11 +12,15 @@ REIMBURSEMENT_RATES = [0.25] * NUM_ROUNDS # need one per round
 BID_COST = 0.05
 SIGNAL_NOISE = 0.1
 VALUATION_WEIGHT = 0.25
-LOSS_ADDITION = 0.05
+# opps and reward function
+LOSS_ADDITION = 0.05 # for opponents
 BID_THRESH = 0.15
+NOT_ABS_PENALTY = -.2
+NO_BID_PENALTY = -.4
+OVERBID_WEIGHT = 3
 
 # agent
-LEARNING_RATE = 0.001
+LEARNING_RATE = 0.001   
 DISCOUNT_RATE = 0.95
 REPLAY_BUFF_SIZE = 10000
 BATCH_PULL_SIZE = 64
@@ -24,7 +28,7 @@ NUM_AVAILABLE_BIDS = 101 # ex. 101 => 0.00, 0.01, ... 1.0; we need the extra 1 f
 OBS_SIZE = 4 # for agent and environment
 
 # training
-NUM_EPISODES = 20000
+NUM_EPISODES = 50000
 TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
     # can include different number of opponents, rounds, etc. in each stage
@@ -36,7 +40,7 @@ win_log = [] # binary
 reward_log = []
 
 agent = Distinguished_agent(LEARNING_RATE, DISCOUNT_RATE, REPLAY_BUFF_SIZE, BATCH_PULL_SIZE, NUM_AVAILABLE_BIDS, OBS_SIZE)
-env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE, LOSS_ADDITION, BID_THRESH)
+env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE, LOSS_ADDITION, BID_THRESH, NOT_ABS_PENALTY, NO_BID_PENALTY, OVERBID_WEIGHT)
 
 # LOOP PORTION
 
@@ -63,10 +67,12 @@ with open("training_log.txt", "w") as f:
             if terminated or truncated:
                 won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
 
-            # print(f"episode: {episode} | round: {round_num} | won: {won} | reward: {total_reward:.4f} | agent_signal: {action_discrete:.3f} | opp_bids: {env.opponents}")
             if episode % 100 == 0:
                 opp_str = [f"{b:.3f}" if b is not None else "None" for b in env.opponents]
-                f.write(f"\nepisode: {episode} | round: {round_num + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f}\n")
+                f.write(f"episode: {episode} | round: {round_num + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f}\n")
+
+        if episode % 100 == 0:
+            f.write("\n")
 
         win_log.append(won)
         reward_log.append(total_reward)
