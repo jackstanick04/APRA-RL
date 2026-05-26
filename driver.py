@@ -28,7 +28,7 @@ NUM_AVAILABLE_BIDS = 101 # ex. 101 => 0.00, 0.01, ... 1.0; we need the extra 1 f
 OBS_SIZE = 4 # for agent and environment
 
 # training
-NUM_EPISODES = 50000
+NUM_EPISODES = 20000
 TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
     # can include different number of opponents, rounds, etc. in each stage
@@ -38,6 +38,8 @@ TARGET_UPDATE_FREQ = 10
 # general bookkeeping--can always add more
 win_log = [] # binary
 reward_log = []
+revenue_log = []
+hype_log = []
 
 agent = Distinguished_agent(LEARNING_RATE, DISCOUNT_RATE, REPLAY_BUFF_SIZE, BATCH_PULL_SIZE, NUM_AVAILABLE_BIDS, OBS_SIZE)
 env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE, LOSS_ADDITION, BID_THRESH, NOT_ABS_PENALTY, NO_BID_PENALTY, OVERBID_WEIGHT)
@@ -52,6 +54,10 @@ with open("training_log.txt", "w") as f:
         total_reward = 0
         won = False
 
+        # auctioneer variables--what we are testing for
+        hype = 0.0
+        revenue = 0.0
+
         for round_num in range(NUM_ROUNDS):
             
             action_raw_index = agent.choose_action(observation)
@@ -64,21 +70,29 @@ with open("training_log.txt", "w") as f:
             observation = next_observation
             total_reward += reward
 
+            hype += env.max_bid
+
             if terminated or truncated:
                 won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
 
             if episode % 100 == 0:
                 opp_str = [f"{b:.3f}" if b is not None else "None" for b in env.opponents]
-                f.write(f"episode: {episode} | round: {round_num + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f}\n")
+                f.write(f"episode: {episode} | round: {round_num + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f} | hype: {hype:.3f}\n")
 
+        revenue += env.max_bid - env.total_reimbursement # max bid at time of last round is the winning bid
         if episode % 100 == 0:
-            f.write("\n")
+            f.write(f"{revenue} \n")
 
+        hype_log.append(hype)
+        revenue_log.append(revenue)
         win_log.append(won)
         reward_log.append(total_reward)
+
         if episode % TARGET_UPDATE_FREQ == 0:
             agent.decay_eps() # only decays after warmup (agent class handles this)
             agent.update_target()
+
+        
 
         
         
