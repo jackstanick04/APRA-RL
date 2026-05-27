@@ -5,11 +5,12 @@ from distinguished_agent import Distinguished_agent
 # HYPERPARAMETERS (can obviously all be tweaked)
 
 # environment
-NUM_ROUNDS = 5
+NUM_ROUNDS = 20
 NUM_OPPONENTS = 3  
 RESERVE_PRICE = 0.2
 REIMBURSEMENT_RATES = [0.25] * NUM_ROUNDS # one per round, most important variable in this research
 BID_COST = 0.05
+
 SIGNAL_NOISE = 0.1 # fixed
 VALUATION_WEIGHT = 0.25 # fixed for now
 LOSS_ADDITION = 0.05 # fixed and for opponents
@@ -24,7 +25,7 @@ OBS_SIZE = 4 # for agent and environment
 EPS_DECAY = 0.998
 
 # training -- fixing for now
-NUM_EPISODES = 20000
+NUM_EPISODES = 30000
 TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
     # can include different number of opponents, rounds, etc. in each stage
@@ -35,7 +36,7 @@ TARGET_UPDATE_FREQ = 10
 win_log = [] # binary
 reward_log = []
 revenue_log = []
-hype_log = []
+hype_log = [] # hype per episode--hype per round is in google sheet
 
 agent = Distinguished_agent(LEARNING_RATE, DISCOUNT_RATE, REPLAY_BUFF_SIZE, BATCH_PULL_SIZE, NUM_AVAILABLE_BIDS, OBS_SIZE)
 env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE, LOSS_ADDITION)
@@ -76,13 +77,15 @@ with open("training_log.txt", "w") as f:
                 f.write(f"episode: {episode} | round: {round_num + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f} | hype: {hype:.3f}\n")
 
         revenue += env.max_bid - env.total_reimbursement # max bid at time of last round is the winning bid
-        if episode % 100 == 0:
-            f.write(f"{revenue} \n")
 
-        hype_log.append(hype)
-        revenue_log.append(revenue)
-        win_log.append(won)
-        reward_log.append(total_reward)
+        if episode % 100 == 0:
+            f.write(f"\n")
+
+        if episode >= 20000: # we only want to log when exploiting
+            hype_log.append(hype)
+            revenue_log.append(revenue)
+            win_log.append(won)
+            reward_log.append(total_reward)
 
         if episode % TARGET_UPDATE_FREQ == 0:
             agent.decay_eps(decay = EPS_DECAY) # only decays after warmup (agent class handles this)
