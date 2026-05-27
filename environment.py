@@ -4,7 +4,7 @@ from gymnasium import spaces
 
 class Apra_env(gym.Env):
     
-    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, loss_addition, bid_thresh, not_abs_penalty, no_bid_penalty, overbid_weight):
+    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, loss_addition):
         super().__init__()
 
         # auction parameters (fixed)
@@ -16,6 +16,7 @@ class Apra_env(gym.Env):
         self.signal_noise = signal_noise
         self.valuation_weight = valuation_weight
         self.obs_size = obs_size
+        self.loss_addition = loss_addition # for opponents
 
         # auction states (reset per episode)
         self.current_round = 0
@@ -28,13 +29,6 @@ class Apra_env(gym.Env):
         self.total_reimbursement = 0.0
         self.opponents = [] # for debugging
         self.age_val = 0.0 # for debugging
-
-        # opponent bidding and agent reward
-        self.loss_addition = loss_addition # for opponents
-        self.bid_thresh = bid_thresh
-        self.not_abs_penalty = not_abs_penalty # bidding when leader--negative value
-        self.no_bid_penalty = no_bid_penalty # small or abstaining bid when he has a chance--negative value
-        self.overbid_weight = overbid_weight
 
         # Box spaces ensure that all observation and action values are in [0,1] range
         self.action_space = spaces.Box(low = 0.0, high = 1.0, shape = (1,), dtype = np.float32) # action: bid
@@ -110,10 +104,10 @@ class Apra_env(gym.Env):
         
         return observation, reward, last_round, False # false is truncated
     
-    # this function may be updated to be more complex!!
-    # currently used for both agent and opponents
+    # both agent and opponents
+    # can be updated down the line for better interdependence and theory
     def valuation(self, signals, bidder_num, stat): 
-        return np.clip(signals[bidder_num] + (stat * self.valuation_weight), 0.0, 1.0) # no randomness, valuation func is deterministic: if not, what's the point of a signal?
+        return np.clip(((1 - self.valuation_weight) * signals[bidder_num]) + (stat * self.valuation_weight), 0.0, 1.0) # no randomness, but deterministic: if not, what's the point of a signal?
     
     # NEEDS TO BE UPDATED BIG TIME DOWNT THE ROAD!!!
     # SHOULD BE SHADING, BUT DOING IT WITHOUT TO BE EVEN STRICTER ON MONKEE

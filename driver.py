@@ -8,26 +8,22 @@ from distinguished_agent import Distinguished_agent
 NUM_ROUNDS = 5
 NUM_OPPONENTS = 3  
 RESERVE_PRICE = 0.2
-REIMBURSEMENT_RATES = [0.25] * NUM_ROUNDS # need one per round
+REIMBURSEMENT_RATES = [0.25] * NUM_ROUNDS # one per round, most important variable in this research
 BID_COST = 0.05
-SIGNAL_NOISE = 0.1
-VALUATION_WEIGHT = 0.25
-# opps and reward function
-LOSS_ADDITION = 0.05 # for opponents
-BID_THRESH = 0.15
-NOT_ABS_PENALTY = -.2
-NO_BID_PENALTY = -.4
-OVERBID_WEIGHT = 3
+SIGNAL_NOISE = 0.1 # fixed
+VALUATION_WEIGHT = 0.25 # fixed for now
+LOSS_ADDITION = 0.05 # fixed and for opponents
 
-# agent
+# agent -- fixing for now
 LEARNING_RATE = 0.001   
 DISCOUNT_RATE = 0.95
 REPLAY_BUFF_SIZE = 10000
 BATCH_PULL_SIZE = 64
 NUM_AVAILABLE_BIDS = 101 # ex. 101 => 0.00, 0.01, ... 1.0; we need the extra 1 for 1.00
 OBS_SIZE = 4 # for agent and environment
+EPS_DECAY = 0.998
 
-# training
+# training -- fixing for now
 NUM_EPISODES = 20000
 TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
@@ -42,7 +38,7 @@ revenue_log = []
 hype_log = []
 
 agent = Distinguished_agent(LEARNING_RATE, DISCOUNT_RATE, REPLAY_BUFF_SIZE, BATCH_PULL_SIZE, NUM_AVAILABLE_BIDS, OBS_SIZE)
-env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE, LOSS_ADDITION, BID_THRESH, NOT_ABS_PENALTY, NO_BID_PENALTY, OVERBID_WEIGHT)
+env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE, LOSS_ADDITION)
 
 # LOOP PORTION
 
@@ -89,8 +85,14 @@ with open("training_log.txt", "w") as f:
         reward_log.append(total_reward)
 
         if episode % TARGET_UPDATE_FREQ == 0:
-            agent.decay_eps() # only decays after warmup (agent class handles this)
+            agent.decay_eps(decay = EPS_DECAY) # only decays after warmup (agent class handles this)
             agent.update_target()
+
+    print(f"Avg. Win Rate: {np.mean(win_log):.4f}")
+    print(f"Avg. Reward: {np.mean(reward_log):.4f}")
+    print(f"Avg. Revenue: {np.mean(revenue_log):.4f}")
+    print(f"Avg. Hype: {np.mean(hype_log):.4f}")
+
 
         
 
