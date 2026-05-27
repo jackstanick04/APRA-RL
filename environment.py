@@ -4,7 +4,7 @@ from gymnasium import spaces
 
 class Apra_env(gym.Env):
     
-    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, loss_addition, bid_thresh, not_abs_penalty, no_bid_penalty, overbid_weight, render_mode = None):
+    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, loss_addition, bid_thresh, not_abs_penalty, no_bid_penalty, overbid_weight):
         super().__init__()
 
         # auction parameters (fixed)
@@ -16,7 +16,6 @@ class Apra_env(gym.Env):
         self.signal_noise = signal_noise
         self.valuation_weight = valuation_weight
         self.obs_size = obs_size
-        self.render_mode = render_mode
 
         # auction states (reset per episode)
         self.current_round = 0
@@ -102,7 +101,7 @@ class Apra_env(gym.Env):
         agent_won = won and self.agent_max_bid_holder
         
         # only agent's reward, because the opponents aren't learning
-        reward = self.reward(round_num, last_round, agent_won, self.max_bid, agent_bid, all_vals[0], reimbursements[0], self.agent_max_bid_holder, was_leader, prev_max_bid)
+        reward = self.reward(agent_won, agent_bid, self.max_bid, all_vals[0], reimbursements[0])
 
         std_round = self.current_round / self.num_rounds # standardized round number for observation
         observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), std_round], dtype = np.float32)
@@ -143,92 +142,14 @@ class Apra_env(gym.Env):
         self.opponents = opp_bids
         return opp_bids
 
-    # reward function depends on subfunctions per round number
-    def reward(self, round_num, last_round, agent_won, winning_bid, agent_bid, valuation, reimbursement, agent_leader, was_leader, prev_max_bid):
-        if round_num == 0:
-            return self.first_round_rew(agent_bid, valuation, reimbursement)
-        elif last_round:
-            return self.last_round_rew(agent_won, was_leader, winning_bid, agent_bid, valuation, reimbursement, prev_max_bid)
-        else:
-            return self.other_round_rew(agent_leader, was_leader, winning_bid, agent_bid, valuation, reimbursement, prev_max_bid)
-
-    def first_round_rew(self, agent_bid, valuation, reimbursement):
-        if agent_bid is None:
-            return self.no_bid_penalty # agent must be penalized for abstaining in round 1, as it is never gto
+    def reward(self, agent_won, agent_bid, winning_bid, agent_valuation, reimbursement):
         
-        return reimbursement - self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0)) # punishes for bidding > valuation; 3 just scales
+        win_bonus = agent_valuation - winning_bid if agent_won else 0 # if the agent wins, winning_bid = agent_bid
 
-    # there's probably a cleaner way to make this if skeleton
-    def last_round_rew(self, agent_won, was_leader, winning_bid, agent_bid, valuation, reimbursement, prev_max_bid):
-        if was_leader:
-            if agent_bid is not None:
-                return self.not_abs_penalty # agent needs to be penalized for not abiding gto abstention
-            elif agent_won:
-                return valuation - winning_bid # no reimbursement or bid cost because that happened last round
-            else:
-                return 0
-            
-        else:
-            if agent_won: 
-                return self.overbid_weight * (valuation - winning_bid) + reimbursement - self.bid_cost # note that the overbid weight here does deviate this from the notes' official reward definition
-            else: # if he wasn't leading and lost, he is rewarded based on his action and if he had a chance
-                if np.abs(valuation - winning_bid) > self.bid_thresh or winning_bid == 1.0: # check if auction already won
-                    if agent_bid is None:
-                        return 0
-                    else:
-                        return -self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
-                else:
-                    if agent_bid is None or agent_bid <= prev_max_bid:
-                        return self.no_bid_penalty # agent must be punished for abstaining when he had a chance
-                    else:
-                        return -self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
+        if agent_bid is not None:
+            return win_bonus + reimbursement - self.bid_cost
+        return win_bonus # abstention gives 0 unless it's the last round and agent won
 
-    # very similar to the last round function
-    def other_round_rew(self, agent_leader, was_leader, winning_bid, agent_bid, valuation, reimbursement, prev_max_bid):
-        if was_leader:
-            if agent_bid is not None:
-                return self.not_abs_penalty # agent needs to be penalized for not abiding gto abstention
-            else:
-                return 0
-            
-        else:
-            if agent_leader:
-                return reimbursement - self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
-            else: # if he wasn't leading and lost, he is rewarded based on his action and if he had a chance
-                if np.abs(valuation - winning_bid) > self.bid_thresh or winning_bid == 1.0: # if auction is won, he should abstain
-                    if agent_bid is None:
-                        return 0
-                    else:
-                        return -self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
-                else:
-                    if agent_bid is None or agent_bid <= prev_max_bid:
-                        return self.no_bid_penalty # agent must be punished for abstaining when he had a chance
-                    else:
-                        return -self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
-
-    # delete or overwrite this?
-    def render(self):
-        if self.render_mode == "human":
-            print(f"Round Number: {int(self.current_round)}")
-            print(f"Agent Signal: {self.agent_signal}")
-            print(f"Opponent Signals: {self.opp_signals}")
-            print(f"Highest Bid: {self.max_bid}")
-
-    # OLD REWARD FUNCTION CODE
-     # if last_round:
-        #     if won:
-        #         return valuation - winning_bid + reimbursement - (self.bid_cost if bid is not None else 0)
-        #     else:
-        #         if bid is None:
-        #             return 0
-        #         else:
-        #             return -(self.bid_cost)
-        # else:
-        #     if bid is None:
-        #         return 0
-        #     else:
-        #         return reimbursement - self.bid_cost
-        
 
 
     
