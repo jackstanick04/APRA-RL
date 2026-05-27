@@ -4,7 +4,7 @@ from gymnasium import spaces
 
 class Apra_env(gym.Env):
     
-    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, loss_addition, bid_thresh, not_abs_penalty, no_bid_penalty, overbid_weight, render_mode = None):
+    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, loss_addition, bid_thresh, not_abs_penalty, no_bid_penalty, overbid_weight):
         super().__init__()
 
         # auction parameters (fixed)
@@ -16,7 +16,6 @@ class Apra_env(gym.Env):
         self.signal_noise = signal_noise
         self.valuation_weight = valuation_weight
         self.obs_size = obs_size
-        self.render_mode = render_mode
 
         # auction states (reset per episode)
         self.current_round = 0
@@ -206,28 +205,6 @@ class Apra_env(gym.Env):
                     else:
                         return -self.bid_cost - (self.overbid_weight * max(agent_bid - valuation, 0))
 
-    # delete or overwrite this?
-    def render(self):
-        if self.render_mode == "human":
-            print(f"Round Number: {int(self.current_round)}")
-            print(f"Agent Signal: {self.agent_signal}")
-            print(f"Opponent Signals: {self.opp_signals}")
-            print(f"Highest Bid: {self.max_bid}")
-
-    # OLD REWARD FUNCTION CODE
-     # if last_round:
-        #     if won:
-        #         return valuation - winning_bid + reimbursement - (self.bid_cost if bid is not None else 0)
-        #     else:
-        #         if bid is None:
-        #             return 0
-        #         else:
-        #             return -(self.bid_cost)
-        # else:
-        #     if bid is None:
-        #         return 0
-        #     else:
-        #         return reimbursement - self.bid_cost
         
 
 
