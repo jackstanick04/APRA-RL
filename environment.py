@@ -70,16 +70,14 @@ class Apra_env(gym.Env):
 
         # agent is index 0
         all_signals = [self.agent_signal] + list(self.opp_signals)
-        all_vals = [self.valuation(all_signals, i, self.max_bid) for i in range(self.num_opponents + 1)]
+        all_vals = [self.valuation(all_signals, i, self.max_bid, round_num) for i in range(self.num_opponents + 1)]
         self.age_val = all_vals[0]
 
-        opp_bids = self.opp_bids()
+        opp_bids = self.opp_bids(round_num)
         all_bids = [agent_bid] + opp_bids
         round_max_bid = max((bid for bid in all_bids if bid is not None), default = 0.0)
         round_max_bid_index = all_bids.index(round_max_bid) if round_max_bid > 0.0 else -1 # if everyone asbtains, nobody gets reimbursed
 
-        was_leader = self.agent_max_bid_holder
-        prev_max_bid = self.max_bid
         reimbursements = [0] * (self.num_opponents + 1)
         if round_max_bid > self.max_bid: # need to see if the price actually increased this round to be reimbursed
             reimburse = (round_max_bid - self.max_bid) * self.reimbursement_rates[self.current_round]
@@ -106,19 +104,23 @@ class Apra_env(gym.Env):
     
     # both agent and opponents
     # can be updated down the line for better interdependence and theory
-    def valuation(self, signals, bidder_num, stat): 
+    def valuation(self, signals, bidder_num, stat, round_num): 
+
+        if round_num == 0:
+            return signals[bidder_num] # don't want first round valuation to be cut (current max bid is 0)
+
         return np.clip(((1 - self.valuation_weight) * signals[bidder_num]) + (stat * self.valuation_weight), 0.0, 1.0) # no randomness, but deterministic: if not, what's the point of a signal?
     
     # NEEDS TO BE UPDATED BIG TIME DOWNT THE ROAD!!!
     # SHOULD BE SHADING, BUT DOING IT WITHOUT TO BE EVEN STRICTER ON MONKEE
-    def opp_bids(self): 
+    def opp_bids(self, round_num): 
 
         opp_bids = []
         for i in range(self.num_opponents):
 
             leader = self.max_bid_index == i + 1 # max bid index already includes the agent at 0
 
-            value = self.valuation(self.opp_signals, i, self.max_bid)
+            value = self.valuation(self.opp_signals, i, self.max_bid, round_num)
             loss_boost = self.loss_addition * self.opp_loss_streaks[i] # if max bid is the same and they have been losing, we need to bid more
             bid = np.clip(value + loss_boost, 0.0, 1.0)
 

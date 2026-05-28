@@ -5,15 +5,15 @@ from distinguished_agent import Distinguished_agent
 # HYPERPARAMETERS (can obviously all be tweaked)
 
 # environment
-NUM_ROUNDS = 20
+NUM_ROUNDS = 5
 NUM_OPPONENTS = 3  
 RESERVE_PRICE = 0.2
-REIMBURSEMENT_RATES = [0.25] * NUM_ROUNDS # one per round, most important variable in this research
+REIMBURSEMENT_RATES = [0.12] * NUM_ROUNDS # one per round, most important variable in this research; FOUND TO BE "MOST OPTIMAL"
 BID_COST = 0.05
 
 SIGNAL_NOISE = 0.1 # fixed
-VALUATION_WEIGHT = 0.25 # fixed for now
-LOSS_ADDITION = 0.05 # fixed and for opponents
+VALUATION_WEIGHT = 0.5 # fixed for now
+LOSS_ADDITION = 0.1 # fixed and for opponents
 
 # agent -- fixing for now
 LEARNING_RATE = 0.001   
@@ -25,7 +25,7 @@ OBS_SIZE = 4 # for agent and environment
 EPS_DECAY = 0.998
 
 # training -- fixing for now
-NUM_EPISODES = 30000
+NUM_EPISODES = 25000
 TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
     # can include different number of opponents, rounds, etc. in each stage
