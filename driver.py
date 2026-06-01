@@ -8,7 +8,7 @@ from distinguished_agent import Distinguished_agent
 NUM_ROUNDS = 5
 NUM_OPPONENTS = 3  
 RESERVE_PRICE = 0.2
-REIMBURSEMENT_RATES = [0.12] * NUM_ROUNDS # one per round, most important variable in this research; FOUND TO BE "MOST OPTIMAL"
+REIMBURSEMENT_RATES = [0.25] * NUM_ROUNDS # one per round, most important variable in this research; FOUND TO BE "MOST OPTIMAL"
 BID_COST = 0.05
 
 SIGNAL_NOISE = 0.1 # fixed
@@ -16,16 +16,16 @@ VALUATION_WEIGHT = 0.5 # fixed for now
 LOSS_ADDITION = 0.1 # fixed and for opponents
 
 # agent -- fixing for now
-LEARNING_RATE = 0.001   
-DISCOUNT_RATE = 0.95
+LEARNING_RATE = 0.0005
+DISCOUNT_RATE = 0.99 # keeping it high so the last round (where win happens) is weighted heavily early on
 REPLAY_BUFF_SIZE = 10000
-BATCH_PULL_SIZE = 64
+BATCH_PULL_SIZE = 128
 NUM_AVAILABLE_BIDS = 101 # ex. 101 => 0.00, 0.01, ... 1.0; we need the extra 1 for 1.00
 OBS_SIZE = 4 # for agent and environment
-EPS_DECAY = 0.998
+EPS_DECAY = 0.999
 
 # training -- fixing for now
-NUM_EPISODES = 25000
+NUM_EPISODES = 60000
 TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
     # can include different number of opponents, rounds, etc. in each stage
