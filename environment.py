@@ -54,7 +54,7 @@ class Apra_env(gym.Env):
         else: 
             self.agent_signal = np.clip(true_value + self.np_random.standard_normal() * self.signal_noise, 0.0, 1.0)
 
-        observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), 0.0], dtype = np.float32)
+        observation = np.array([self.agent_signal, self.max_bid,float(self.agent_max_bid_holder), 0.0], dtype = np.float32)
 
         # extra info for debugging
         info = {

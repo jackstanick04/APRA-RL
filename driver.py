@@ -22,10 +22,10 @@ REPLAY_BUFF_SIZE = 10000
 BATCH_PULL_SIZE = 128
 NUM_AVAILABLE_BIDS = 101 # ex. 101 => 0.00, 0.01, ... 1.0; we need the extra 1 for 1.00
 OBS_SIZE = 4 # for agent and environment
-EPS_DECAY = 0.999
+EPS_DECAY = 0.9991
 
 # training -- fixing for now
-NUM_EPISODES = 60000
+NUM_EPISODES = 70000
 TARGET_UPDATE_FREQ = 10
 # where we can make a curriculum stages dictionary to iterate over
     # can include different number of opponents, rounds, etc. in each stage
@@ -72,16 +72,16 @@ with open("training_log.txt", "w") as f:
             if terminated or truncated:
                 won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
 
-            if episode % 100 == 0:
+            if episode >= 50000 and episode % 100 == 0:
                 opp_str = [f"{b:.3f}" if b is not None else "None" for b in env.opponents]
                 f.write(f"episode: {episode} | round: {round_num + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f} | hype: {hype:.3f}\n")
 
         revenue += env.max_bid - env.total_reimbursement # max bid at time of last round is the winning bid
 
-        if episode % 100 == 0:
+        if episode >= 50000 and episode % 100 == 0:
             f.write(f"\n")
 
-        if episode >= 20000: # we only want to log when exploiting
+        if episode >= 50000: # we only want to log when exploiting
             hype_log.append(hype)
             revenue_log.append(revenue)
             win_log.append(won)
