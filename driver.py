@@ -8,7 +8,7 @@ from distinguished_agent import Distinguished_agent
 NUM_ROUNDS = 5
 NUM_OPPONENTS = 3  
 RESERVE_PRICE = 0.2
-REIMBURSEMENT_RATES = [0.1] * NUM_ROUNDS # one per round, most important variable in this research; FOUND TO BE "MOST OPTIMAL"
+REIMBURSEMENT_RATES = [0.1] * NUM_ROUNDS # one per round, most important variable in this research
 BID_COST = 0.03
 
 SIGNAL_NOISE = 0.1 # fixed

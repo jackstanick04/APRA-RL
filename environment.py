@@ -67,33 +67,33 @@ class Apra_env(gym.Env):
     def step(self, action, round_num):
         
         agent_bid = None if action[0] < 0.01 else action[0] # punishes him for bidding invalid amount, because it triggers the wrong abstention penalty in reward function
+        self.age_val = self.valuation(self.agent_signal, self.max_bid, round_num)
 
-        # agent is index 0
-        all_signals = [self.agent_signal] + list(self.opp_signals)
-        all_vals = [self.valuation(all_signals, i, self.max_bid, round_num) for i in range(self.num_opponents + 1)]
-        self.age_val = all_vals[0]
-
-        opp_bids = self.opp_bids(round_num)
+        opp_bids = self.opp_bids(round_num) # i think we can use the valuation calculations from earlier to shorten the opp_bids method
         all_bids = [agent_bid] + opp_bids
-        round_max_bid = max((bid for bid in all_bids if bid is not None), default = 0.0)
-        round_max_bid_index = all_bids.index(round_max_bid) if round_max_bid > 0.0 else -1 # if everyone asbtains, nobody gets reimbursed
+        round_max_bid = max((bid for bid in all_bids if bid is not None), default = 0.0) # probably could be made more efficient
+        round_max_bid_index_list = [i for i, bid in enumerate(all_bids) if bid == round_max_bid and round_max_bid is not None] 
 
+        # not sure if we need to calculate the reimbursements for the opps yet
+        # AGENT IS ALWAYS INDEX 0
         reimbursements = [0] * (self.num_opponents + 1)
         if round_max_bid > self.max_bid: # need to see if the price actually increased this round to be reimbursed
+
             reimburse = (round_max_bid - self.max_bid) * self.reimbursement_rates[self.current_round]
-            reimbursements[round_max_bid_index] = reimburse
+            winning_index = np.random.choice(round_max_bid_index_list) # randomize the winner if multiple tie the highest bid
+            reimbursements[winning_index] = reimburse
             self.total_reimbursement += reimburse
 
             self.max_bid = round_max_bid
-            self.max_bid_index = round_max_bid_index
-            self.agent_max_bid_holder = self.max_bid_index == 0
+            self.max_bid_index = winning_index
+            self.agent_max_bid_holder = winning_index == 0 # only max_bid_holder if randomly chosen out of the max bidders
 
         last_round = self.current_round + 1 == self.num_rounds # because we increment at the end anyway
         won = last_round and (self.max_bid >= self.reserve_price)
         agent_won = won and self.agent_max_bid_holder
         
         # only agent's reward, because the opponents aren't learning
-        reward = self.reward(agent_won, agent_bid, self.max_bid, all_vals[0], reimbursements[0])
+        reward = self.reward(agent_won, agent_bid, self.max_bid, self.age_val, reimbursements[0])
 
         std_round = self.current_round / self.num_rounds # standardized round number for observation
         observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), std_round], dtype = np.float32)
@@ -104,12 +104,12 @@ class Apra_env(gym.Env):
     
     # both agent and opponents
     # can be updated down the line for better interdependence and theory
-    def valuation(self, signals, bidder_num, stat, round_num): 
+    def valuation(self, signal, stat, round_num): 
 
         if round_num == 0:
-            return signals[bidder_num] # don't want first round valuation to be cut (current max bid is 0)
+            return signal # don't want first round valuation to be cut (current max bid is 0)
 
-        return np.clip(((1 - self.valuation_weight) * signals[bidder_num]) + (stat * self.valuation_weight), 0.0, 1.0) # no randomness, but deterministic: if not, what's the point of a signal?
+        return np.clip(((1 - self.valuation_weight) * signal) + (stat * self.valuation_weight), 0.0, 1.0) # no randomness, but deterministic: if not, what's the point of a signal?
     
     # NEEDS TO BE UPDATED BIG TIME DOWNT THE ROAD!!!
     # SHOULD BE SHADING, BUT DOING IT WITHOUT TO BE EVEN STRICTER ON MONKEE
@@ -118,22 +118,27 @@ class Apra_env(gym.Env):
         opp_bids = []
         for i in range(self.num_opponents):
 
-            leader = self.max_bid_index == i + 1 # max bid index already includes the agent at 0
+            pass
+            
+            
+            
+            # OLD OPP_BIDS FUNCTION
+            # leader = self.max_bid_index == i + 1 # max bid index already includes the agent at 0
 
-            value = self.valuation(self.opp_signals, i, self.max_bid, round_num)
-            loss_boost = self.loss_addition * self.opp_loss_streaks[i] # if max bid is the same and they have been losing, we need to bid more
-            bid = np.clip(value + loss_boost, 0.0, 1.0)
+            # value = self.valuation(self.opp_signals[i], self.max_bid, round_num)
+            # loss_boost = self.loss_addition * self.opp_loss_streaks[i] # if max bid is the same and they have been losing, we need to bid more
+            # bid = np.clip(value + loss_boost, 0.0, 1.0)
 
-            if not leader: # step already ensures that the bid is a valid size
-                if bid <= self.max_bid:
-                    opp_bids.append(None) # don't increment loss because we've given up. we aren't losing, we're just done 
-                else:
-                    opp_bids.append(bid)
-                    self.opp_loss_streaks[i] += 1 # assume we lose, if we win the next iteration fixes this
+            # if not leader: # step already ensures that the bid is a valid size
+            #     if bid <= self.max_bid:
+            #         opp_bids.append(None) # don't increment loss because we've given up. we aren't losing, we're just done 
+            #     else:
+            #         opp_bids.append(bid)
+            #         self.opp_loss_streaks[i] += 1 # assume we lose, if we win the next iteration fixes this
 
-            else: 
-                opp_bids.append(None)
-                self.opp_loss_streaks[i] = 0
+            # else: 
+            #     opp_bids.append(None)
+            #     self.opp_loss_streaks[i] = 0
 
         self.opponents = opp_bids
         return opp_bids
