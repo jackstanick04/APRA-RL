@@ -111,38 +111,6 @@ class Apra_env(gym.Env):
 
         return np.clip(((1 - self.valuation_weight) * signal) + (stat * self.valuation_weight), 0.0, 1.0) # no randomness, but deterministic: if not, what's the point of a signal?
     
-    # NEEDS TO BE UPDATED BIG TIME DOWNT THE ROAD!!!
-    # SHOULD BE SHADING, BUT DOING IT WITHOUT TO BE EVEN STRICTER ON MONKEE
-    def opp_bids(self, round_num): 
-
-        opp_bids = []
-        for i in range(self.num_opponents):
-
-            pass
-            
-            
-            
-            # OLD OPP_BIDS FUNCTION
-            # leader = self.max_bid_index == i + 1 # max bid index already includes the agent at 0
-
-            # value = self.valuation(self.opp_signals[i], self.max_bid, round_num)
-            # loss_boost = self.loss_addition * self.opp_loss_streaks[i] # if max bid is the same and they have been losing, we need to bid more
-            # bid = np.clip(value + loss_boost, 0.0, 1.0)
-
-            # if not leader: # step already ensures that the bid is a valid size
-            #     if bid <= self.max_bid:
-            #         opp_bids.append(None) # don't increment loss because we've given up. we aren't losing, we're just done 
-            #     else:
-            #         opp_bids.append(bid)
-            #         self.opp_loss_streaks[i] += 1 # assume we lose, if we win the next iteration fixes this
-
-            # else: 
-            #     opp_bids.append(None)
-            #     self.opp_loss_streaks[i] = 0
-
-        self.opponents = opp_bids
-        return opp_bids
-
     def reward(self, agent_won, agent_bid, winning_bid, agent_valuation, reimbursement):
         
         win_bonus = agent_valuation - winning_bid if agent_won else 0 # if the agent wins, winning_bid = agent_bid
@@ -150,8 +118,67 @@ class Apra_env(gym.Env):
         if agent_bid is not None:
             return win_bonus + reimbursement - self.bid_cost
         return win_bonus # abstention gives 0 unless it's the last round and agent won
+    
+    # NEEDS TO BE UPDATED BIG TIME DOWNT THE ROAD!!!
+    # SHOULD BE SHADING, BUT DOING IT WITHOUT TO BE EVEN STRICTER ON MONKEE
+    def opp_bids(self, round_num): 
 
+        opp_bids = []
+        for i in range(1, self.num_opponents + 1): # bidder 0 is the agent
 
+            signal = self.opp_signals[i - 1]
+
+            if i == 1: 
+                opp_bids.append(self.round_one_overbid(signal, self.max_bid, self.max_bid_index == i, round_num, overbid_size = .2, signal_cutoff = .3))
+            elif i == 2:
+                opp_bids.append(self.round_one_overbid(signal, self.max_bid, self.max_bid_index == i, round_num, overbid_size = 1.0, signal_cutoff = .9))
+            else:
+                opp_bids.append(self.loss_weight_bidding(i, round_num))
+            
+        self.opponents = opp_bids
+        return opp_bids
+    
+    # only function that doesnt have the uniform observation space--not worth it if were ditching this soon
+    def loss_weight_bidding(self, bidder_num, round_num):
+
+        leader = self.max_bid_index == bidder_num 
+
+        # bidder number is 1 higher because of rl agent being 0
+        opp_num = bidder_num - 1
+
+        value = self.valuation(self.opp_signals[opp_num], self.max_bid, round_num) 
+        loss_boost = self.loss_addition * self.opp_loss_streaks[opp_num] # if max bid is the same and they have been losing, we need to bid more
+        bid = np.clip(value + loss_boost, 0.0, 1.0)
+
+        if not leader: # step already ensures that the bid is a valid size
+            if bid <= self.max_bid:
+                return None # don't increment loss because we've given up. we aren't losing, we're just done 
+            else:
+                self.opp_loss_streaks[opp_num] += 1 # assume we lose, if we win the next iteration fixes this
+                return bid
+
+        else: 
+            self.opp_loss_streaks[opp_num] = 0
+            return None
+        
+    # first rl agent exploit--see notes
+    def round_one_overbid(self, signal, max_bid, max_bid_holder, round_num, overbid_size, signal_cutoff):
+        
+        if round_num != 0:
+            return None
+
+        else: 
+            if signal <= signal_cutoff:
+                return None
+            else:
+                return np.clip(signal + overbid_size, 0.0, 1.0)
+            
+
+                
+
+    
+
+    
 
     
 
