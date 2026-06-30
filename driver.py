@@ -46,6 +46,7 @@ env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BI
 with open("training_log.txt", "w") as f:
 
     for episode in range(1, NUM_EPISODES + 1):
+
         observation, info = env.reset() # info is optional for debugging
         
         total_reward = 0
@@ -56,9 +57,12 @@ with open("training_log.txt", "w") as f:
         revenue = 0.0
 
         for round_num in range(NUM_ROUNDS):
-            
-            action_raw_index = agent.choose_action(observation)
-            action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
+
+            if round_num == 1: # for testing/debugging
+                action_discrete = observation[1] + .05
+            else:
+                action_raw_index = agent.choose_action(observation)
+                action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
 
             next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]), round_num)
             agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
