@@ -8,8 +8,8 @@ from distinguished_agent import Distinguished_agent
 NUM_ROUNDS = 5
 NUM_OPPONENTS = 3  
 RESERVE_PRICE = 0.2
-REIMBURSEMENT_RATES = [0.1] * NUM_ROUNDS # one per round, most important variable in this research
-BID_COST = 0.03
+REIMBURSEMENT_RATES = [0.15, 0.5, 0.5, 0.5, 0.5] * NUM_ROUNDS # one per round, most important variable in this research
+BID_COST = 0.08
 
 SIGNAL_NOISE = 0.1 # fixed
 VALUATION_WEIGHT = 0.5 # fixed for now
@@ -58,11 +58,8 @@ with open("training_log.txt", "w") as f:
 
         for round_num in range(NUM_ROUNDS):
 
-            if round_num == 1: # for testing/debugging
-                action_discrete = observation[1] + .05
-            else:
-                action_raw_index = agent.choose_action(observation)
-                action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
+            action_raw_index = agent.choose_action(observation)
+            action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
 
             next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]), round_num)
             agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)

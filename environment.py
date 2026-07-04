@@ -127,13 +127,14 @@ class Apra_env(gym.Env):
         for i in range(1, self.num_opponents + 1): # bidder 0 is the agent
 
             signal = self.opp_signals[i - 1]
+            opp_bids.append(self.loss_weight_bidding(i, round_num))
 
-            if i == 1: 
-                opp_bids.append(self.round_one_overbid(signal, self.max_bid, self.max_bid_index == i, round_num, overbid_size = .2, signal_cutoff = .3))
-            elif i == 2:
-                opp_bids.append(self.round_one_overbid(signal, self.max_bid, self.max_bid_index == i, round_num, overbid_size = 1.0, signal_cutoff = .9))
-            else:
-                opp_bids.append(self.loss_weight_bidding(i, round_num))
+            # if i == 1: 
+            #     opp_bids.append(self.round_one_overbid(signal, self.max_bid, self.max_bid_index == i, round_num, overbid_size = .2, signal_cutoff = .3))
+            # elif i == 2:
+            #     opp_bids.append(self.round_one_overbid(signal, self.max_bid, self.max_bid_index == i, round_num, overbid_size = 1.0, signal_cutoff = .9))
+            # else:
+            #     opp_bids.append(self.loss_weight_bidding(i, round_num))
             
         self.opponents = opp_bids
         return opp_bids
@@ -148,7 +149,7 @@ class Apra_env(gym.Env):
 
         value = self.valuation(self.opp_signals[opp_num], self.max_bid, round_num) 
         loss_boost = self.loss_addition * self.opp_loss_streaks[opp_num] # if max bid is the same and they have been losing, we need to bid more
-        bid = np.clip(value + loss_boost, 0.0, 1.0)
+        bid = np.clip(0.75 * (value + loss_boost), 0.0, 1.0)
 
         if not leader: # step already ensures that the bid is a valid size
             if bid <= self.max_bid:
@@ -162,7 +163,7 @@ class Apra_env(gym.Env):
             return None
         
     # first rl agent exploit--see notes
-    def round_one_overbid(self, signal, max_bid, max_bid_holder, round_num, overbid_size, signal_cutoff):
+    def round_overbid(self, signal, max_bid, max_bid_holder, round_num, overbid_size, signal_cutoff):
         
         if round_num != 0:
             return None
