@@ -94,6 +94,8 @@ class Distinguished_agent:
         loss.backward()
         self.optimizer.step() # the actual updating
 
+        return loss # for tracking purposes
+
     def update_target(self, tau = 0.05):
 
         # if the replay buffer doesn't have enough data, don't worry about training yet
