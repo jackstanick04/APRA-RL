@@ -48,7 +48,7 @@ with open("training_log.txt", "w") as f:
 
     # logs for loss tracking
     losses = []
-    agg_rounds = []
+    agg_round = 0
 
     for episode in range(1, NUM_EPISODES + 1):
 
@@ -75,12 +75,9 @@ with open("training_log.txt", "w") as f:
 
             hype += env.max_bid
 
-            agg_round = round_num + (episode - 1) * NUM_ROUNDS
+            agg_round += 1
             if agg_round >= BATCH_PULL_SIZE: # only want to check loss once it begins to get calculated
-                losses.append(loss)
-                agg_rounds.append(agg_round) 
-
-            plots.plot_loss(losses, agg_rounds)
+                losses.append(loss.item()) 
 
             if terminated:
                 won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
@@ -103,6 +100,8 @@ with open("training_log.txt", "w") as f:
         if episode % TARGET_UPDATE_FREQ == 0:
             agent.decay_eps(decay = EPS_DECAY) # only decays after warmup (agent class handles this)
             agent.update_target()
+
+    plots.plot_loss(losses)
 
     print(f"Avg. Win Rate: {np.mean(win_log):.4f}")
     print(f"Avg. Reward: {np.mean(reward_log):.4f}")
