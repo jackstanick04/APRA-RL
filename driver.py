@@ -1,6 +1,7 @@
 import numpy as np
 from environment import Apra_env
 from distinguished_agent import Distinguished_agent
+import plots
     
 # HYPERPARAMETERS (can obviously all be tweaked)
 
@@ -45,6 +46,10 @@ env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BI
 
 with open("training_log.txt", "w") as f:
 
+    # logs for loss tracking
+    losses = []
+    agg_round = 0
+
     for episode in range(1, NUM_EPISODES + 1):
 
         observation, info = env.reset() # info is optional for debugging
@@ -64,13 +69,17 @@ with open("training_log.txt", "w") as f:
             next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]), round_num)
             agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
 
-            agent.update_policy() # able to be called with unfull buffer, because the agent class handles it
+            loss = agent.update_policy() # able to be called with unfull buffer, because the agent class handles it
             observation = next_observation
             total_reward += reward
 
             hype += env.max_bid
 
-            if terminated or truncated:
+            agg_round += 1
+            if agg_round >= BATCH_PULL_SIZE: # only want to check loss once it begins to get calculated
+                losses.append(loss.item()) 
+
+            if terminated:
                 won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
 
             if episode >= 20000 and episode % 100 == 0:
@@ -91,6 +100,8 @@ with open("training_log.txt", "w") as f:
         if episode % TARGET_UPDATE_FREQ == 0:
             agent.decay_eps(decay = EPS_DECAY) # only decays after warmup (agent class handles this)
             agent.update_target()
+
+    plots.plot_loss(losses)
 
     print(f"Avg. Win Rate: {np.mean(win_log):.4f}")
     print(f"Avg. Reward: {np.mean(reward_log):.4f}")
