@@ -4,7 +4,7 @@ from gymnasium import spaces
 
 class Apra_env(gym.Env):
     
-    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, valuation_weight, obs_size, loss_addition):
+    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, obs_size):
         super().__init__()
 
         # auction parameters (fixed)
@@ -14,9 +14,7 @@ class Apra_env(gym.Env):
         self.reimbursement_rates = reimbursement_rates
         self.bid_cost = bid_cost
         self.signal_noise = signal_noise
-        self.valuation_weight = valuation_weight
         self.obs_size = obs_size
-        self.loss_addition = loss_addition # for opponents
 
         # auction states (reset per episode)
         self.current_round = 0
@@ -25,7 +23,6 @@ class Apra_env(gym.Env):
         self.agent_max_bid_holder = False
         self.agent_signal = 0.0
         self.opp_signals = np.zeros(self.num_opponents)
-        self.opp_loss_streaks = np.zeros(self.num_opponents)
         self.total_reimbursement = 0.0
         self.opponents = [] # for debugging
         self.age_val = 0.0 # for debugging
@@ -41,7 +38,6 @@ class Apra_env(gym.Env):
         self.max_bid = 0.0
         self.max_bid_index = -1
         self.agent_max_bid_holder = False
-        self.opp_loss_streaks = np.zeros(self.num_opponents)
         self.total_reimbursement = 0.0
         super().reset(seed = seed) # seed for agent signal debugging
 
@@ -66,22 +62,22 @@ class Apra_env(gym.Env):
 
     def step(self, action, round_num):
         
-        agent_bid = None if action[0] < 0.01 else action[0] # punishes him for bidding invalid amount, because it triggers the wrong abstention penalty in reward function
-        self.age_val = self.valuation(self.agent_signal, self.max_bid, round_num)
+        agent_bid = None if action[0] < 0.01 else action[0]
+        self.age_val = self.valuation()
 
-        opp_bids = self.opp_bids(round_num) # i think we can use the valuation calculations from earlier to shorten the opp_bids method
+        opp_bids = self.opp_bids()
         all_bids = [agent_bid] + opp_bids
-        round_max_bid = max((bid for bid in all_bids if bid is not None), default = 0.0) # probably could be made more efficient
+        round_max_bid = max((bid for bid in all_bids if bid is not None), default = 0.0)
         round_max_bid_index_list = [i for i, bid in enumerate(all_bids) if bid == round_max_bid and round_max_bid is not None] 
 
-        # not sure if we need to calculate the reimbursements for the opps yet
-        # AGENT IS ALWAYS INDEX 0
-        reimbursements = [0] * (self.num_opponents + 1)
+        reimburse = 0
+        age_reimburse = 0
         if round_max_bid > self.max_bid: # need to see if the price actually increased this round to be reimbursed
 
             reimburse = (round_max_bid - self.max_bid) * self.reimbursement_rates[self.current_round]
-            winning_index = np.random.choice(round_max_bid_index_list) # randomize the winner if multiple tie the highest bid
-            reimbursements[winning_index] = reimburse
+            winning_index = np.random.choice(round_max_bid_index_list)
+            if winning_index == 0: # agent is only reimbursed if they win the random tie breaker
+                age_reimburse = reimburse
             self.total_reimbursement += reimburse
 
             self.max_bid = round_max_bid
@@ -93,7 +89,7 @@ class Apra_env(gym.Env):
         agent_won = won and self.agent_max_bid_holder
         
         # only agent's reward, because the opponents aren't learning
-        reward = self.reward(agent_won, agent_bid, self.max_bid, self.age_val, reimbursements[0])
+        reward = self.reward(agent_won, agent_bid, self.max_bid, self.age_val, age_reimburse)
 
         std_round = self.current_round / self.num_rounds # standardized round number for observation
         observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), std_round], dtype = np.float32)
@@ -102,78 +98,19 @@ class Apra_env(gym.Env):
         
         return observation, reward, last_round, False # false is truncated
     
-    # both agent and opponents
-    # can be updated down the line for better interdependence and theory
-    def valuation(self, signal, stat, round_num): 
-
-        if round_num == 0:
-            return signal # don't want first round valuation to be cut (current max bid is 0)
-
-        return np.clip(((1 - self.valuation_weight) * signal) + (stat * self.valuation_weight), 0.0, 1.0) # no randomness, but deterministic: if not, what's the point of a signal?
+    def valuation(self): 
+        return 1.0
     
     def reward(self, agent_won, agent_bid, winning_bid, agent_valuation, reimbursement):
-        
         win_bonus = agent_valuation - winning_bid if agent_won else 0 # if the agent wins, winning_bid = agent_bid
 
         if agent_bid is not None:
             return win_bonus + reimbursement - self.bid_cost
         return win_bonus # abstention gives 0 unless it's the last round and agent won
     
-    # NEEDS TO BE UPDATED BIG TIME DOWNT THE ROAD!!!
-    # SHOULD BE SHADING, BUT DOING IT WITHOUT TO BE EVEN STRICTER ON MONKEE
-    def opp_bids(self, round_num): 
-
-        opp_bids = []
-        for i in range(1, self.num_opponents + 1): # bidder 0 is the agent
-
-            signal = self.opp_signals[i - 1]
-            opp_bids.append(self.loss_weight_bidding(i, round_num))
-
-            # if i == 1: 
-            #     opp_bids.append(self.round_one_overbid(signal, self.max_bid, self.max_bid_index == i, round_num, overbid_size = .2, signal_cutoff = .3))
-            # elif i == 2:
-            #     opp_bids.append(self.round_one_overbid(signal, self.max_bid, self.max_bid_index == i, round_num, overbid_size = 1.0, signal_cutoff = .9))
-            # else:
-            #     opp_bids.append(self.loss_weight_bidding(i, round_num))
-            
-        self.opponents = opp_bids
-        return opp_bids
+    def opp_bids(self): # placeholder signature for now
+        return [0] * self.num_opponents
     
-    # only function that doesnt have the uniform observation space--not worth it if were ditching this soon
-    def loss_weight_bidding(self, bidder_num, round_num):
-
-        leader = self.max_bid_index == bidder_num 
-
-        # bidder number is 1 higher because of rl agent being 0
-        opp_num = bidder_num - 1
-
-        value = self.valuation(self.opp_signals[opp_num], self.max_bid, round_num) 
-        loss_boost = self.loss_addition * self.opp_loss_streaks[opp_num] # if max bid is the same and they have been losing, we need to bid more
-        bid = np.clip(0.75 * (value + loss_boost), 0.0, 1.0)
-
-        if not leader: # step already ensures that the bid is a valid size
-            if bid <= self.max_bid:
-                return None # don't increment loss because we've given up. we aren't losing, we're just done 
-            else:
-                self.opp_loss_streaks[opp_num] += 1 # assume we lose, if we win the next iteration fixes this
-                return bid
-
-        else: 
-            self.opp_loss_streaks[opp_num] = 0
-            return None
-        
-    # first rl agent exploit--see notes
-    def round_overbid(self, signal, max_bid, max_bid_holder, round_num, overbid_size, signal_cutoff):
-        
-        if round_num != 0:
-            return None
-
-        else: 
-            if signal <= signal_cutoff:
-                return None
-            else:
-                return np.clip(signal + overbid_size, 0.0, 1.0)
-            
 
                 
 

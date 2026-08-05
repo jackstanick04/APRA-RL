@@ -13,8 +13,6 @@ REIMBURSEMENT_RATES = [0.15, 0.5, 0.5, 0.5, 0.5] * NUM_ROUNDS # one per round, m
 BID_COST = 0.08
 
 SIGNAL_NOISE = 0.1 # fixed
-VALUATION_WEIGHT = 0.5 # fixed for now
-LOSS_ADDITION = 0.1 # fixed and for opponents
 
 # agent -- fixing for now
 LEARNING_RATE = 0.0005
@@ -40,7 +38,7 @@ revenue_log = []
 hype_log = [] # hype per episode--hype per round is in google sheet
 
 agent = Distinguished_agent(LEARNING_RATE, DISCOUNT_RATE, REPLAY_BUFF_SIZE, BATCH_PULL_SIZE, NUM_AVAILABLE_BIDS, OBS_SIZE)
-env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE, LOSS_ADDITION)
+env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, OBS_SIZE)
 
 # LOOP PORTION
 
