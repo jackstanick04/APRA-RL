@@ -81,7 +81,7 @@ with open("training_log.txt", "w") as f:
                 won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
 
             if episode >= 20000 and episode % 100 == 0:
-                opp_str = [f"{b:.3f}" if b is not None else "None" for b in env.opponents]
+                opp_str = [f"{b:.3f}" if b is not None else "None" for b in env.opp_bid_vals]
                 f.write(f"episode: {episode} | round: {round_num + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f} | hype: {hype:.3f}\n")
 
         revenue += env.max_bid - env.total_reimbursement # max bid at time of last round is the winning bid

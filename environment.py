@@ -15,6 +15,7 @@ class Apra_env(gym.Env):
         self.bid_cost = bid_cost
         self.signal_noise = signal_noise
         self.obs_size = obs_size
+        self.opp_bid_vals = []
 
         # auction states (reset per episode)
         self.current_round = 0
@@ -39,6 +40,7 @@ class Apra_env(gym.Env):
         self.max_bid_index = -1
         self.agent_max_bid_holder = False
         self.total_reimbursement = 0.0
+        self.opp_bid_vals = [] # for debugging
         super().reset(seed = seed) # seed for agent signal debugging
 
         # make a base value, then add some noise to each person (keep between 0 and 1)
@@ -60,13 +62,13 @@ class Apra_env(gym.Env):
 
         return observation, info
 
-    def step(self, action, round_num):
+    def step(self, action):
         
         agent_bid = None if action[0] < 0.01 else action[0]
         self.age_val = self.valuation()
 
-        opp_bids = self.opp_bids()
-        all_bids = [agent_bid] + opp_bids
+        self.opp_bid_vals = self.opp_bids()
+        all_bids = [agent_bid] + self.opp_bid_vals
         round_max_bid = max((bid for bid in all_bids if bid is not None), default = 0.0)
         round_max_bid_index_list = [i for i, bid in enumerate(all_bids) if bid == round_max_bid and round_max_bid is not None] 
 
@@ -99,7 +101,7 @@ class Apra_env(gym.Env):
         return observation, reward, last_round, False # false is truncated
     
     def valuation(self): 
-        return 1.0
+        return self.agent_signal
     
     def reward(self, agent_won, agent_bid, winning_bid, agent_valuation, reimbursement):
         win_bonus = agent_valuation - winning_bid if agent_won else 0 # if the agent wins, winning_bid = agent_bid
