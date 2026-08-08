@@ -44,8 +44,15 @@ env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BI
 
 with open("training_log.txt", "w") as f:
 
-    # logs for loss tracking
+    # logs for plotting
     losses = []
+    bids = []
+    vals = []
+
+    rewards = []
+    wins = []
+    revenues = []
+    
     agg_round = 0
 
     for episode in range(1, NUM_EPISODES + 1):
@@ -64,7 +71,7 @@ with open("training_log.txt", "w") as f:
             action_raw_index = agent.choose_action(observation)
             action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
 
-            next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]), round_num)
+            next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]))
             agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
 
             loss = agent.update_policy() # able to be called with unfull buffer, because the agent class handles it
@@ -76,6 +83,8 @@ with open("training_log.txt", "w") as f:
             agg_round += 1
             if agg_round >= BATCH_PULL_SIZE: # only want to check loss once it begins to get calculated
                 losses.append(loss.item()) 
+                bids.append(action_discrete)
+                vals.append(env.age_val)
 
             if terminated:
                 won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
@@ -95,11 +104,21 @@ with open("training_log.txt", "w") as f:
             win_log.append(won)
             reward_log.append(total_reward)
 
+            # for plotting
+            rewards.append(total_reward)
+            wins.append(won)
+            revenues.append(revenue)
+
+
         if episode % TARGET_UPDATE_FREQ == 0:
             agent.decay_eps(decay = EPS_DECAY) # only decays after warmup (agent class handles this)
             agent.update_target()
 
     plots.plot_loss(losses)
+    plots.bid_ratio_round(bids, vals, NUM_ROUNDS)
+    plots.plot_rewards(rewards)
+    plots.plot_win_rate(wins)
+    plots.plot_revenue(revenues)
 
     print(f"Avg. Win Rate: {np.mean(win_log):.4f}")
     print(f"Avg. Reward: {np.mean(reward_log):.4f}")
