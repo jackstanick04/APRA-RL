@@ -114,11 +114,12 @@ with open("training_log.txt", "w") as f:
             agent.decay_eps(decay = EPS_DECAY) # only decays after warmup (agent class handles this)
             agent.update_target()
 
-    plots.plot_loss(losses)
-    plots.bid_ratio_round(bids, vals, NUM_ROUNDS)
-    plots.plot_rewards(rewards)
-    plots.plot_win_rate(wins)
-    plots.plot_revenue(revenues)
+    # 1500 and 100 arbitrarily chosen
+    plots.windowed_metric(losses, 1500, "Average Loss")
+    plots.windowed_metric(rewards, 100, "Average Reward")
+    plots.windowed_metric(wins, 100, "Win Rate")
+    plots.windowed_metric(revenues, 100, "Average Revenue")
+    plots.bid_ratio_round(bids, vals, NUM_ROUNDS, 100)
 
     print(f"Avg. Win Rate: {np.mean(win_log):.4f}")
     print(f"Avg. Reward: {np.mean(reward_log):.4f}")
