@@ -26,11 +26,11 @@ def bid_ratio_round(bids, vals, num_rounds, window_size): # window_size is also 
 
         windowed_bids = []
         windowed_vals = []
-        for j in range(0, len(by_round_bids[i]), window_size): 
+        for j in range(0, len(by_round_bids[i]), window_size):
             windowed_bids.append(np.mean(by_round_bids[i][j:j+window_size]))
             windowed_vals.append(np.mean(by_round_vals[i][j:j+window_size]))
 
-        ratios = [b / v for b, v in zip(windowed_bids, windowed_vals)]
+        ratios = [b / v for b, v in zip(windowed_bids, windowed_vals)] # finding ratio for every windowed bid and valuation pair
         plt.plot(step_range, ratios, label = f"Round {i + 1}") 
         
     plt.xlabel("Step Range")
