@@ -1,606 +1,575 @@
-episode: 20000 | round: 1 | strat: exploit | valution: 0.750 | bid: 0.720 | opps: ['0.539', '0.660', '0.607'] | won: False | reward: 0.0280 | epsilon: 0.0499 | hype: 0.720
-episode: 20000 | round: 2 | strat: exploit | valution: 0.735 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0280 | epsilon: 0.0499 | hype: 1.440
-episode: 20000 | round: 3 | strat: exploit | valution: 0.735 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0280 | epsilon: 0.0499 | hype: 2.160
-episode: 20000 | round: 4 | strat: exploit | valution: 0.735 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0280 | epsilon: 0.0499 | hype: 2.880
-episode: 20000 | round: 5 | strat: exploit | valution: 0.735 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0432 | epsilon: 0.0499 | hype: 3.600
-
-episode: 20100 | round: 1 | strat: exploit | valution: 0.286 | bid: 0.000 | opps: ['0.201', '0.103', '0.258'] | won: False | reward: 0.0000 | epsilon: 0.0492 | hype: 0.258
-episode: 20100 | round: 2 | strat: exploit | valution: 0.272 | bid: 0.000 | opps: ['0.273', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0492 | hype: 0.531
-episode: 20100 | round: 3 | strat: exploit | valution: 0.279 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0492 | hype: 0.803
-episode: 20100 | round: 4 | strat: exploit | valution: 0.279 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0492 | hype: 1.076
-episode: 20100 | round: 5 | strat: exploit | valution: 0.279 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0492 | hype: 1.348
-
-episode: 20200 | round: 1 | strat: exploit | valution: 0.142 | bid: 0.000 | opps: ['0.034', '0.172', '0.098'] | won: False | reward: 0.0000 | epsilon: 0.0484 | hype: 0.172
-episode: 20200 | round: 2 | strat: exploit | valution: 0.157 | bid: 0.000 | opps: ['None', 'None', '0.189'] | won: False | reward: 0.0000 | epsilon: 0.0484 | hype: 0.361
-episode: 20200 | round: 3 | strat: exploit | valution: 0.165 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0484 | hype: 0.549
-episode: 20200 | round: 4 | strat: exploit | valution: 0.165 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0484 | hype: 0.738
-episode: 20200 | round: 5 | strat: exploit | valution: 0.165 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0484 | hype: 0.926
-
-episode: 20300 | round: 1 | strat: exploit | valution: 0.507 | bid: 0.000 | opps: ['0.454', '0.394', '0.394'] | won: False | reward: 0.0000 | epsilon: 0.0477 | hype: 0.454
-episode: 20300 | round: 2 | strat: exploit | valution: 0.480 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0477 | hype: 0.908
-episode: 20300 | round: 3 | strat: exploit | valution: 0.480 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0477 | hype: 1.361
-episode: 20300 | round: 4 | strat: exploit | valution: 0.480 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0477 | hype: 1.815
-episode: 20300 | round: 5 | strat: exploit | valution: 0.480 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0477 | hype: 2.269
-
-episode: 20400 | round: 1 | strat: exploit | valution: 0.757 | bid: 0.720 | opps: ['0.676', '0.750', '0.629'] | won: False | reward: -0.0800 | epsilon: 0.0470 | hype: 0.750
-episode: 20400 | round: 2 | strat: exploit | valution: 0.753 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0470 | hype: 1.500
-episode: 20400 | round: 3 | strat: exploit | valution: 0.753 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0470 | hype: 2.250
-episode: 20400 | round: 4 | strat: exploit | valution: 0.753 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0470 | hype: 3.000
-episode: 20400 | round: 5 | strat: exploit | valution: 0.753 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0470 | hype: 3.750
-
-episode: 20500 | round: 1 | strat: exploit | valution: 0.914 | bid: 0.760 | opps: ['0.621', '0.447', '0.609'] | won: False | reward: 0.0340 | epsilon: 0.0463 | hype: 0.760
-episode: 20500 | round: 2 | strat: exploit | valution: 0.837 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0463 | hype: 1.520
-episode: 20500 | round: 3 | strat: exploit | valution: 0.837 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0463 | hype: 2.280
-episode: 20500 | round: 4 | strat: exploit | valution: 0.837 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0463 | hype: 3.040
-episode: 20500 | round: 5 | strat: exploit | valution: 0.837 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1111 | epsilon: 0.0463 | hype: 3.800
-
-episode: 20600 | round: 1 | strat: exploit | valution: 0.614 | bid: 0.000 | opps: ['0.429', '0.476', '0.301'] | won: False | reward: 0.0000 | epsilon: 0.0456 | hype: 0.476
-episode: 20600 | round: 2 | strat: exploit | valution: 0.545 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0456 | hype: 0.952
-episode: 20600 | round: 3 | strat: exploit | valution: 0.545 | bid: 0.650 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0070 | epsilon: 0.0456 | hype: 1.602
-episode: 20600 | round: 4 | strat: exploit | valution: 0.632 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0070 | epsilon: 0.0456 | hype: 2.252
-episode: 20600 | round: 5 | strat: exploit | valution: 0.632 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: -0.0110 | epsilon: 0.0456 | hype: 2.902
-
-episode: 20700 | round: 1 | strat: exploit | valution: 0.917 | bid: 0.760 | opps: ['0.712', '0.742', '0.697'] | won: False | reward: 0.0340 | epsilon: 0.0449 | hype: 0.760
-episode: 20700 | round: 2 | strat: exploit | valution: 0.839 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0449 | hype: 1.520
-episode: 20700 | round: 3 | strat: exploit | valution: 0.839 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0449 | hype: 2.280
-episode: 20700 | round: 4 | strat: exploit | valution: 0.839 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0449 | hype: 3.040
-episode: 20700 | round: 5 | strat: exploit | valution: 0.839 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1127 | epsilon: 0.0449 | hype: 3.800
-
-episode: 20800 | round: 1 | strat: exploit | valution: 0.481 | bid: 0.000 | opps: ['0.384', '0.487', '0.478'] | won: False | reward: 0.0000 | epsilon: 0.0443 | hype: 0.487
-episode: 20800 | round: 2 | strat: explore | valution: 0.484 | bid: 0.600 | opps: ['None', 'None', '0.497'] | won: False | reward: -0.0233 | epsilon: 0.0443 | hype: 1.087
-episode: 20800 | round: 3 | strat: exploit | valution: 0.540 | bid: 0.000 | opps: ['None', 'None', '0.614'] | won: False | reward: -0.0233 | epsilon: 0.0443 | hype: 1.701
-episode: 20800 | round: 4 | strat: explore | valution: 0.547 | bid: 0.270 | opps: ['None', 'None', 'None'] | won: False | reward: -0.1033 | epsilon: 0.0443 | hype: 2.315
-episode: 20800 | round: 5 | strat: exploit | valution: 0.547 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.1033 | epsilon: 0.0443 | hype: 2.929
-
-episode: 20900 | round: 1 | strat: exploit | valution: 0.277 | bid: 0.000 | opps: ['0.253', '0.264', '0.373'] | won: False | reward: 0.0000 | epsilon: 0.0436 | hype: 0.373
-episode: 20900 | round: 2 | strat: exploit | valution: 0.325 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0436 | hype: 0.746
-episode: 20900 | round: 3 | strat: exploit | valution: 0.325 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0436 | hype: 1.119
-episode: 20900 | round: 4 | strat: exploit | valution: 0.325 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0436 | hype: 1.492
-episode: 20900 | round: 5 | strat: exploit | valution: 0.325 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0436 | hype: 1.865
-
-episode: 21000 | round: 1 | strat: exploit | valution: 0.009 | bid: 0.000 | opps: ['0.117', '0.167', '0.049'] | won: False | reward: 0.0000 | epsilon: 0.0429 | hype: 0.167
-episode: 21000 | round: 2 | strat: exploit | valution: 0.088 | bid: 0.000 | opps: ['0.196', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0429 | hype: 0.363
-episode: 21000 | round: 3 | strat: exploit | valution: 0.102 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0429 | hype: 0.559
-episode: 21000 | round: 4 | strat: exploit | valution: 0.102 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0429 | hype: 0.755
-episode: 21000 | round: 5 | strat: exploit | valution: 0.102 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0429 | hype: 0.951
-
-episode: 21100 | round: 1 | strat: exploit | valution: 0.600 | bid: 0.000 | opps: ['0.348', '0.443', '0.175'] | won: False | reward: 0.0000 | epsilon: 0.0423 | hype: 0.443
-episode: 21100 | round: 2 | strat: exploit | valution: 0.521 | bid: 0.670 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0337 | epsilon: 0.0423 | hype: 1.113
-episode: 21100 | round: 3 | strat: exploit | valution: 0.635 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0337 | epsilon: 0.0423 | hype: 1.783
-episode: 21100 | round: 4 | strat: exploit | valution: 0.635 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0337 | epsilon: 0.0423 | hype: 2.453
-episode: 21100 | round: 5 | strat: exploit | valution: 0.635 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: -0.0013 | epsilon: 0.0423 | hype: 3.123
-
-episode: 21200 | round: 1 | strat: exploit | valution: 0.736 | bid: 0.770 | opps: ['0.615', '0.666', '0.562'] | won: False | reward: 0.0355 | epsilon: 0.0417 | hype: 0.770
-episode: 21200 | round: 2 | strat: exploit | valution: 0.753 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0355 | epsilon: 0.0417 | hype: 1.540
-episode: 21200 | round: 3 | strat: exploit | valution: 0.753 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0355 | epsilon: 0.0417 | hype: 2.310
-episode: 21200 | round: 4 | strat: exploit | valution: 0.753 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0355 | epsilon: 0.0417 | hype: 3.080
-episode: 21200 | round: 5 | strat: exploit | valution: 0.753 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0183 | epsilon: 0.0417 | hype: 3.850
-
-episode: 21300 | round: 1 | strat: exploit | valution: 0.331 | bid: 0.000 | opps: ['0.252', '0.363', '0.331'] | won: False | reward: 0.0000 | epsilon: 0.0411 | hype: 0.363
-episode: 21300 | round: 2 | strat: exploit | valution: 0.347 | bid: 0.000 | opps: ['None', 'None', '0.377'] | won: False | reward: 0.0000 | epsilon: 0.0411 | hype: 0.740
-episode: 21300 | round: 3 | strat: exploit | valution: 0.354 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0411 | hype: 1.116
-episode: 21300 | round: 4 | strat: exploit | valution: 0.354 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0411 | hype: 1.493
-episode: 21300 | round: 5 | strat: exploit | valution: 0.354 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0411 | hype: 1.870
-
-episode: 21400 | round: 1 | strat: exploit | valution: 0.477 | bid: 0.000 | opps: ['0.372', '0.214', '0.260'] | won: False | reward: 0.0000 | epsilon: 0.0404 | hype: 0.372
-episode: 21400 | round: 2 | strat: exploit | valution: 0.425 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0404 | hype: 0.744
-episode: 21400 | round: 3 | strat: exploit | valution: 0.425 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0404 | hype: 1.117
-episode: 21400 | round: 4 | strat: exploit | valution: 0.425 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0404 | hype: 1.489
-episode: 21400 | round: 5 | strat: exploit | valution: 0.425 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0404 | hype: 1.861
-
-episode: 21500 | round: 1 | strat: exploit | valution: 0.138 | bid: 0.000 | opps: ['0.231', '0.154', '0.124'] | won: False | reward: 0.0000 | epsilon: 0.0398 | hype: 0.231
-episode: 21500 | round: 2 | strat: explore | valution: 0.185 | bid: 0.910 | opps: ['None', '0.239', 'None'] | won: False | reward: 0.2594 | epsilon: 0.0398 | hype: 1.141
-episode: 21500 | round: 3 | strat: explore | valution: 0.524 | bid: 0.560 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1794 | epsilon: 0.0398 | hype: 2.051
-episode: 21500 | round: 4 | strat: exploit | valution: 0.524 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1794 | epsilon: 0.0398 | hype: 2.961
-episode: 21500 | round: 5 | strat: exploit | valution: 0.524 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: -0.2065 | epsilon: 0.0398 | hype: 3.871
-
-episode: 21600 | round: 1 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.083', '0.112', '0.037'] | won: False | reward: 0.0000 | epsilon: 0.0392 | hype: 0.112
-episode: 21600 | round: 2 | strat: exploit | valution: 0.056 | bid: 0.000 | opps: ['0.158', 'None', '0.135'] | won: False | reward: 0.0000 | epsilon: 0.0392 | hype: 0.270
-episode: 21600 | round: 3 | strat: exploit | valution: 0.079 | bid: 0.000 | opps: ['None', 'None', '0.228'] | won: False | reward: 0.0000 | epsilon: 0.0392 | hype: 0.498
-episode: 21600 | round: 4 | strat: exploit | valution: 0.114 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0392 | hype: 0.726
-episode: 21600 | round: 5 | strat: exploit | valution: 0.114 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0392 | hype: 0.954
-
-episode: 21700 | round: 1 | strat: exploit | valution: 0.617 | bid: 0.000 | opps: ['0.736', '0.719', '0.697'] | won: False | reward: 0.0000 | epsilon: 0.0387 | hype: 0.736
-episode: 21700 | round: 2 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0387 | hype: 1.472
-episode: 21700 | round: 3 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0387 | hype: 2.209
-episode: 21700 | round: 4 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0387 | hype: 2.945
-episode: 21700 | round: 5 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0387 | hype: 3.681
-
-episode: 21800 | round: 1 | strat: exploit | valution: 0.480 | bid: 0.000 | opps: ['0.331', '0.346', '0.345'] | won: False | reward: 0.0000 | epsilon: 0.0381 | hype: 0.346
-episode: 21800 | round: 2 | strat: exploit | valution: 0.413 | bid: 0.000 | opps: ['0.370', 'None', '0.377'] | won: False | reward: 0.0000 | epsilon: 0.0381 | hype: 0.723
-episode: 21800 | round: 3 | strat: exploit | valution: 0.429 | bid: 0.000 | opps: ['0.457', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0381 | hype: 1.180
-episode: 21800 | round: 4 | strat: exploit | valution: 0.469 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0381 | hype: 1.637
-episode: 21800 | round: 5 | strat: exploit | valution: 0.469 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0381 | hype: 2.094
-
-episode: 21900 | round: 1 | strat: exploit | valution: 0.614 | bid: 0.000 | opps: ['0.442', '0.399', '0.311'] | won: False | reward: 0.0000 | epsilon: 0.0375 | hype: 0.442
-episode: 21900 | round: 2 | strat: exploit | valution: 0.528 | bid: 0.840 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1189 | epsilon: 0.0375 | hype: 1.282
-episode: 21900 | round: 3 | strat: exploit | valution: 0.727 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1189 | epsilon: 0.0375 | hype: 2.122
-episode: 21900 | round: 4 | strat: exploit | valution: 0.727 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1189 | epsilon: 0.0375 | hype: 2.962
-episode: 21900 | round: 5 | strat: exploit | valution: 0.727 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0057 | epsilon: 0.0375 | hype: 3.802
-
-episode: 22000 | round: 1 | strat: exploit | valution: 0.365 | bid: 0.000 | opps: ['0.222', '0.144', '0.254'] | won: False | reward: 0.0000 | epsilon: 0.0370 | hype: 0.254
-episode: 22000 | round: 2 | strat: exploit | valution: 0.310 | bid: 0.000 | opps: ['0.281', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0370 | hype: 0.535
-episode: 22000 | round: 3 | strat: exploit | valution: 0.323 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0370 | hype: 0.817
-episode: 22000 | round: 4 | strat: exploit | valution: 0.323 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0370 | hype: 1.098
-episode: 22000 | round: 5 | strat: exploit | valution: 0.323 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0370 | hype: 1.379
-
-episode: 22100 | round: 1 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.012', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0364 | hype: 0.012
-episode: 22100 | round: 2 | strat: exploit | valution: 0.006 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0364 | hype: 0.024
-episode: 22100 | round: 3 | strat: exploit | valution: 0.006 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0364 | hype: 0.036
-episode: 22100 | round: 4 | strat: exploit | valution: 0.006 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0364 | hype: 0.048
-episode: 22100 | round: 5 | strat: exploit | valution: 0.006 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0364 | hype: 0.060
-
-episode: 22200 | round: 1 | strat: exploit | valution: 0.148 | bid: 0.000 | opps: ['None', '0.127', '0.088'] | won: False | reward: 0.0000 | epsilon: 0.0359 | hype: 0.127
-episode: 22200 | round: 2 | strat: explore | valution: 0.138 | bid: 0.610 | opps: ['None', 'None', '0.167'] | won: False | reward: 0.1613 | epsilon: 0.0359 | hype: 0.737
-episode: 22200 | round: 3 | strat: exploit | valution: 0.379 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1613 | epsilon: 0.0359 | hype: 1.347
-episode: 22200 | round: 4 | strat: exploit | valution: 0.379 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1613 | epsilon: 0.0359 | hype: 1.957
-episode: 22200 | round: 5 | strat: exploit | valution: 0.379 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: -0.0696 | epsilon: 0.0359 | hype: 2.567
-
-episode: 22300 | round: 1 | strat: exploit | valution: 0.341 | bid: 0.000 | opps: ['0.235', '0.252', '0.211'] | won: False | reward: 0.0000 | epsilon: 0.0353 | hype: 0.252
-episode: 22300 | round: 2 | strat: exploit | valution: 0.296 | bid: 0.000 | opps: ['0.287', 'None', '0.275'] | won: False | reward: 0.0000 | epsilon: 0.0353 | hype: 0.538
-episode: 22300 | round: 3 | strat: exploit | valution: 0.314 | bid: 0.000 | opps: ['None', 'None', '0.363'] | won: False | reward: 0.0000 | epsilon: 0.0353 | hype: 0.901
-episode: 22300 | round: 4 | strat: exploit | valution: 0.352 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0353 | hype: 1.264
-episode: 22300 | round: 5 | strat: exploit | valution: 0.352 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0353 | hype: 1.627
-
-episode: 22400 | round: 1 | strat: exploit | valution: 0.372 | bid: 0.000 | opps: ['0.271', '0.341', '0.249'] | won: False | reward: 0.0000 | epsilon: 0.0348 | hype: 0.341
-episode: 22400 | round: 2 | strat: exploit | valution: 0.357 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0348 | hype: 0.683
-episode: 22400 | round: 3 | strat: exploit | valution: 0.357 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0348 | hype: 1.024
-episode: 22400 | round: 4 | strat: exploit | valution: 0.357 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0348 | hype: 1.366
-episode: 22400 | round: 5 | strat: exploit | valution: 0.357 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0348 | hype: 1.707
-
-episode: 22500 | round: 1 | strat: exploit | valution: 0.199 | bid: 0.000 | opps: ['0.124', '0.390', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0343 | hype: 0.390
-episode: 22500 | round: 2 | strat: exploit | valution: 0.294 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0343 | hype: 0.779
-episode: 22500 | round: 3 | strat: exploit | valution: 0.294 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0343 | hype: 1.169
-episode: 22500 | round: 4 | strat: exploit | valution: 0.294 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0343 | hype: 1.558
-episode: 22500 | round: 5 | strat: exploit | valution: 0.294 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0343 | hype: 1.948
-
-episode: 22600 | round: 1 | strat: exploit | valution: 0.014 | bid: 0.000 | opps: ['0.120', '0.116', '0.109'] | won: False | reward: 0.0000 | epsilon: 0.0338 | hype: 0.120
-episode: 22600 | round: 2 | strat: exploit | valution: 0.067 | bid: 0.000 | opps: ['None', '0.178', '0.174'] | won: False | reward: 0.0000 | epsilon: 0.0338 | hype: 0.297
-episode: 22600 | round: 3 | strat: exploit | valution: 0.096 | bid: 0.000 | opps: ['None', 'None', '0.271'] | won: False | reward: 0.0000 | epsilon: 0.0338 | hype: 0.569
-episode: 22600 | round: 4 | strat: exploit | valution: 0.143 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0338 | hype: 0.840
-episode: 22600 | round: 5 | strat: exploit | valution: 0.143 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0338 | hype: 1.111
-
-episode: 22700 | round: 1 | strat: exploit | valution: 0.304 | bid: 0.000 | opps: ['0.296', '0.204', '0.074'] | won: False | reward: 0.0000 | epsilon: 0.0333 | hype: 0.296
-episode: 22700 | round: 2 | strat: exploit | valution: 0.300 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0333 | hype: 0.593
-episode: 22700 | round: 3 | strat: exploit | valution: 0.300 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0333 | hype: 0.889
-episode: 22700 | round: 4 | strat: exploit | valution: 0.300 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0333 | hype: 1.186
-episode: 22700 | round: 5 | strat: exploit | valution: 0.300 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0333 | hype: 1.482
-
-episode: 22800 | round: 1 | strat: exploit | valution: 0.294 | bid: 0.000 | opps: ['0.307', '0.200', '0.157'] | won: False | reward: 0.0000 | epsilon: 0.0328 | hype: 0.307
-episode: 22800 | round: 2 | strat: exploit | valution: 0.301 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0328 | hype: 0.614
-episode: 22800 | round: 3 | strat: exploit | valution: 0.301 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0328 | hype: 0.921
-episode: 22800 | round: 4 | strat: explore | valution: 0.301 | bid: 0.360 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0535 | epsilon: 0.0328 | hype: 1.281
-episode: 22800 | round: 5 | strat: exploit | valution: 0.327 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: -0.0864 | epsilon: 0.0328 | hype: 1.641
-
-episode: 22900 | round: 1 | strat: exploit | valution: 0.043 | bid: 0.000 | opps: ['None', 'None', '0.164'] | won: False | reward: 0.0000 | epsilon: 0.0323 | hype: 0.164
-episode: 22900 | round: 2 | strat: exploit | valution: 0.103 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0323 | hype: 0.328
-episode: 22900 | round: 3 | strat: exploit | valution: 0.103 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0323 | hype: 0.492
-episode: 22900 | round: 4 | strat: exploit | valution: 0.103 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0323 | hype: 0.656
-episode: 22900 | round: 5 | strat: exploit | valution: 0.103 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0323 | hype: 0.820
-
-episode: 23000 | round: 1 | strat: exploit | valution: 0.056 | bid: 0.000 | opps: ['0.144', '0.098', '0.093'] | won: False | reward: 0.0000 | epsilon: 0.0318 | hype: 0.144
-episode: 23000 | round: 2 | strat: exploit | valution: 0.100 | bid: 0.000 | opps: ['None', '0.178', '0.175'] | won: False | reward: 0.0000 | epsilon: 0.0318 | hype: 0.322
-episode: 23000 | round: 3 | strat: exploit | valution: 0.117 | bid: 0.000 | opps: ['None', 'None', '0.263'] | won: False | reward: 0.0000 | epsilon: 0.0318 | hype: 0.585
-episode: 23000 | round: 4 | strat: exploit | valution: 0.160 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0318 | hype: 0.848
-episode: 23000 | round: 5 | strat: exploit | valution: 0.160 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0318 | hype: 1.112
-
-episode: 23100 | round: 1 | strat: exploit | valution: 0.856 | bid: 0.760 | opps: ['0.602', '0.750', '0.693'] | won: False | reward: 0.0340 | epsilon: 0.0313 | hype: 0.760
-episode: 23100 | round: 2 | strat: exploit | valution: 0.808 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0313 | hype: 1.520
-episode: 23100 | round: 3 | strat: exploit | valution: 0.808 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0313 | hype: 2.280
-episode: 23100 | round: 4 | strat: exploit | valution: 0.808 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0313 | hype: 3.040
-episode: 23100 | round: 5 | strat: explore | valution: 0.808 | bid: 0.150 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0018 | epsilon: 0.0313 | hype: 3.800
-
-episode: 23200 | round: 1 | strat: exploit | valution: 0.542 | bid: 0.000 | opps: ['0.383', '0.272', '0.464'] | won: False | reward: 0.0000 | epsilon: 0.0309 | hype: 0.464
-episode: 23200 | round: 2 | strat: exploit | valution: 0.503 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0309 | hype: 0.928
-episode: 23200 | round: 3 | strat: exploit | valution: 0.503 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0309 | hype: 1.393
-episode: 23200 | round: 4 | strat: exploit | valution: 0.503 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0309 | hype: 1.857
-episode: 23200 | round: 5 | strat: exploit | valution: 0.503 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0309 | hype: 2.321
-
-episode: 23300 | round: 1 | strat: exploit | valution: 0.205 | bid: 0.000 | opps: ['0.102', '0.083', '0.062'] | won: False | reward: 0.0000 | epsilon: 0.0304 | hype: 0.102
-episode: 23300 | round: 2 | strat: exploit | valution: 0.153 | bid: 0.000 | opps: ['None', '0.155', '0.144'] | won: False | reward: 0.0000 | epsilon: 0.0304 | hype: 0.257
-episode: 23300 | round: 3 | strat: exploit | valution: 0.180 | bid: 0.000 | opps: ['None', 'None', '0.239'] | won: False | reward: 0.0000 | epsilon: 0.0304 | hype: 0.496
-episode: 23300 | round: 4 | strat: exploit | valution: 0.222 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0304 | hype: 0.735
-episode: 23300 | round: 5 | strat: exploit | valution: 0.222 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0304 | hype: 0.974
-
-episode: 23400 | round: 1 | strat: exploit | valution: 0.010 | bid: 0.000 | opps: ['0.006', '0.068', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0300 | hype: 0.068
-episode: 23400 | round: 2 | strat: exploit | valution: 0.039 | bid: 0.000 | opps: ['0.104', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0300 | hype: 0.172
-episode: 23400 | round: 3 | strat: exploit | valution: 0.057 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0300 | hype: 0.275
-episode: 23400 | round: 4 | strat: exploit | valution: 0.057 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0300 | hype: 0.379
-episode: 23400 | round: 5 | strat: exploit | valution: 0.057 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0300 | hype: 0.482
-
-episode: 23500 | round: 1 | strat: exploit | valution: 0.962 | bid: 0.760 | opps: ['0.413', '0.523', '0.538'] | won: False | reward: 0.0340 | epsilon: 0.0295 | hype: 0.760
-episode: 23500 | round: 2 | strat: exploit | valution: 0.861 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0295 | hype: 1.520
-episode: 23500 | round: 3 | strat: exploit | valution: 0.861 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0295 | hype: 2.280
-episode: 23500 | round: 4 | strat: exploit | valution: 0.861 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0295 | hype: 3.040
-episode: 23500 | round: 5 | strat: exploit | valution: 0.861 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1352 | epsilon: 0.0295 | hype: 3.800
-
-episode: 23600 | round: 1 | strat: explore | valution: 0.739 | bid: 0.640 | opps: ['0.539', '0.577', '0.516'] | won: False | reward: 0.0160 | epsilon: 0.0291 | hype: 0.640
-episode: 23600 | round: 2 | strat: exploit | valution: 0.689 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0291 | hype: 1.280
-episode: 23600 | round: 3 | strat: exploit | valution: 0.689 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0291 | hype: 1.920
-episode: 23600 | round: 4 | strat: exploit | valution: 0.689 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0291 | hype: 2.560
-episode: 23600 | round: 5 | strat: exploit | valution: 0.689 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0654 | epsilon: 0.0291 | hype: 3.200
-
-episode: 23700 | round: 1 | strat: exploit | valution: 0.850 | bid: 0.760 | opps: ['0.642', '0.413', '0.636'] | won: False | reward: 0.0340 | epsilon: 0.0286 | hype: 0.760
-episode: 23700 | round: 2 | strat: exploit | valution: 0.805 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0286 | hype: 1.520
-episode: 23700 | round: 3 | strat: exploit | valution: 0.805 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0286 | hype: 2.280
-episode: 23700 | round: 4 | strat: exploit | valution: 0.805 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0286 | hype: 3.040
-episode: 23700 | round: 5 | strat: exploit | valution: 0.805 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0788 | epsilon: 0.0286 | hype: 3.800
-
-episode: 23800 | round: 1 | strat: exploit | valution: 0.108 | bid: 0.000 | opps: ['None', '0.009', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0282 | hype: 0.009
-episode: 23800 | round: 2 | strat: exploit | valution: 0.059 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0282 | hype: 0.018
-episode: 23800 | round: 3 | strat: exploit | valution: 0.059 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0282 | hype: 0.027
-episode: 23800 | round: 4 | strat: exploit | valution: 0.059 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0282 | hype: 0.036
-episode: 23800 | round: 5 | strat: exploit | valution: 0.059 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0282 | hype: 0.045
-
-episode: 23900 | round: 1 | strat: exploit | valution: 0.919 | bid: 0.760 | opps: ['0.468', '0.516', '0.548'] | won: False | reward: 0.0340 | epsilon: 0.0278 | hype: 0.760
-episode: 23900 | round: 2 | strat: exploit | valution: 0.839 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0278 | hype: 1.520
-episode: 23900 | round: 3 | strat: exploit | valution: 0.839 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0278 | hype: 2.280
-episode: 23900 | round: 4 | strat: exploit | valution: 0.839 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0278 | hype: 3.040
-episode: 23900 | round: 5 | strat: exploit | valution: 0.839 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1134 | epsilon: 0.0278 | hype: 3.800
-
-episode: 24000 | round: 1 | strat: exploit | valution: 0.430 | bid: 0.000 | opps: ['0.076', '0.099', '0.102'] | won: False | reward: 0.0000 | epsilon: 0.0274 | hype: 0.102
-episode: 24000 | round: 2 | strat: exploit | valution: 0.266 | bid: 0.530 | opps: ['0.151', '0.163', 'None'] | won: False | reward: 0.1342 | epsilon: 0.0274 | hype: 0.632
-episode: 24000 | round: 3 | strat: exploit | valution: 0.480 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1342 | epsilon: 0.0274 | hype: 1.162
-episode: 24000 | round: 4 | strat: exploit | valution: 0.480 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1342 | epsilon: 0.0274 | hype: 1.692
-episode: 24000 | round: 5 | strat: exploit | valution: 0.480 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0844 | epsilon: 0.0274 | hype: 2.222
-
-episode: 24100 | round: 1 | strat: exploit | valution: 0.728 | bid: 0.000 | opps: ['0.457', '0.446', '0.576'] | won: False | reward: 0.0000 | epsilon: 0.0270 | hype: 0.576
-episode: 24100 | round: 2 | strat: exploit | valution: 0.652 | bid: 0.960 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1120 | epsilon: 0.0270 | hype: 1.536
-episode: 24100 | round: 3 | strat: exploit | valution: 0.844 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1120 | epsilon: 0.0270 | hype: 2.496
-episode: 24100 | round: 4 | strat: exploit | valution: 0.844 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1120 | epsilon: 0.0270 | hype: 3.456
-episode: 24100 | round: 5 | strat: exploit | valution: 0.844 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: -0.0041 | epsilon: 0.0270 | hype: 4.416
-
-episode: 24200 | round: 1 | strat: exploit | valution: 0.682 | bid: 0.700 | opps: ['0.701', '0.656', '0.538'] | won: False | reward: -0.0800 | epsilon: 0.0266 | hype: 0.701
-episode: 24200 | round: 2 | strat: exploit | valution: 0.692 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0266 | hype: 1.403
-episode: 24200 | round: 3 | strat: exploit | valution: 0.692 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0266 | hype: 2.104
-episode: 24200 | round: 4 | strat: exploit | valution: 0.692 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0266 | hype: 2.805
-episode: 24200 | round: 5 | strat: exploit | valution: 0.692 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0266 | hype: 3.507
-
-episode: 24300 | round: 1 | strat: exploit | valution: 0.685 | bid: 0.000 | opps: ['0.577', '0.591', '0.575'] | won: False | reward: 0.0000 | epsilon: 0.0262 | hype: 0.591
-episode: 24300 | round: 2 | strat: exploit | valution: 0.638 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0262 | hype: 1.181
-episode: 24300 | round: 3 | strat: exploit | valution: 0.638 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0262 | hype: 1.772
-episode: 24300 | round: 4 | strat: exploit | valution: 0.638 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0262 | hype: 2.363
-episode: 24300 | round: 5 | strat: exploit | valution: 0.638 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0262 | hype: 2.953
-
-episode: 24400 | round: 1 | strat: exploit | valution: 0.441 | bid: 0.000 | opps: ['0.330', '0.191', '0.240'] | won: False | reward: 0.0000 | epsilon: 0.0258 | hype: 0.330
-episode: 24400 | round: 2 | strat: exploit | valution: 0.385 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0258 | hype: 0.659
-episode: 24400 | round: 3 | strat: exploit | valution: 0.385 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0258 | hype: 0.989
-episode: 24400 | round: 4 | strat: exploit | valution: 0.385 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0258 | hype: 1.319
-episode: 24400 | round: 5 | strat: exploit | valution: 0.385 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0258 | hype: 1.648
-
-episode: 24500 | round: 1 | strat: exploit | valution: 0.144 | bid: 0.000 | opps: ['0.147', '0.211', '0.004'] | won: False | reward: 0.0000 | epsilon: 0.0254 | hype: 0.211
-episode: 24500 | round: 2 | strat: exploit | valution: 0.177 | bid: 0.000 | opps: ['0.227', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0254 | hype: 0.438
-episode: 24500 | round: 3 | strat: exploit | valution: 0.185 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0254 | hype: 0.666
-episode: 24500 | round: 4 | strat: exploit | valution: 0.185 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0254 | hype: 0.893
-episode: 24500 | round: 5 | strat: exploit | valution: 0.185 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0254 | hype: 1.121
-
-episode: 24600 | round: 1 | strat: exploit | valution: 0.996 | bid: 0.830 | opps: ['0.733', '0.611', '0.566'] | won: False | reward: 0.0445 | epsilon: 0.0250 | hype: 0.830
-episode: 24600 | round: 2 | strat: exploit | valution: 0.913 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0445 | epsilon: 0.0250 | hype: 1.660
-episode: 24600 | round: 3 | strat: exploit | valution: 0.913 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0445 | epsilon: 0.0250 | hype: 2.490
-episode: 24600 | round: 4 | strat: exploit | valution: 0.913 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0445 | epsilon: 0.0250 | hype: 3.320
-episode: 24600 | round: 5 | strat: exploit | valution: 0.913 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1273 | epsilon: 0.0250 | hype: 4.150
-
-episode: 24700 | round: 1 | strat: exploit | valution: 0.114 | bid: 0.000 | opps: ['0.228', '0.131', '0.187'] | won: False | reward: 0.0000 | epsilon: 0.0246 | hype: 0.228
-episode: 24700 | round: 2 | strat: exploit | valution: 0.171 | bid: 0.000 | opps: ['None', 'None', '0.254'] | won: False | reward: 0.0000 | epsilon: 0.0246 | hype: 0.482
-episode: 24700 | round: 3 | strat: exploit | valution: 0.184 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0246 | hype: 0.736
-episode: 24700 | round: 4 | strat: exploit | valution: 0.184 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0246 | hype: 0.990
-episode: 24700 | round: 5 | strat: exploit | valution: 0.184 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0246 | hype: 1.244
-
-episode: 24800 | round: 1 | strat: exploit | valution: 0.135 | bid: 0.000 | opps: ['0.231', '0.193', '0.186'] | won: False | reward: 0.0000 | epsilon: 0.0243 | hype: 0.231
-episode: 24800 | round: 2 | strat: exploit | valution: 0.183 | bid: 0.000 | opps: ['None', '0.258', '0.255'] | won: False | reward: 0.0000 | epsilon: 0.0243 | hype: 0.489
-episode: 24800 | round: 3 | strat: exploit | valution: 0.197 | bid: 0.000 | opps: ['None', 'None', '0.340'] | won: False | reward: 0.0000 | epsilon: 0.0243 | hype: 0.829
-episode: 24800 | round: 4 | strat: exploit | valution: 0.238 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0243 | hype: 1.169
-episode: 24800 | round: 5 | strat: exploit | valution: 0.238 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0243 | hype: 1.509
-
-episode: 24900 | round: 1 | strat: exploit | valution: 0.246 | bid: 0.000 | opps: ['0.134', '0.214', '0.270'] | won: False | reward: 0.0000 | epsilon: 0.0239 | hype: 0.270
-episode: 24900 | round: 2 | strat: exploit | valution: 0.258 | bid: 0.000 | opps: ['None', '0.283', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0239 | hype: 0.553
-episode: 24900 | round: 3 | strat: exploit | valution: 0.265 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0239 | hype: 0.836
-episode: 24900 | round: 4 | strat: exploit | valution: 0.265 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0239 | hype: 1.119
-episode: 24900 | round: 5 | strat: exploit | valution: 0.265 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0239 | hype: 1.402
-
-episode: 25000 | round: 1 | strat: exploit | valution: 0.482 | bid: 0.000 | opps: ['0.536', '0.646', '0.489'] | won: False | reward: 0.0000 | epsilon: 0.0236 | hype: 0.646
-episode: 25000 | round: 2 | strat: exploit | valution: 0.564 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0236 | hype: 1.292
-episode: 25000 | round: 3 | strat: exploit | valution: 0.564 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0236 | hype: 1.939
-episode: 25000 | round: 4 | strat: exploit | valution: 0.564 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0236 | hype: 2.585
-episode: 25000 | round: 5 | strat: exploit | valution: 0.564 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0236 | hype: 3.231
-
-episode: 25100 | round: 1 | strat: exploit | valution: 0.668 | bid: 0.610 | opps: ['0.539', '0.392', '0.649'] | won: False | reward: -0.0800 | epsilon: 0.0232 | hype: 0.649
-episode: 25100 | round: 2 | strat: exploit | valution: 0.659 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0232 | hype: 1.299
-episode: 25100 | round: 3 | strat: exploit | valution: 0.659 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0232 | hype: 1.948
-episode: 25100 | round: 4 | strat: explore | valution: 0.659 | bid: 0.710 | opps: ['None', 'None', 'None'] | won: False | reward: -0.1296 | epsilon: 0.0232 | hype: 2.658
-episode: 25100 | round: 5 | strat: exploit | valution: 0.689 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: -0.1505 | epsilon: 0.0232 | hype: 3.368
-
-episode: 25200 | round: 1 | strat: exploit | valution: 0.527 | bid: 0.000 | opps: ['0.351', '0.331', '0.342'] | won: False | reward: 0.0000 | epsilon: 0.0229 | hype: 0.351
-episode: 25200 | round: 2 | strat: exploit | valution: 0.439 | bid: 0.830 | opps: ['None', '0.372', '0.377'] | won: False | reward: 0.1595 | epsilon: 0.0229 | hype: 1.181
-episode: 25200 | round: 3 | strat: exploit | valution: 0.679 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1595 | epsilon: 0.0229 | hype: 2.011
-episode: 25200 | round: 4 | strat: exploit | valution: 0.679 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1595 | epsilon: 0.0229 | hype: 2.841
-episode: 25200 | round: 5 | strat: exploit | valution: 0.679 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0080 | epsilon: 0.0229 | hype: 3.671
-
-episode: 25300 | round: 1 | strat: exploit | valution: 1.000 | bid: 0.760 | opps: ['0.678', '0.750', '0.750'] | won: False | reward: 0.0340 | epsilon: 0.0225 | hype: 0.760
-episode: 25300 | round: 2 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0225 | hype: 1.520
-episode: 25300 | round: 3 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0225 | hype: 2.280
-episode: 25300 | round: 4 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0225 | hype: 3.040
-episode: 25300 | round: 5 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1540 | epsilon: 0.0225 | hype: 3.800
-
-episode: 25400 | round: 1 | strat: exploit | valution: 0.355 | bid: 0.000 | opps: ['0.325', '0.406', '0.353'] | won: False | reward: 0.0000 | epsilon: 0.0222 | hype: 0.406
-episode: 25400 | round: 2 | strat: exploit | valution: 0.381 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0222 | hype: 0.812
-episode: 25400 | round: 3 | strat: exploit | valution: 0.381 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0222 | hype: 1.218
-episode: 25400 | round: 4 | strat: exploit | valution: 0.381 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0222 | hype: 1.624
-episode: 25400 | round: 5 | strat: exploit | valution: 0.381 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0222 | hype: 2.030
-
-episode: 25500 | round: 1 | strat: explore | valution: 1.000 | bid: 0.490 | opps: ['0.724', '0.717', '0.747'] | won: False | reward: -0.0800 | epsilon: 0.0219 | hype: 0.747
-episode: 25500 | round: 2 | strat: exploit | valution: 0.874 | bid: 1.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0337 | epsilon: 0.0219 | hype: 1.747
-episode: 25500 | round: 3 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0337 | epsilon: 0.0219 | hype: 2.747
-episode: 25500 | round: 4 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0337 | epsilon: 0.0219 | hype: 3.747
-episode: 25500 | round: 5 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: -0.0337 | epsilon: 0.0219 | hype: 4.747
-
-episode: 25600 | round: 1 | strat: exploit | valution: 0.630 | bid: 0.000 | opps: ['0.503', '0.435', '0.416'] | won: False | reward: 0.0000 | epsilon: 0.0215 | hype: 0.503
-episode: 25600 | round: 2 | strat: exploit | valution: 0.566 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0215 | hype: 1.007
-episode: 25600 | round: 3 | strat: exploit | valution: 0.566 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0215 | hype: 1.510
-episode: 25600 | round: 4 | strat: explore | valution: 0.566 | bid: 0.320 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0215 | hype: 2.013
-episode: 25600 | round: 5 | strat: exploit | valution: 0.566 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0800 | epsilon: 0.0215 | hype: 2.516
-
-episode: 25700 | round: 1 | strat: exploit | valution: 0.312 | bid: 0.000 | opps: ['0.199', '0.277', '0.146'] | won: False | reward: 0.0000 | epsilon: 0.0212 | hype: 0.277
-episode: 25700 | round: 2 | strat: exploit | valution: 0.294 | bid: 0.000 | opps: ['0.278', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0212 | hype: 0.555
-episode: 25700 | round: 3 | strat: exploit | valution: 0.295 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0212 | hype: 0.833
-episode: 25700 | round: 4 | strat: exploit | valution: 0.295 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0212 | hype: 1.111
-episode: 25700 | round: 5 | strat: exploit | valution: 0.295 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0212 | hype: 1.390
-
-episode: 25800 | round: 1 | strat: exploit | valution: 0.702 | bid: 0.760 | opps: ['0.569', '0.566', '0.602'] | won: False | reward: 0.0340 | epsilon: 0.0209 | hype: 0.760
-episode: 25800 | round: 2 | strat: exploit | valution: 0.731 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0209 | hype: 1.520
-episode: 25800 | round: 3 | strat: exploit | valution: 0.731 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0209 | hype: 2.280
-episode: 25800 | round: 4 | strat: exploit | valution: 0.731 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0209 | hype: 3.040
-episode: 25800 | round: 5 | strat: exploit | valution: 0.731 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0050 | epsilon: 0.0209 | hype: 3.800
-
-episode: 25900 | round: 1 | strat: explore | valution: 0.795 | bid: 0.620 | opps: ['0.504', '0.634', '0.524'] | won: False | reward: -0.0800 | epsilon: 0.0206 | hype: 0.634
-episode: 25900 | round: 2 | strat: exploit | valution: 0.715 | bid: 0.960 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0030 | epsilon: 0.0206 | hype: 1.594
-episode: 25900 | round: 3 | strat: exploit | valution: 0.878 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0030 | epsilon: 0.0206 | hype: 2.554
-episode: 25900 | round: 4 | strat: exploit | valution: 0.878 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0030 | epsilon: 0.0206 | hype: 3.514
-episode: 25900 | round: 5 | strat: exploit | valution: 0.878 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: -0.0794 | epsilon: 0.0206 | hype: 4.474
-
-episode: 26000 | round: 1 | strat: exploit | valution: 0.983 | bid: 0.760 | opps: ['0.618', '0.750', '0.712'] | won: False | reward: 0.0340 | epsilon: 0.0203 | hype: 0.760
-episode: 26000 | round: 2 | strat: exploit | valution: 0.871 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0203 | hype: 1.520
-episode: 26000 | round: 3 | strat: exploit | valution: 0.871 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0203 | hype: 2.280
-episode: 26000 | round: 4 | strat: exploit | valution: 0.871 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0203 | hype: 3.040
-episode: 26000 | round: 5 | strat: exploit | valution: 0.871 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1453 | epsilon: 0.0203 | hype: 3.800
-
-episode: 26100 | round: 1 | strat: exploit | valution: 1.000 | bid: 0.760 | opps: ['0.695', '0.750', '0.658'] | won: False | reward: 0.0340 | epsilon: 0.0200 | hype: 0.760
-episode: 26100 | round: 2 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0200 | hype: 1.520
-episode: 26100 | round: 3 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0200 | hype: 2.280
-episode: 26100 | round: 4 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0200 | hype: 3.040
-episode: 26100 | round: 5 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1540 | epsilon: 0.0200 | hype: 3.800
-
-episode: 26200 | round: 1 | strat: exploit | valution: 0.473 | bid: 0.000 | opps: ['0.351', '0.417', '0.307'] | won: False | reward: 0.0000 | epsilon: 0.0197 | hype: 0.417
-episode: 26200 | round: 2 | strat: exploit | valution: 0.445 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0197 | hype: 0.834
-episode: 26200 | round: 3 | strat: exploit | valution: 0.445 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0197 | hype: 1.250
-episode: 26200 | round: 4 | strat: exploit | valution: 0.445 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0197 | hype: 1.667
-episode: 26200 | round: 5 | strat: exploit | valution: 0.445 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0197 | hype: 2.084
-
-episode: 26300 | round: 1 | strat: exploit | valution: 0.219 | bid: 0.000 | opps: ['0.073', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0194 | hype: 0.073
-episode: 26300 | round: 2 | strat: exploit | valution: 0.146 | bid: 0.840 | opps: ['None', 'None', 'None'] | won: False | reward: 0.3033 | epsilon: 0.0194 | hype: 0.913
-episode: 26300 | round: 3 | strat: exploit | valution: 0.529 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.3033 | epsilon: 0.0194 | hype: 1.753
-episode: 26300 | round: 4 | strat: exploit | valution: 0.529 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.3033 | epsilon: 0.0194 | hype: 2.593
-episode: 26300 | round: 5 | strat: exploit | valution: 0.529 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: -0.0072 | epsilon: 0.0194 | hype: 3.433
-
-episode: 26400 | round: 1 | strat: exploit | valution: 0.617 | bid: 0.000 | opps: ['0.444', '0.378', '0.504'] | won: False | reward: 0.0000 | epsilon: 0.0191 | hype: 0.504
-episode: 26400 | round: 2 | strat: exploit | valution: 0.560 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0191 | hype: 1.008
-episode: 26400 | round: 3 | strat: exploit | valution: 0.560 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0191 | hype: 1.512
-episode: 26400 | round: 4 | strat: exploit | valution: 0.560 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0191 | hype: 2.016
-episode: 26400 | round: 5 | strat: exploit | valution: 0.560 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0191 | hype: 2.520
-
-episode: 26500 | round: 1 | strat: exploit | valution: 0.770 | bid: 0.760 | opps: ['0.673', '0.660', '0.650'] | won: False | reward: 0.0340 | epsilon: 0.0188 | hype: 0.760
-episode: 26500 | round: 2 | strat: exploit | valution: 0.765 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0188 | hype: 1.520
-episode: 26500 | round: 3 | strat: exploit | valution: 0.765 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0188 | hype: 2.280
-episode: 26500 | round: 4 | strat: exploit | valution: 0.765 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0188 | hype: 3.040
-episode: 26500 | round: 5 | strat: exploit | valution: 0.765 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0390 | epsilon: 0.0188 | hype: 3.800
-
-episode: 26600 | round: 1 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['None', 'None', '0.050'] | won: False | reward: 0.0000 | epsilon: 0.0185 | hype: 0.050
-episode: 26600 | round: 2 | strat: exploit | valution: 0.025 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0185 | hype: 0.100
-episode: 26600 | round: 3 | strat: exploit | valution: 0.025 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0185 | hype: 0.150
-episode: 26600 | round: 4 | strat: exploit | valution: 0.025 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0185 | hype: 0.200
-episode: 26600 | round: 5 | strat: exploit | valution: 0.025 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0185 | hype: 0.250
-
-episode: 26700 | round: 1 | strat: exploit | valution: 0.128 | bid: 0.000 | opps: ['None', '0.075', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0183 | hype: 0.075
-episode: 26700 | round: 2 | strat: exploit | valution: 0.102 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0183 | hype: 0.151
-episode: 26700 | round: 3 | strat: exploit | valution: 0.102 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0183 | hype: 0.226
-episode: 26700 | round: 4 | strat: exploit | valution: 0.102 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0183 | hype: 0.302
-episode: 26700 | round: 5 | strat: exploit | valution: 0.102 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0183 | hype: 0.377
-
-episode: 26800 | round: 1 | strat: exploit | valution: 0.320 | bid: 0.000 | opps: ['0.354', '0.159', '0.179'] | won: False | reward: 0.0000 | epsilon: 0.0180 | hype: 0.354
-episode: 26800 | round: 2 | strat: exploit | valution: 0.337 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0180 | hype: 0.708
-episode: 26800 | round: 3 | strat: exploit | valution: 0.337 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0180 | hype: 1.061
-episode: 26800 | round: 4 | strat: exploit | valution: 0.337 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0180 | hype: 1.415
-episode: 26800 | round: 5 | strat: exploit | valution: 0.337 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0180 | hype: 1.769
-
-episode: 26900 | round: 1 | strat: exploit | valution: 0.470 | bid: 0.000 | opps: ['0.278', '0.352', '0.246'] | won: False | reward: 0.0000 | epsilon: 0.0177 | hype: 0.352
-episode: 26900 | round: 2 | strat: exploit | valution: 0.411 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0177 | hype: 0.703
-episode: 26900 | round: 3 | strat: exploit | valution: 0.411 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0177 | hype: 1.055
-episode: 26900 | round: 4 | strat: exploit | valution: 0.411 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0177 | hype: 1.407
-episode: 26900 | round: 5 | strat: exploit | valution: 0.411 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0177 | hype: 1.758
-
-episode: 27000 | round: 1 | strat: exploit | valution: 0.866 | bid: 0.760 | opps: ['0.638', '0.648', '0.544'] | won: False | reward: 0.0340 | epsilon: 0.0174 | hype: 0.760
-episode: 27000 | round: 2 | strat: exploit | valution: 0.813 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0174 | hype: 1.520
-episode: 27000 | round: 3 | strat: exploit | valution: 0.813 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0174 | hype: 2.280
-episode: 27000 | round: 4 | strat: exploit | valution: 0.813 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0174 | hype: 3.040
-episode: 27000 | round: 5 | strat: exploit | valution: 0.813 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0870 | epsilon: 0.0174 | hype: 3.800
-
-episode: 27100 | round: 1 | strat: exploit | valution: 0.928 | bid: 0.760 | opps: ['0.750', '0.750', '0.723'] | won: False | reward: 0.0340 | epsilon: 0.0172 | hype: 0.760
-episode: 27100 | round: 2 | strat: exploit | valution: 0.844 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0172 | hype: 1.520
-episode: 27100 | round: 3 | strat: explore | valution: 0.844 | bid: 0.600 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0460 | epsilon: 0.0172 | hype: 2.280
-episode: 27100 | round: 4 | strat: exploit | valution: 0.844 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0460 | epsilon: 0.0172 | hype: 3.040
-episode: 27100 | round: 5 | strat: exploit | valution: 0.844 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0379 | epsilon: 0.0172 | hype: 3.800
-
-episode: 27200 | round: 1 | strat: exploit | valution: 0.594 | bid: 0.000 | opps: ['0.532', '0.452', '0.351'] | won: False | reward: 0.0000 | epsilon: 0.0169 | hype: 0.532
-episode: 27200 | round: 2 | strat: exploit | valution: 0.563 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0169 | hype: 1.063
-episode: 27200 | round: 3 | strat: exploit | valution: 0.563 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0169 | hype: 1.595
-episode: 27200 | round: 4 | strat: exploit | valution: 0.563 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0169 | hype: 2.126
-episode: 27200 | round: 5 | strat: exploit | valution: 0.563 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0169 | hype: 2.658
-
-episode: 27300 | round: 1 | strat: exploit | valution: 0.392 | bid: 0.000 | opps: ['0.338', '0.386', '0.401'] | won: False | reward: 0.0000 | epsilon: 0.0167 | hype: 0.401
-episode: 27300 | round: 2 | strat: exploit | valution: 0.397 | bid: 0.000 | opps: ['None', '0.419', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0167 | hype: 0.820
-episode: 27300 | round: 3 | strat: exploit | valution: 0.406 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0167 | hype: 1.238
-episode: 27300 | round: 4 | strat: exploit | valution: 0.406 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0167 | hype: 1.657
-episode: 27300 | round: 5 | strat: exploit | valution: 0.406 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0167 | hype: 2.076
-
-episode: 27400 | round: 1 | strat: exploit | valution: 0.290 | bid: 0.000 | opps: ['0.203', '0.171', '0.285'] | won: False | reward: 0.0000 | epsilon: 0.0164 | hype: 0.285
-episode: 27400 | round: 2 | strat: exploit | valution: 0.288 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0164 | hype: 0.570
-episode: 27400 | round: 3 | strat: exploit | valution: 0.288 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0164 | hype: 0.855
-episode: 27400 | round: 4 | strat: exploit | valution: 0.288 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0164 | hype: 1.140
-episode: 27400 | round: 5 | strat: exploit | valution: 0.288 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0164 | hype: 1.425
-
-episode: 27500 | round: 1 | strat: explore | valution: 0.397 | bid: 0.850 | opps: ['0.247', '0.057', '0.146'] | won: False | reward: 0.0475 | epsilon: 0.0162 | hype: 0.850
-episode: 27500 | round: 2 | strat: exploit | valution: 0.623 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0475 | epsilon: 0.0162 | hype: 1.700
-episode: 27500 | round: 3 | strat: exploit | valution: 0.623 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0475 | epsilon: 0.0162 | hype: 2.550
-episode: 27500 | round: 4 | strat: explore | valution: 0.623 | bid: 0.830 | opps: ['None', 'None', 'None'] | won: False | reward: -0.0325 | epsilon: 0.0162 | hype: 3.400
-episode: 27500 | round: 5 | strat: explore | valution: 0.623 | bid: 0.670 | opps: ['None', 'None', 'None'] | won: True | reward: -0.3391 | epsilon: 0.0162 | hype: 4.250
-
-episode: 27600 | round: 1 | strat: exploit | valution: 0.675 | bid: 0.640 | opps: ['0.542', '0.546', '0.542'] | won: False | reward: 0.0160 | epsilon: 0.0159 | hype: 0.640
-episode: 27600 | round: 2 | strat: exploit | valution: 0.658 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0159 | hype: 1.280
-episode: 27600 | round: 3 | strat: exploit | valution: 0.658 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0159 | hype: 1.920
-episode: 27600 | round: 4 | strat: exploit | valution: 0.658 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0159 | hype: 2.560
-episode: 27600 | round: 5 | strat: exploit | valution: 0.658 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0336 | epsilon: 0.0159 | hype: 3.200
-
-episode: 27700 | round: 1 | strat: exploit | valution: 0.908 | bid: 0.790 | opps: ['0.690', '0.732', '0.616'] | won: False | reward: 0.0385 | epsilon: 0.0157 | hype: 0.790
-episode: 27700 | round: 2 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0385 | epsilon: 0.0157 | hype: 1.580
-episode: 27700 | round: 3 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0385 | epsilon: 0.0157 | hype: 2.370
-episode: 27700 | round: 4 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0385 | epsilon: 0.0157 | hype: 3.160
-episode: 27700 | round: 5 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0974 | epsilon: 0.0157 | hype: 3.950
-
-episode: 27800 | round: 1 | strat: exploit | valution: 0.940 | bid: 0.760 | opps: ['0.750', '0.746', '0.732'] | won: False | reward: 0.0340 | epsilon: 0.0155 | hype: 0.760
-episode: 27800 | round: 2 | strat: exploit | valution: 0.850 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0155 | hype: 1.520
-episode: 27800 | round: 3 | strat: exploit | valution: 0.850 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0155 | hype: 2.280
-episode: 27800 | round: 4 | strat: exploit | valution: 0.850 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0155 | hype: 3.040
-episode: 27800 | round: 5 | strat: exploit | valution: 0.850 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1241 | epsilon: 0.0155 | hype: 3.800
-
-episode: 27900 | round: 1 | strat: exploit | valution: 0.965 | bid: 0.760 | opps: ['0.675', '0.646', '0.638'] | won: False | reward: 0.0340 | epsilon: 0.0152 | hype: 0.760
-episode: 27900 | round: 2 | strat: exploit | valution: 0.862 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0152 | hype: 1.520
-episode: 27900 | round: 3 | strat: exploit | valution: 0.862 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0152 | hype: 2.280
-episode: 27900 | round: 4 | strat: exploit | valution: 0.862 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0152 | hype: 3.040
-episode: 27900 | round: 5 | strat: exploit | valution: 0.862 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1364 | epsilon: 0.0152 | hype: 3.800
-
-episode: 28000 | round: 1 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.164', '0.046', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0150 | hype: 0.164
-episode: 28000 | round: 2 | strat: exploit | valution: 0.082 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0150 | hype: 0.328
-episode: 28000 | round: 3 | strat: exploit | valution: 0.082 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0150 | hype: 0.493
-episode: 28000 | round: 4 | strat: exploit | valution: 0.082 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0150 | hype: 0.657
-episode: 28000 | round: 5 | strat: exploit | valution: 0.082 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0150 | hype: 0.821
-
-episode: 28100 | round: 1 | strat: exploit | valution: 0.085 | bid: 0.000 | opps: ['0.063', '0.205', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0148 | hype: 0.205
-episode: 28100 | round: 2 | strat: exploit | valution: 0.145 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0148 | hype: 0.410
-episode: 28100 | round: 3 | strat: exploit | valution: 0.145 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0148 | hype: 0.615
-episode: 28100 | round: 4 | strat: exploit | valution: 0.145 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0148 | hype: 0.821
-episode: 28100 | round: 5 | strat: exploit | valution: 0.145 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0148 | hype: 1.026
-
-episode: 28200 | round: 1 | strat: exploit | valution: 0.794 | bid: 0.760 | opps: ['0.507', '0.536', '0.400'] | won: False | reward: 0.0340 | epsilon: 0.0146 | hype: 0.760
-episode: 28200 | round: 2 | strat: exploit | valution: 0.777 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0146 | hype: 1.520
-episode: 28200 | round: 3 | strat: exploit | valution: 0.777 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0146 | hype: 2.280
-episode: 28200 | round: 4 | strat: exploit | valution: 0.777 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0146 | hype: 3.040
-episode: 28200 | round: 5 | strat: exploit | valution: 0.777 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0511 | epsilon: 0.0146 | hype: 3.800
-
-episode: 28300 | round: 1 | strat: exploit | valution: 0.549 | bid: 0.000 | opps: ['0.406', '0.450', '0.458'] | won: False | reward: 0.0000 | epsilon: 0.0144 | hype: 0.458
-episode: 28300 | round: 2 | strat: exploit | valution: 0.504 | bid: 0.000 | opps: ['None', '0.472', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0144 | hype: 0.930
-episode: 28300 | round: 3 | strat: exploit | valution: 0.510 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0144 | hype: 1.402
-episode: 28300 | round: 4 | strat: exploit | valution: 0.510 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0144 | hype: 1.874
-episode: 28300 | round: 5 | strat: exploit | valution: 0.510 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0144 | hype: 2.346
-
-episode: 28400 | round: 1 | strat: exploit | valution: 0.711 | bid: 0.700 | opps: ['0.682', '0.360', '0.634'] | won: False | reward: 0.0250 | epsilon: 0.0141 | hype: 0.700
-episode: 28400 | round: 2 | strat: exploit | valution: 0.705 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0250 | epsilon: 0.0141 | hype: 1.400
-episode: 28400 | round: 3 | strat: exploit | valution: 0.705 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0250 | epsilon: 0.0141 | hype: 2.100
-episode: 28400 | round: 4 | strat: exploit | valution: 0.705 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0250 | epsilon: 0.0141 | hype: 2.800
-episode: 28400 | round: 5 | strat: exploit | valution: 0.705 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0303 | epsilon: 0.0141 | hype: 3.500
-
-episode: 28500 | round: 1 | strat: exploit | valution: 1.000 | bid: 0.760 | opps: ['0.743', '0.703', '0.647'] | won: False | reward: 0.0340 | epsilon: 0.0139 | hype: 0.760
-episode: 28500 | round: 2 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0139 | hype: 1.520
-episode: 28500 | round: 3 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0139 | hype: 2.280
-episode: 28500 | round: 4 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0139 | hype: 3.040
-episode: 28500 | round: 5 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1540 | epsilon: 0.0139 | hype: 3.800
-
-episode: 28600 | round: 1 | strat: exploit | valution: 0.390 | bid: 0.000 | opps: ['0.290', '0.305', '0.210'] | won: False | reward: 0.0000 | epsilon: 0.0137 | hype: 0.305
-episode: 28600 | round: 2 | strat: exploit | valution: 0.348 | bid: 0.000 | opps: ['0.334', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0137 | hype: 0.640
-episode: 28600 | round: 3 | strat: exploit | valution: 0.362 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0137 | hype: 0.974
-episode: 28600 | round: 4 | strat: exploit | valution: 0.362 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0137 | hype: 1.309
-episode: 28600 | round: 5 | strat: exploit | valution: 0.362 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0137 | hype: 1.643
-
-episode: 28700 | round: 1 | strat: exploit | valution: 0.341 | bid: 0.000 | opps: ['0.242', '0.135', '0.124'] | won: False | reward: 0.0000 | epsilon: 0.0135 | hype: 0.242
-episode: 28700 | round: 2 | strat: exploit | valution: 0.292 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0135 | hype: 0.485
-episode: 28700 | round: 3 | strat: exploit | valution: 0.292 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0135 | hype: 0.727
-episode: 28700 | round: 4 | strat: exploit | valution: 0.292 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0135 | hype: 0.970
-episode: 28700 | round: 5 | strat: exploit | valution: 0.292 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0135 | hype: 1.212
-
-episode: 28800 | round: 1 | strat: exploit | valution: 0.395 | bid: 0.000 | opps: ['0.282', '0.328', '0.308'] | won: False | reward: 0.0000 | epsilon: 0.0133 | hype: 0.328
-episode: 28800 | round: 2 | strat: exploit | valution: 0.362 | bid: 0.000 | opps: ['0.339', 'None', '0.352'] | won: False | reward: 0.0000 | epsilon: 0.0133 | hype: 0.680
-episode: 28800 | round: 3 | strat: exploit | valution: 0.374 | bid: 0.000 | opps: ['0.423', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0133 | hype: 1.103
-episode: 28800 | round: 4 | strat: exploit | valution: 0.409 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0133 | hype: 1.526
-episode: 28800 | round: 5 | strat: exploit | valution: 0.409 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0133 | hype: 1.949
-
-episode: 28900 | round: 1 | strat: exploit | valution: 1.000 | bid: 0.760 | opps: ['0.733', '0.750', '0.530'] | won: False | reward: 0.0340 | epsilon: 0.0131 | hype: 0.760
-episode: 28900 | round: 2 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0131 | hype: 1.520
-episode: 28900 | round: 3 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0131 | hype: 2.280
-episode: 28900 | round: 4 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0131 | hype: 3.040
-episode: 28900 | round: 5 | strat: exploit | valution: 0.880 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1540 | epsilon: 0.0131 | hype: 3.800
-
-episode: 29000 | round: 1 | strat: exploit | valution: 0.820 | bid: 0.760 | opps: ['0.578', '0.750', '0.687'] | won: False | reward: 0.0340 | epsilon: 0.0129 | hype: 0.760
-episode: 29000 | round: 2 | strat: exploit | valution: 0.790 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0129 | hype: 1.520
-episode: 29000 | round: 3 | strat: exploit | valution: 0.790 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0129 | hype: 2.280
-episode: 29000 | round: 4 | strat: exploit | valution: 0.790 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0129 | hype: 3.040
-episode: 29000 | round: 5 | strat: exploit | valution: 0.790 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0640 | epsilon: 0.0129 | hype: 3.800
-
-episode: 29100 | round: 1 | strat: exploit | valution: 0.646 | bid: 0.640 | opps: ['0.508', '0.597', '0.489'] | won: False | reward: 0.0160 | epsilon: 0.0127 | hype: 0.640
-episode: 29100 | round: 2 | strat: exploit | valution: 0.643 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0127 | hype: 1.280
-episode: 29100 | round: 3 | strat: exploit | valution: 0.643 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0127 | hype: 1.920
-episode: 29100 | round: 4 | strat: exploit | valution: 0.643 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0127 | hype: 2.560
-episode: 29100 | round: 5 | strat: exploit | valution: 0.643 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0192 | epsilon: 0.0127 | hype: 3.200
-
-episode: 29200 | round: 1 | strat: exploit | valution: 0.278 | bid: 0.000 | opps: ['0.206', '0.149', '0.039'] | won: False | reward: 0.0000 | epsilon: 0.0125 | hype: 0.206
-episode: 29200 | round: 2 | strat: exploit | valution: 0.242 | bid: 0.000 | opps: ['None', '0.227', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0125 | hype: 0.433
-episode: 29200 | round: 3 | strat: exploit | valution: 0.252 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0125 | hype: 0.660
-episode: 29200 | round: 4 | strat: exploit | valution: 0.252 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0125 | hype: 0.887
-episode: 29200 | round: 5 | strat: exploit | valution: 0.252 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0125 | hype: 1.113
-
-episode: 29300 | round: 1 | strat: exploit | valution: 0.657 | bid: 0.640 | opps: ['0.522', '0.321', '0.421'] | won: False | reward: 0.0160 | epsilon: 0.0124 | hype: 0.640
-episode: 29300 | round: 2 | strat: exploit | valution: 0.648 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0124 | hype: 1.280
-episode: 29300 | round: 3 | strat: exploit | valution: 0.648 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0124 | hype: 1.920
-episode: 29300 | round: 4 | strat: exploit | valution: 0.648 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0160 | epsilon: 0.0124 | hype: 2.560
-episode: 29300 | round: 5 | strat: exploit | valution: 0.648 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0245 | epsilon: 0.0124 | hype: 3.200
-
-episode: 29400 | round: 1 | strat: exploit | valution: 0.792 | bid: 0.760 | opps: ['0.564', '0.663', '0.590'] | won: False | reward: 0.0340 | epsilon: 0.0122 | hype: 0.760
-episode: 29400 | round: 2 | strat: exploit | valution: 0.776 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0122 | hype: 1.520
-episode: 29400 | round: 3 | strat: exploit | valution: 0.776 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0122 | hype: 2.280
-episode: 29400 | round: 4 | strat: exploit | valution: 0.776 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0122 | hype: 3.040
-episode: 29400 | round: 5 | strat: exploit | valution: 0.776 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0502 | epsilon: 0.0122 | hype: 3.800
-
-episode: 29500 | round: 1 | strat: exploit | valution: 0.975 | bid: 0.760 | opps: ['0.639', '0.617', '0.678'] | won: False | reward: 0.0340 | epsilon: 0.0120 | hype: 0.760
-episode: 29500 | round: 2 | strat: exploit | valution: 0.868 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0120 | hype: 1.520
-episode: 29500 | round: 3 | strat: exploit | valution: 0.868 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0120 | hype: 2.280
-episode: 29500 | round: 4 | strat: exploit | valution: 0.868 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0340 | epsilon: 0.0120 | hype: 3.040
-episode: 29500 | round: 5 | strat: exploit | valution: 0.868 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.1416 | epsilon: 0.0120 | hype: 3.800
-
-episode: 29600 | round: 1 | strat: exploit | valution: 0.302 | bid: 0.000 | opps: ['0.179', '0.227', '0.335'] | won: False | reward: 0.0000 | epsilon: 0.0118 | hype: 0.335
-episode: 29600 | round: 2 | strat: exploit | valution: 0.318 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0118 | hype: 0.670
-episode: 29600 | round: 3 | strat: exploit | valution: 0.318 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0118 | hype: 1.005
-episode: 29600 | round: 4 | strat: exploit | valution: 0.318 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0118 | hype: 1.339
-episode: 29600 | round: 5 | strat: exploit | valution: 0.318 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0118 | hype: 1.674
-
-episode: 29700 | round: 1 | strat: exploit | valution: 0.133 | bid: 0.000 | opps: ['0.199', '0.268', '0.301'] | won: False | reward: 0.0000 | epsilon: 0.0116 | hype: 0.301
-episode: 29700 | round: 2 | strat: exploit | valution: 0.217 | bid: 0.000 | opps: ['None', '0.322', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0116 | hype: 0.623
-episode: 29700 | round: 3 | strat: exploit | valution: 0.227 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0116 | hype: 0.945
-episode: 29700 | round: 4 | strat: exploit | valution: 0.227 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0116 | hype: 1.267
-episode: 29700 | round: 5 | strat: exploit | valution: 0.227 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0116 | hype: 1.588
-
-episode: 29800 | round: 1 | strat: exploit | valution: 0.567 | bid: 0.000 | opps: ['0.248', '0.347', '0.286'] | won: False | reward: 0.0000 | epsilon: 0.0115 | hype: 0.347
-episode: 29800 | round: 2 | strat: exploit | valution: 0.457 | bid: 0.720 | opps: ['None', 'None', '0.348'] | won: False | reward: 0.1067 | epsilon: 0.0115 | hype: 1.067
-episode: 29800 | round: 3 | strat: exploit | valution: 0.644 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1067 | epsilon: 0.0115 | hype: 1.787
-episode: 29800 | round: 4 | strat: exploit | valution: 0.644 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.1067 | epsilon: 0.0115 | hype: 2.507
-episode: 29800 | round: 5 | strat: exploit | valution: 0.644 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: True | reward: 0.0304 | epsilon: 0.0115 | hype: 3.227
-
-episode: 29900 | round: 1 | strat: exploit | valution: 0.281 | bid: 0.000 | opps: ['0.203', '0.117', '0.143'] | won: False | reward: 0.0000 | epsilon: 0.0113 | hype: 0.203
-episode: 29900 | round: 2 | strat: exploit | valution: 0.242 | bid: 0.000 | opps: ['None', '0.209', '0.222'] | won: False | reward: 0.0000 | epsilon: 0.0113 | hype: 0.425
-episode: 29900 | round: 3 | strat: exploit | valution: 0.252 | bid: 0.000 | opps: ['None', '0.292', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0113 | hype: 0.717
-episode: 29900 | round: 4 | strat: exploit | valution: 0.286 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0113 | hype: 1.009
-episode: 29900 | round: 5 | strat: exploit | valution: 0.286 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0113 | hype: 1.300
-
-episode: 30000 | round: 1 | strat: exploit | valution: 0.097 | bid: 0.000 | opps: ['0.266', '0.209', '0.113'] | won: False | reward: 0.0000 | epsilon: 0.0111 | hype: 0.266
-episode: 30000 | round: 2 | strat: exploit | valution: 0.182 | bid: 0.000 | opps: ['None', '0.279', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0111 | hype: 0.545
-episode: 30000 | round: 3 | strat: exploit | valution: 0.188 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0111 | hype: 0.825
-episode: 30000 | round: 4 | strat: exploit | valution: 0.188 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0111 | hype: 1.104
-episode: 30000 | round: 5 | strat: exploit | valution: 0.188 | bid: 0.000 | opps: ['None', 'None', 'None'] | won: False | reward: 0.0000 | epsilon: 0.0111 | hype: 1.383
-
+episode: 20000 | round: 1 | strat: exploit | valution: 0.798 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0499 | hype: 0.000
+episode: 20000 | round: 2 | strat: exploit | valution: 0.798 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0499 | hype: 0.000
+episode: 20000 | round: 3 | strat: exploit | valution: 0.798 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0499 | hype: 0.000
+episode: 20000 | round: 4 | strat: exploit | valution: 0.798 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0499 | hype: 0.000
+episode: 20000 | round: 5 | strat: exploit | valution: 0.798 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.6175 | epsilon: 0.0499 | hype: 0.200
+
+episode: 20100 | round: 1 | strat: exploit | valution: 0.242 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0492 | hype: 0.000
+episode: 20100 | round: 2 | strat: exploit | valution: 0.242 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0492 | hype: 0.000
+episode: 20100 | round: 3 | strat: explore | valution: 0.242 | bid: 0.300 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0700 | epsilon: 0.0492 | hype: 0.300
+episode: 20100 | round: 4 | strat: exploit | valution: 0.242 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0700 | epsilon: 0.0492 | hype: 0.600
+episode: 20100 | round: 5 | strat: exploit | valution: 0.242 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.0117 | epsilon: 0.0492 | hype: 0.900
+
+episode: 20200 | round: 1 | strat: exploit | valution: 0.824 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0484 | hype: 0.000
+episode: 20200 | round: 2 | strat: exploit | valution: 0.824 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0484 | hype: 0.000
+episode: 20200 | round: 3 | strat: exploit | valution: 0.824 | bid: 0.210 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0250 | epsilon: 0.0484 | hype: 0.210
+episode: 20200 | round: 4 | strat: exploit | valution: 0.824 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0250 | epsilon: 0.0484 | hype: 0.420
+episode: 20200 | round: 5 | strat: exploit | valution: 0.824 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.6391 | epsilon: 0.0484 | hype: 0.630
+
+episode: 20300 | round: 1 | strat: exploit | valution: 0.134 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0477 | hype: 0.000
+episode: 20300 | round: 2 | strat: exploit | valution: 0.134 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0477 | hype: 0.000
+episode: 20300 | round: 3 | strat: exploit | valution: 0.134 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0477 | hype: 0.000
+episode: 20300 | round: 4 | strat: exploit | valution: 0.134 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0477 | hype: 0.000
+episode: 20300 | round: 5 | strat: exploit | valution: 0.134 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0477 | hype: 0.190
+
+episode: 20400 | round: 1 | strat: exploit | valution: 0.466 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0470 | hype: 0.000
+episode: 20400 | round: 2 | strat: exploit | valution: 0.466 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0470 | hype: 0.000
+episode: 20400 | round: 3 | strat: exploit | valution: 0.466 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0470 | hype: 0.000
+episode: 20400 | round: 4 | strat: exploit | valution: 0.466 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0470 | hype: 0.200
+episode: 20400 | round: 5 | strat: exploit | valution: 0.466 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.2865 | epsilon: 0.0470 | hype: 0.400
+
+episode: 20500 | round: 1 | strat: exploit | valution: 0.981 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0463 | hype: 0.000
+episode: 20500 | round: 2 | strat: exploit | valution: 0.981 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0463 | hype: 0.000
+episode: 20500 | round: 3 | strat: exploit | valution: 0.981 | bid: 0.220 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0300 | epsilon: 0.0463 | hype: 0.220
+episode: 20500 | round: 4 | strat: exploit | valution: 0.981 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0300 | epsilon: 0.0463 | hype: 0.440
+episode: 20500 | round: 5 | strat: exploit | valution: 0.981 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.7913 | epsilon: 0.0463 | hype: 0.660
+
+episode: 20600 | round: 1 | strat: exploit | valution: 0.764 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0456 | hype: 0.000
+episode: 20600 | round: 2 | strat: exploit | valution: 0.764 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0456 | hype: 0.000
+episode: 20600 | round: 3 | strat: exploit | valution: 0.764 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0456 | hype: 0.200
+episode: 20600 | round: 4 | strat: exploit | valution: 0.764 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0456 | hype: 0.400
+episode: 20600 | round: 5 | strat: exploit | valution: 0.764 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.5838 | epsilon: 0.0456 | hype: 0.600
+
+episode: 20700 | round: 1 | strat: exploit | valution: 0.911 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0449 | hype: 0.000
+episode: 20700 | round: 2 | strat: exploit | valution: 0.911 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0449 | hype: 0.000
+episode: 20700 | round: 3 | strat: exploit | valution: 0.911 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0449 | hype: 0.000
+episode: 20700 | round: 4 | strat: exploit | valution: 0.911 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0449 | hype: 0.000
+episode: 20700 | round: 5 | strat: exploit | valution: 0.911 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.7311 | epsilon: 0.0449 | hype: 0.200
+
+episode: 20800 | round: 1 | strat: exploit | valution: 0.181 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0443 | hype: 0.000
+episode: 20800 | round: 2 | strat: explore | valution: 0.181 | bid: 1.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.4200 | epsilon: 0.0443 | hype: 1.000
+episode: 20800 | round: 3 | strat: exploit | valution: 0.181 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.4200 | epsilon: 0.0443 | hype: 2.000
+episode: 20800 | round: 4 | strat: exploit | valution: 0.181 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.4200 | epsilon: 0.0443 | hype: 3.000
+episode: 20800 | round: 5 | strat: exploit | valution: 0.181 | bid: 0.840 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: -0.4793 | epsilon: 0.0443 | hype: 4.000
+
+episode: 20900 | round: 1 | strat: exploit | valution: 0.130 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0436 | hype: 0.000
+episode: 20900 | round: 2 | strat: exploit | valution: 0.130 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0436 | hype: 0.000
+episode: 20900 | round: 3 | strat: exploit | valution: 0.130 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0436 | hype: 0.000
+episode: 20900 | round: 4 | strat: exploit | valution: 0.130 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0436 | hype: 0.000
+episode: 20900 | round: 5 | strat: exploit | valution: 0.130 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0436 | hype: 0.190
+
+episode: 21000 | round: 1 | strat: exploit | valution: 0.498 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0429 | hype: 0.000
+episode: 21000 | round: 2 | strat: exploit | valution: 0.498 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0429 | hype: 0.000
+episode: 21000 | round: 3 | strat: exploit | valution: 0.498 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0429 | hype: 0.200
+episode: 21000 | round: 4 | strat: exploit | valution: 0.498 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0429 | hype: 0.400
+episode: 21000 | round: 5 | strat: exploit | valution: 0.498 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.3176 | epsilon: 0.0429 | hype: 0.600
+
+episode: 21100 | round: 1 | strat: exploit | valution: 0.707 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0423 | hype: 0.000
+episode: 21100 | round: 2 | strat: exploit | valution: 0.707 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0423 | hype: 0.000
+episode: 21100 | round: 3 | strat: exploit | valution: 0.707 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0423 | hype: 0.200
+episode: 21100 | round: 4 | strat: exploit | valution: 0.707 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0423 | hype: 0.400
+episode: 21100 | round: 5 | strat: exploit | valution: 0.707 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.5269 | epsilon: 0.0423 | hype: 0.600
+
+episode: 21200 | round: 1 | strat: exploit | valution: 0.766 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0417 | hype: 0.000
+episode: 21200 | round: 2 | strat: exploit | valution: 0.766 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0417 | hype: 0.000
+episode: 21200 | round: 3 | strat: exploit | valution: 0.766 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0417 | hype: 0.200
+episode: 21200 | round: 4 | strat: exploit | valution: 0.766 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0417 | hype: 0.400
+episode: 21200 | round: 5 | strat: exploit | valution: 0.766 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.5857 | epsilon: 0.0417 | hype: 0.600
+
+episode: 21300 | round: 1 | strat: exploit | valution: 0.664 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0411 | hype: 0.000
+episode: 21300 | round: 2 | strat: exploit | valution: 0.664 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0411 | hype: 0.000
+episode: 21300 | round: 3 | strat: explore | valution: 0.664 | bid: 0.220 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0300 | epsilon: 0.0411 | hype: 0.220
+episode: 21300 | round: 4 | strat: exploit | valution: 0.664 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0300 | epsilon: 0.0411 | hype: 0.440
+episode: 21300 | round: 5 | strat: exploit | valution: 0.664 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4739 | epsilon: 0.0411 | hype: 0.660
+
+episode: 21400 | round: 1 | strat: exploit | valution: 0.698 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0404 | hype: 0.000
+episode: 21400 | round: 2 | strat: exploit | valution: 0.698 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0404 | hype: 0.000
+episode: 21400 | round: 3 | strat: exploit | valution: 0.698 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0404 | hype: 0.200
+episode: 21400 | round: 4 | strat: exploit | valution: 0.698 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0404 | hype: 0.400
+episode: 21400 | round: 5 | strat: exploit | valution: 0.698 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.5182 | epsilon: 0.0404 | hype: 0.600
+
+episode: 21500 | round: 1 | strat: exploit | valution: 0.366 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0398 | hype: 0.000
+episode: 21500 | round: 2 | strat: exploit | valution: 0.366 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0398 | hype: 0.000
+episode: 21500 | round: 3 | strat: exploit | valution: 0.366 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0398 | hype: 0.000
+episode: 21500 | round: 4 | strat: exploit | valution: 0.366 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0398 | hype: 0.000
+episode: 21500 | round: 5 | strat: exploit | valution: 0.366 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.1864 | epsilon: 0.0398 | hype: 0.200
+
+episode: 21600 | round: 1 | strat: exploit | valution: 0.058 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0392 | hype: 0.000
+episode: 21600 | round: 2 | strat: exploit | valution: 0.058 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0392 | hype: 0.000
+episode: 21600 | round: 3 | strat: exploit | valution: 0.058 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0392 | hype: 0.000
+episode: 21600 | round: 4 | strat: exploit | valution: 0.058 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0392 | hype: 0.000
+episode: 21600 | round: 5 | strat: exploit | valution: 0.058 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0392 | hype: 0.190
+
+episode: 21700 | round: 1 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0387 | hype: 0.000
+episode: 21700 | round: 2 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0387 | hype: 0.000
+episode: 21700 | round: 3 | strat: exploit | valution: 0.849 | bid: 0.220 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0300 | epsilon: 0.0387 | hype: 0.220
+episode: 21700 | round: 4 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0300 | epsilon: 0.0387 | hype: 0.440
+episode: 21700 | round: 5 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.6587 | epsilon: 0.0387 | hype: 0.660
+
+episode: 21800 | round: 1 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0381 | hype: 0.000
+episode: 21800 | round: 2 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0381 | hype: 0.000
+episode: 21800 | round: 3 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0381 | hype: 0.000
+episode: 21800 | round: 4 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0381 | hype: 0.000
+episode: 21800 | round: 5 | strat: exploit | valution: 1.000 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.8200 | epsilon: 0.0381 | hype: 0.200
+
+episode: 21900 | round: 1 | strat: explore | valution: 0.272 | bid: 0.100 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0650 | epsilon: 0.0375 | hype: 0.100
+episode: 21900 | round: 2 | strat: exploit | valution: 0.272 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0650 | epsilon: 0.0375 | hype: 0.200
+episode: 21900 | round: 3 | strat: exploit | valution: 0.272 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0950 | epsilon: 0.0375 | hype: 0.400
+episode: 21900 | round: 4 | strat: exploit | valution: 0.272 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0950 | epsilon: 0.0375 | hype: 0.600
+episode: 21900 | round: 5 | strat: exploit | valution: 0.272 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: -0.0228 | epsilon: 0.0375 | hype: 0.800
+
+episode: 22000 | round: 1 | strat: exploit | valution: 0.329 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0370 | hype: 0.000
+episode: 22000 | round: 2 | strat: exploit | valution: 0.329 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0370 | hype: 0.000
+episode: 22000 | round: 3 | strat: exploit | valution: 0.329 | bid: 0.210 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0250 | epsilon: 0.0370 | hype: 0.210
+episode: 22000 | round: 4 | strat: exploit | valution: 0.329 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0250 | epsilon: 0.0370 | hype: 0.420
+episode: 22000 | round: 5 | strat: exploit | valution: 0.329 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.1438 | epsilon: 0.0370 | hype: 0.630
+
+episode: 22100 | round: 1 | strat: exploit | valution: 0.663 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0364 | hype: 0.000
+episode: 22100 | round: 2 | strat: exploit | valution: 0.663 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0364 | hype: 0.000
+episode: 22100 | round: 3 | strat: exploit | valution: 0.663 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0364 | hype: 0.000
+episode: 22100 | round: 4 | strat: exploit | valution: 0.663 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0364 | hype: 0.000
+episode: 22100 | round: 5 | strat: exploit | valution: 0.663 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4835 | epsilon: 0.0364 | hype: 0.200
+
+episode: 22200 | round: 1 | strat: exploit | valution: 0.007 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0359 | hype: 0.000
+episode: 22200 | round: 2 | strat: exploit | valution: 0.007 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0359 | hype: 0.000
+episode: 22200 | round: 3 | strat: exploit | valution: 0.007 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0359 | hype: 0.000
+episode: 22200 | round: 4 | strat: exploit | valution: 0.007 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0359 | hype: 0.000
+episode: 22200 | round: 5 | strat: exploit | valution: 0.007 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0359 | hype: 0.190
+
+episode: 22300 | round: 1 | strat: exploit | valution: 0.244 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0353 | hype: 0.000
+episode: 22300 | round: 2 | strat: exploit | valution: 0.244 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0353 | hype: 0.000
+episode: 22300 | round: 3 | strat: exploit | valution: 0.244 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0353 | hype: 0.200
+episode: 22300 | round: 4 | strat: exploit | valution: 0.244 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0353 | hype: 0.400
+episode: 22300 | round: 5 | strat: exploit | valution: 0.244 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.0642 | epsilon: 0.0353 | hype: 0.600
+
+episode: 22400 | round: 1 | strat: exploit | valution: 0.958 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0348 | hype: 0.000
+episode: 22400 | round: 2 | strat: exploit | valution: 0.958 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0348 | hype: 0.000
+episode: 22400 | round: 3 | strat: exploit | valution: 0.958 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0348 | hype: 0.000
+episode: 22400 | round: 4 | strat: exploit | valution: 0.958 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0348 | hype: 0.000
+episode: 22400 | round: 5 | strat: exploit | valution: 0.958 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.7777 | epsilon: 0.0348 | hype: 0.200
+
+episode: 22500 | round: 1 | strat: exploit | valution: 0.790 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0343 | hype: 0.000
+episode: 22500 | round: 2 | strat: exploit | valution: 0.790 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0343 | hype: 0.000
+episode: 22500 | round: 3 | strat: exploit | valution: 0.790 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0343 | hype: 0.000
+episode: 22500 | round: 4 | strat: exploit | valution: 0.790 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0343 | hype: 0.000
+episode: 22500 | round: 5 | strat: exploit | valution: 0.790 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.6105 | epsilon: 0.0343 | hype: 0.200
+
+episode: 22600 | round: 1 | strat: exploit | valution: 0.778 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0338 | hype: 0.000
+episode: 22600 | round: 2 | strat: exploit | valution: 0.778 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0338 | hype: 0.000
+episode: 22600 | round: 3 | strat: exploit | valution: 0.778 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0338 | hype: 0.200
+episode: 22600 | round: 4 | strat: exploit | valution: 0.778 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0338 | hype: 0.400
+episode: 22600 | round: 5 | strat: explore | valution: 0.778 | bid: 0.700 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.2677 | epsilon: 0.0338 | hype: 1.100
+
+episode: 22700 | round: 1 | strat: exploit | valution: 0.527 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0333 | hype: 0.000
+episode: 22700 | round: 2 | strat: exploit | valution: 0.527 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0333 | hype: 0.000
+episode: 22700 | round: 3 | strat: exploit | valution: 0.527 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0333 | hype: 0.000
+episode: 22700 | round: 4 | strat: explore | valution: 0.527 | bid: 1.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.4200 | epsilon: 0.0333 | hype: 1.000
+episode: 22700 | round: 5 | strat: exploit | valution: 0.527 | bid: 0.910 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: -0.1333 | epsilon: 0.0333 | hype: 2.000
+
+episode: 22800 | round: 1 | strat: exploit | valution: 0.339 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0328 | hype: 0.000
+episode: 22800 | round: 2 | strat: exploit | valution: 0.339 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0328 | hype: 0.000
+episode: 22800 | round: 3 | strat: exploit | valution: 0.339 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0328 | hype: 0.200
+episode: 22800 | round: 4 | strat: exploit | valution: 0.339 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0328 | hype: 0.400
+episode: 22800 | round: 5 | strat: exploit | valution: 0.339 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.1592 | epsilon: 0.0328 | hype: 0.600
+
+episode: 22900 | round: 1 | strat: exploit | valution: 0.667 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0323 | hype: 0.000
+episode: 22900 | round: 2 | strat: exploit | valution: 0.667 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0323 | hype: 0.000
+episode: 22900 | round: 3 | strat: exploit | valution: 0.667 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0323 | hype: 0.000
+episode: 22900 | round: 4 | strat: exploit | valution: 0.667 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0323 | hype: 0.200
+episode: 22900 | round: 5 | strat: exploit | valution: 0.667 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4872 | epsilon: 0.0323 | hype: 0.400
+
+episode: 23000 | round: 1 | strat: exploit | valution: 0.634 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0318 | hype: 0.000
+episode: 23000 | round: 2 | strat: exploit | valution: 0.634 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0318 | hype: 0.000
+episode: 23000 | round: 3 | strat: exploit | valution: 0.634 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0318 | hype: 0.000
+episode: 23000 | round: 4 | strat: exploit | valution: 0.634 | bid: 0.230 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0350 | epsilon: 0.0318 | hype: 0.230
+episode: 23000 | round: 5 | strat: exploit | valution: 0.634 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4386 | epsilon: 0.0318 | hype: 0.460
+
+episode: 23100 | round: 1 | strat: exploit | valution: 0.628 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0313 | hype: 0.000
+episode: 23100 | round: 2 | strat: exploit | valution: 0.628 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0313 | hype: 0.000
+episode: 23100 | round: 3 | strat: exploit | valution: 0.628 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0313 | hype: 0.000
+episode: 23100 | round: 4 | strat: exploit | valution: 0.628 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0313 | hype: 0.000
+episode: 23100 | round: 5 | strat: exploit | valution: 0.628 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4481 | epsilon: 0.0313 | hype: 0.200
+
+episode: 23200 | round: 1 | strat: exploit | valution: 0.658 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0309 | hype: 0.000
+episode: 23200 | round: 2 | strat: exploit | valution: 0.658 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0309 | hype: 0.000
+episode: 23200 | round: 3 | strat: exploit | valution: 0.658 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0309 | hype: 0.200
+episode: 23200 | round: 4 | strat: exploit | valution: 0.658 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0309 | hype: 0.400
+episode: 23200 | round: 5 | strat: explore | valution: 0.658 | bid: 0.660 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.1681 | epsilon: 0.0309 | hype: 1.060
+
+episode: 23300 | round: 1 | strat: exploit | valution: 0.557 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0304 | hype: 0.000
+episode: 23300 | round: 2 | strat: exploit | valution: 0.557 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0304 | hype: 0.000
+episode: 23300 | round: 3 | strat: exploit | valution: 0.557 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0304 | hype: 0.000
+episode: 23300 | round: 4 | strat: exploit | valution: 0.557 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0304 | hype: 0.000
+episode: 23300 | round: 5 | strat: exploit | valution: 0.557 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.3771 | epsilon: 0.0304 | hype: 0.200
+
+episode: 23400 | round: 1 | strat: exploit | valution: 0.477 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0300 | hype: 0.000
+episode: 23400 | round: 2 | strat: exploit | valution: 0.477 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0300 | hype: 0.000
+episode: 23400 | round: 3 | strat: exploit | valution: 0.477 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0300 | hype: 0.200
+episode: 23400 | round: 4 | strat: exploit | valution: 0.477 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0300 | hype: 0.400
+episode: 23400 | round: 5 | strat: explore | valution: 0.477 | bid: 0.650 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: -0.0080 | epsilon: 0.0300 | hype: 1.050
+
+episode: 23500 | round: 1 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0295 | hype: 0.000
+episode: 23500 | round: 2 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0295 | hype: 0.000
+episode: 23500 | round: 3 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0295 | hype: 0.000
+episode: 23500 | round: 4 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0295 | hype: 0.000
+episode: 23500 | round: 5 | strat: exploit | valution: 0.000 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0295 | hype: 0.190
+
+episode: 23600 | round: 1 | strat: exploit | valution: 0.512 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0291 | hype: 0.000
+episode: 23600 | round: 2 | strat: explore | valution: 0.512 | bid: 0.340 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0900 | epsilon: 0.0291 | hype: 0.340
+episode: 23600 | round: 3 | strat: exploit | valution: 0.512 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0900 | epsilon: 0.0291 | hype: 0.680
+episode: 23600 | round: 4 | strat: exploit | valution: 0.512 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0900 | epsilon: 0.0291 | hype: 1.020
+episode: 23600 | round: 5 | strat: exploit | valution: 0.512 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.2618 | epsilon: 0.0291 | hype: 1.360
+
+episode: 23700 | round: 1 | strat: exploit | valution: 0.189 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0286 | hype: 0.000
+episode: 23700 | round: 2 | strat: exploit | valution: 0.189 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0286 | hype: 0.000
+episode: 23700 | round: 3 | strat: exploit | valution: 0.189 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0286 | hype: 0.200
+episode: 23700 | round: 4 | strat: exploit | valution: 0.189 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0286 | hype: 0.400
+episode: 23700 | round: 5 | strat: exploit | valution: 0.189 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.0087 | epsilon: 0.0286 | hype: 0.600
+
+episode: 23800 | round: 1 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0282 | hype: 0.000
+episode: 23800 | round: 2 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0282 | hype: 0.000
+episode: 23800 | round: 3 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0282 | hype: 0.000
+episode: 23800 | round: 4 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0282 | hype: 0.000
+episode: 23800 | round: 5 | strat: exploit | valution: 1.000 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.8200 | epsilon: 0.0282 | hype: 0.200
+
+episode: 23900 | round: 1 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0278 | hype: 0.000
+episode: 23900 | round: 2 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0278 | hype: 0.000
+episode: 23900 | round: 3 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0278 | hype: 0.000
+episode: 23900 | round: 4 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0278 | hype: 0.000
+episode: 23900 | round: 5 | strat: explore | valution: 1.000 | bid: 0.420 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.7100 | epsilon: 0.0278 | hype: 0.420
+
+episode: 24000 | round: 1 | strat: exploit | valution: 0.410 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0274 | hype: 0.000
+episode: 24000 | round: 2 | strat: explore | valution: 0.410 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0274 | hype: 0.190
+episode: 24000 | round: 3 | strat: exploit | valution: 0.410 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0274 | hype: 0.380
+episode: 24000 | round: 4 | strat: exploit | valution: 0.410 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0274 | hype: 0.570
+episode: 24000 | round: 5 | strat: exploit | valution: 0.410 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0274 | hype: 0.760
+
+episode: 24100 | round: 1 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0270 | hype: 0.000
+episode: 24100 | round: 2 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0270 | hype: 0.000
+episode: 24100 | round: 3 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0270 | hype: 0.000
+episode: 24100 | round: 4 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0270 | hype: 0.000
+episode: 24100 | round: 5 | strat: exploit | valution: 0.000 | bid: 0.180 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0100 | epsilon: 0.0270 | hype: 0.180
+
+episode: 24200 | round: 1 | strat: explore | valution: 0.000 | bid: 0.540 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0010 | epsilon: 0.0266 | hype: 0.540
+episode: 24200 | round: 2 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0010 | epsilon: 0.0266 | hype: 1.080
+episode: 24200 | round: 3 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0010 | epsilon: 0.0266 | hype: 1.620
+episode: 24200 | round: 4 | strat: exploit | valution: 0.000 | bid: 0.030 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0790 | epsilon: 0.0266 | hype: 2.160
+episode: 24200 | round: 5 | strat: exploit | valution: 0.000 | bid: 0.030 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: -0.6990 | epsilon: 0.0266 | hype: 2.700
+
+episode: 24300 | round: 1 | strat: exploit | valution: 0.693 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0262 | hype: 0.000
+episode: 24300 | round: 2 | strat: exploit | valution: 0.693 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0262 | hype: 0.000
+episode: 24300 | round: 3 | strat: exploit | valution: 0.693 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0262 | hype: 0.000
+episode: 24300 | round: 4 | strat: exploit | valution: 0.693 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0262 | hype: 0.200
+episode: 24300 | round: 5 | strat: exploit | valution: 0.693 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.5129 | epsilon: 0.0262 | hype: 0.400
+
+episode: 24400 | round: 1 | strat: exploit | valution: 0.389 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0258 | hype: 0.000
+episode: 24400 | round: 2 | strat: exploit | valution: 0.389 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0258 | hype: 0.000
+episode: 24400 | round: 3 | strat: exploit | valution: 0.389 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0258 | hype: 0.200
+episode: 24400 | round: 4 | strat: exploit | valution: 0.389 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0258 | hype: 0.400
+episode: 24400 | round: 5 | strat: exploit | valution: 0.389 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.2086 | epsilon: 0.0258 | hype: 0.600
+
+episode: 24500 | round: 1 | strat: exploit | valution: 0.192 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0254 | hype: 0.000
+episode: 24500 | round: 2 | strat: exploit | valution: 0.192 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0254 | hype: 0.000
+episode: 24500 | round: 3 | strat: exploit | valution: 0.192 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0254 | hype: 0.190
+episode: 24500 | round: 4 | strat: exploit | valution: 0.192 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0254 | hype: 0.380
+episode: 24500 | round: 5 | strat: exploit | valution: 0.192 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0254 | hype: 0.570
+
+episode: 24600 | round: 1 | strat: exploit | valution: 0.562 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0250 | hype: 0.000
+episode: 24600 | round: 2 | strat: exploit | valution: 0.562 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0250 | hype: 0.000
+episode: 24600 | round: 3 | strat: exploit | valution: 0.562 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0250 | hype: 0.200
+episode: 24600 | round: 4 | strat: exploit | valution: 0.562 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0250 | hype: 0.400
+episode: 24600 | round: 5 | strat: exploit | valution: 0.562 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.3821 | epsilon: 0.0250 | hype: 0.600
+
+episode: 24700 | round: 1 | strat: exploit | valution: 0.139 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0246 | hype: 0.000
+episode: 24700 | round: 2 | strat: exploit | valution: 0.139 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0246 | hype: 0.000
+episode: 24700 | round: 3 | strat: exploit | valution: 0.139 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0246 | hype: 0.000
+episode: 24700 | round: 4 | strat: exploit | valution: 0.139 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0246 | hype: 0.000
+episode: 24700 | round: 5 | strat: exploit | valution: 0.139 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0246 | hype: 0.190
+
+episode: 24800 | round: 1 | strat: exploit | valution: 0.781 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0243 | hype: 0.000
+episode: 24800 | round: 2 | strat: exploit | valution: 0.781 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0243 | hype: 0.000
+episode: 24800 | round: 3 | strat: exploit | valution: 0.781 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0243 | hype: 0.200
+episode: 24800 | round: 4 | strat: exploit | valution: 0.781 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0243 | hype: 0.400
+episode: 24800 | round: 5 | strat: exploit | valution: 0.781 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.6012 | epsilon: 0.0243 | hype: 0.600
+
+episode: 24900 | round: 1 | strat: exploit | valution: 0.357 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0239 | hype: 0.000
+episode: 24900 | round: 2 | strat: exploit | valution: 0.357 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0239 | hype: 0.000
+episode: 24900 | round: 3 | strat: exploit | valution: 0.357 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0239 | hype: 0.200
+episode: 24900 | round: 4 | strat: exploit | valution: 0.357 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0239 | hype: 0.400
+episode: 24900 | round: 5 | strat: exploit | valution: 0.357 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.1765 | epsilon: 0.0239 | hype: 0.600
+
+episode: 25000 | round: 1 | strat: exploit | valution: 0.967 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0236 | hype: 0.000
+episode: 25000 | round: 2 | strat: exploit | valution: 0.967 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0236 | hype: 0.000
+episode: 25000 | round: 3 | strat: exploit | valution: 0.967 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0236 | hype: 0.000
+episode: 25000 | round: 4 | strat: exploit | valution: 0.967 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0236 | hype: 0.000
+episode: 25000 | round: 5 | strat: exploit | valution: 0.967 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.7873 | epsilon: 0.0236 | hype: 0.200
+
+episode: 25100 | round: 1 | strat: exploit | valution: 0.130 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0232 | hype: 0.000
+episode: 25100 | round: 2 | strat: explore | valution: 0.130 | bid: 0.280 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0600 | epsilon: 0.0232 | hype: 0.280
+episode: 25100 | round: 3 | strat: exploit | valution: 0.130 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0600 | epsilon: 0.0232 | hype: 0.560
+episode: 25100 | round: 4 | strat: exploit | valution: 0.130 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0600 | epsilon: 0.0232 | hype: 0.840
+episode: 25100 | round: 5 | strat: exploit | valution: 0.130 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: -0.0903 | epsilon: 0.0232 | hype: 1.120
+
+episode: 25200 | round: 1 | strat: exploit | valution: 0.646 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0229 | hype: 0.000
+episode: 25200 | round: 2 | strat: exploit | valution: 0.646 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0229 | hype: 0.000
+episode: 25200 | round: 3 | strat: exploit | valution: 0.646 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0229 | hype: 0.000
+episode: 25200 | round: 4 | strat: exploit | valution: 0.646 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0229 | hype: 0.000
+episode: 25200 | round: 5 | strat: exploit | valution: 0.646 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4664 | epsilon: 0.0229 | hype: 0.200
+
+episode: 25300 | round: 1 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0225 | hype: 0.000
+episode: 25300 | round: 2 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0225 | hype: 0.000
+episode: 25300 | round: 3 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0225 | hype: 0.000
+episode: 25300 | round: 4 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0225 | hype: 0.000
+episode: 25300 | round: 5 | strat: exploit | valution: 1.000 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.8200 | epsilon: 0.0225 | hype: 0.200
+
+episode: 25400 | round: 1 | strat: explore | valution: 0.240 | bid: 0.180 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0530 | epsilon: 0.0222 | hype: 0.180
+episode: 25400 | round: 2 | strat: exploit | valution: 0.240 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0530 | epsilon: 0.0222 | hype: 0.360
+episode: 25400 | round: 3 | strat: exploit | valution: 0.240 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0530 | epsilon: 0.0222 | hype: 0.540
+episode: 25400 | round: 4 | strat: exploit | valution: 0.240 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0530 | epsilon: 0.0222 | hype: 0.720
+episode: 25400 | round: 5 | strat: exploit | valution: 0.240 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0530 | epsilon: 0.0222 | hype: 0.900
+
+episode: 25500 | round: 1 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0219 | hype: 0.000
+episode: 25500 | round: 2 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0219 | hype: 0.000
+episode: 25500 | round: 3 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0219 | hype: 0.000
+episode: 25500 | round: 4 | strat: exploit | valution: 1.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0219 | hype: 0.000
+episode: 25500 | round: 5 | strat: exploit | valution: 1.000 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.8200 | epsilon: 0.0219 | hype: 0.200
+
+episode: 25600 | round: 1 | strat: exploit | valution: 0.131 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0215 | hype: 0.000
+episode: 25600 | round: 2 | strat: exploit | valution: 0.131 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0215 | hype: 0.000
+episode: 25600 | round: 3 | strat: exploit | valution: 0.131 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0215 | hype: 0.000
+episode: 25600 | round: 4 | strat: exploit | valution: 0.131 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0215 | hype: 0.000
+episode: 25600 | round: 5 | strat: exploit | valution: 0.131 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0215 | hype: 0.190
+
+episode: 25700 | round: 1 | strat: exploit | valution: 0.929 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0212 | hype: 0.000
+episode: 25700 | round: 2 | strat: exploit | valution: 0.929 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0212 | hype: 0.000
+episode: 25700 | round: 3 | strat: exploit | valution: 0.929 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0212 | hype: 0.000
+episode: 25700 | round: 4 | strat: exploit | valution: 0.929 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0212 | hype: 0.000
+episode: 25700 | round: 5 | strat: exploit | valution: 0.929 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.7488 | epsilon: 0.0212 | hype: 0.200
+
+episode: 25800 | round: 1 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0209 | hype: 0.000
+episode: 25800 | round: 2 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0209 | hype: 0.000
+episode: 25800 | round: 3 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0209 | hype: 0.000
+episode: 25800 | round: 4 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0209 | hype: 0.000
+episode: 25800 | round: 5 | strat: exploit | valution: 0.000 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0209 | hype: 0.190
+
+episode: 25900 | round: 1 | strat: exploit | valution: 0.874 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0206 | hype: 0.000
+episode: 25900 | round: 2 | strat: exploit | valution: 0.874 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0206 | hype: 0.000
+episode: 25900 | round: 3 | strat: exploit | valution: 0.874 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0206 | hype: 0.200
+episode: 25900 | round: 4 | strat: exploit | valution: 0.874 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0206 | hype: 0.400
+episode: 25900 | round: 5 | strat: exploit | valution: 0.874 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.6944 | epsilon: 0.0206 | hype: 0.600
+
+episode: 26000 | round: 1 | strat: exploit | valution: 0.456 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0203 | hype: 0.000
+episode: 26000 | round: 2 | strat: exploit | valution: 0.456 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0203 | hype: 0.000
+episode: 26000 | round: 3 | strat: exploit | valution: 0.456 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0203 | hype: 0.000
+episode: 26000 | round: 4 | strat: exploit | valution: 0.456 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0203 | hype: 0.200
+episode: 26000 | round: 5 | strat: exploit | valution: 0.456 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.2763 | epsilon: 0.0203 | hype: 0.400
+
+episode: 26100 | round: 1 | strat: exploit | valution: 0.218 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0200 | hype: 0.000
+episode: 26100 | round: 2 | strat: exploit | valution: 0.218 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0200 | hype: 0.000
+episode: 26100 | round: 3 | strat: exploit | valution: 0.218 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0200 | hype: 0.000
+episode: 26100 | round: 4 | strat: exploit | valution: 0.218 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0200 | hype: 0.200
+episode: 26100 | round: 5 | strat: explore | valution: 0.218 | bid: 0.090 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: -0.0416 | epsilon: 0.0200 | hype: 0.400
+
+episode: 26200 | round: 1 | strat: exploit | valution: 0.472 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0197 | hype: 0.000
+episode: 26200 | round: 2 | strat: exploit | valution: 0.472 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0197 | hype: 0.000
+episode: 26200 | round: 3 | strat: exploit | valution: 0.472 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0197 | hype: 0.000
+episode: 26200 | round: 4 | strat: exploit | valution: 0.472 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0197 | hype: 0.000
+episode: 26200 | round: 5 | strat: exploit | valution: 0.472 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.2916 | epsilon: 0.0197 | hype: 0.200
+
+episode: 26300 | round: 1 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0194 | hype: 0.000
+episode: 26300 | round: 2 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0194 | hype: 0.000
+episode: 26300 | round: 3 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0194 | hype: 0.000
+episode: 26300 | round: 4 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0194 | hype: 0.000
+episode: 26300 | round: 5 | strat: exploit | valution: 0.000 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0194 | hype: 0.190
+
+episode: 26400 | round: 1 | strat: exploit | valution: 0.501 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0191 | hype: 0.000
+episode: 26400 | round: 2 | strat: exploit | valution: 0.501 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0191 | hype: 0.000
+episode: 26400 | round: 3 | strat: exploit | valution: 0.501 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0191 | hype: 0.200
+episode: 26400 | round: 4 | strat: exploit | valution: 0.501 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0191 | hype: 0.400
+episode: 26400 | round: 5 | strat: exploit | valution: 0.501 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.3207 | epsilon: 0.0191 | hype: 0.600
+
+episode: 26500 | round: 1 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0188 | hype: 0.000
+episode: 26500 | round: 2 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0188 | hype: 0.000
+episode: 26500 | round: 3 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0188 | hype: 0.000
+episode: 26500 | round: 4 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0188 | hype: 0.000
+episode: 26500 | round: 5 | strat: exploit | valution: 0.677 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4965 | epsilon: 0.0188 | hype: 0.200
+
+episode: 26600 | round: 1 | strat: exploit | valution: 0.101 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0185 | hype: 0.000
+episode: 26600 | round: 2 | strat: exploit | valution: 0.101 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0185 | hype: 0.000
+episode: 26600 | round: 3 | strat: exploit | valution: 0.101 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0185 | hype: 0.000
+episode: 26600 | round: 4 | strat: exploit | valution: 0.101 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0185 | hype: 0.000
+episode: 26600 | round: 5 | strat: exploit | valution: 0.101 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0185 | hype: 0.190
+
+episode: 26700 | round: 1 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0183 | hype: 0.000
+episode: 26700 | round: 2 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0183 | hype: 0.000
+episode: 26700 | round: 3 | strat: exploit | valution: 0.677 | bid: 0.210 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0250 | epsilon: 0.0183 | hype: 0.210
+episode: 26700 | round: 4 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0250 | epsilon: 0.0183 | hype: 0.420
+episode: 26700 | round: 5 | strat: exploit | valution: 0.677 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4921 | epsilon: 0.0183 | hype: 0.630
+
+episode: 26800 | round: 1 | strat: exploit | valution: 0.726 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0180 | hype: 0.000
+episode: 26800 | round: 2 | strat: exploit | valution: 0.726 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0180 | hype: 0.000
+episode: 26800 | round: 3 | strat: exploit | valution: 0.726 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0180 | hype: 0.200
+episode: 26800 | round: 4 | strat: exploit | valution: 0.726 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0180 | hype: 0.400
+episode: 26800 | round: 5 | strat: exploit | valution: 0.726 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.5455 | epsilon: 0.0180 | hype: 0.600
+
+episode: 26900 | round: 1 | strat: exploit | valution: 0.684 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0177 | hype: 0.000
+episode: 26900 | round: 2 | strat: exploit | valution: 0.684 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0177 | hype: 0.000
+episode: 26900 | round: 3 | strat: exploit | valution: 0.684 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0177 | hype: 0.000
+episode: 26900 | round: 4 | strat: exploit | valution: 0.684 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0177 | hype: 0.000
+episode: 26900 | round: 5 | strat: exploit | valution: 0.684 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.5037 | epsilon: 0.0177 | hype: 0.200
+
+episode: 27000 | round: 1 | strat: explore | valution: 0.849 | bid: 0.880 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0520 | epsilon: 0.0174 | hype: 0.880
+episode: 27000 | round: 2 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0520 | epsilon: 0.0174 | hype: 1.760
+episode: 27000 | round: 3 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0520 | epsilon: 0.0174 | hype: 2.640
+episode: 27000 | round: 4 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0520 | epsilon: 0.0174 | hype: 3.520
+episode: 27000 | round: 5 | strat: exploit | valution: 0.849 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.0212 | epsilon: 0.0174 | hype: 4.400
+
+episode: 27100 | round: 1 | strat: exploit | valution: 0.902 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0172 | hype: 0.000
+episode: 27100 | round: 2 | strat: exploit | valution: 0.902 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0172 | hype: 0.000
+episode: 27100 | round: 3 | strat: exploit | valution: 0.902 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0172 | hype: 0.000
+episode: 27100 | round: 4 | strat: exploit | valution: 0.902 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0172 | hype: 0.200
+episode: 27100 | round: 5 | strat: exploit | valution: 0.902 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.7221 | epsilon: 0.0172 | hype: 0.400
+
+episode: 27200 | round: 1 | strat: exploit | valution: 0.680 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0169 | hype: 0.000
+episode: 27200 | round: 2 | strat: exploit | valution: 0.680 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0169 | hype: 0.000
+episode: 27200 | round: 3 | strat: exploit | valution: 0.680 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0169 | hype: 0.200
+episode: 27200 | round: 4 | strat: exploit | valution: 0.680 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0169 | hype: 0.400
+episode: 27200 | round: 5 | strat: exploit | valution: 0.680 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4995 | epsilon: 0.0169 | hype: 0.600
+
+episode: 27300 | round: 1 | strat: exploit | valution: 0.450 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0167 | hype: 0.000
+episode: 27300 | round: 2 | strat: exploit | valution: 0.450 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0167 | hype: 0.000
+episode: 27300 | round: 3 | strat: exploit | valution: 0.450 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0167 | hype: 0.200
+episode: 27300 | round: 4 | strat: exploit | valution: 0.450 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0167 | hype: 0.400
+episode: 27300 | round: 5 | strat: exploit | valution: 0.450 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.2696 | epsilon: 0.0167 | hype: 0.600
+
+episode: 27400 | round: 1 | strat: exploit | valution: 0.686 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0164 | hype: 0.000
+episode: 27400 | round: 2 | strat: exploit | valution: 0.686 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0164 | hype: 0.000
+episode: 27400 | round: 3 | strat: exploit | valution: 0.686 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0164 | hype: 0.000
+episode: 27400 | round: 4 | strat: exploit | valution: 0.686 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0164 | hype: 0.200
+episode: 27400 | round: 5 | strat: exploit | valution: 0.686 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.5060 | epsilon: 0.0164 | hype: 0.400
+
+episode: 27500 | round: 1 | strat: exploit | valution: 0.141 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0162 | hype: 0.000
+episode: 27500 | round: 2 | strat: exploit | valution: 0.141 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0162 | hype: 0.000
+episode: 27500 | round: 3 | strat: exploit | valution: 0.141 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0162 | hype: 0.000
+episode: 27500 | round: 4 | strat: exploit | valution: 0.141 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0162 | hype: 0.000
+episode: 27500 | round: 5 | strat: exploit | valution: 0.141 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0162 | hype: 0.190
+
+episode: 27600 | round: 1 | strat: exploit | valution: 0.787 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0159 | hype: 0.000
+episode: 27600 | round: 2 | strat: exploit | valution: 0.787 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0159 | hype: 0.000
+episode: 27600 | round: 3 | strat: exploit | valution: 0.787 | bid: 0.230 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0350 | epsilon: 0.0159 | hype: 0.230
+episode: 27600 | round: 4 | strat: exploit | valution: 0.787 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0350 | epsilon: 0.0159 | hype: 0.460
+episode: 27600 | round: 5 | strat: exploit | valution: 0.787 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.5919 | epsilon: 0.0159 | hype: 0.690
+
+episode: 27700 | round: 1 | strat: exploit | valution: 0.271 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0157 | hype: 0.000
+episode: 27700 | round: 2 | strat: exploit | valution: 0.271 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0157 | hype: 0.000
+episode: 27700 | round: 3 | strat: exploit | valution: 0.271 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0157 | hype: 0.000
+episode: 27700 | round: 4 | strat: exploit | valution: 0.271 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0157 | hype: 0.200
+episode: 27700 | round: 5 | strat: exploit | valution: 0.271 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.0908 | epsilon: 0.0157 | hype: 0.400
+
+episode: 27800 | round: 1 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0155 | hype: 0.000
+episode: 27800 | round: 2 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0155 | hype: 0.000
+episode: 27800 | round: 3 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0155 | hype: 0.000
+episode: 27800 | round: 4 | strat: exploit | valution: 0.000 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0155 | hype: 0.000
+episode: 27800 | round: 5 | strat: exploit | valution: 0.000 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0155 | hype: 0.190
+
+episode: 27900 | round: 1 | strat: exploit | valution: 0.809 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0152 | hype: 0.000
+episode: 27900 | round: 2 | strat: exploit | valution: 0.809 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0152 | hype: 0.000
+episode: 27900 | round: 3 | strat: exploit | valution: 0.809 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0152 | hype: 0.200
+episode: 27900 | round: 4 | strat: exploit | valution: 0.809 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0152 | hype: 0.400
+episode: 27900 | round: 5 | strat: exploit | valution: 0.809 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.6286 | epsilon: 0.0152 | hype: 0.600
+
+episode: 28000 | round: 1 | strat: exploit | valution: 0.493 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0150 | hype: 0.000
+episode: 28000 | round: 2 | strat: exploit | valution: 0.493 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0150 | hype: 0.000
+episode: 28000 | round: 3 | strat: exploit | valution: 0.493 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0150 | hype: 0.200
+episode: 28000 | round: 4 | strat: exploit | valution: 0.493 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0150 | hype: 0.400
+episode: 28000 | round: 5 | strat: exploit | valution: 0.493 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.3126 | epsilon: 0.0150 | hype: 0.600
+
+episode: 28100 | round: 1 | strat: exploit | valution: 0.269 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0148 | hype: 0.000
+episode: 28100 | round: 2 | strat: exploit | valution: 0.269 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0148 | hype: 0.000
+episode: 28100 | round: 3 | strat: exploit | valution: 0.269 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0148 | hype: 0.000
+episode: 28100 | round: 4 | strat: exploit | valution: 0.269 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0148 | hype: 0.200
+episode: 28100 | round: 5 | strat: exploit | valution: 0.269 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.0892 | epsilon: 0.0148 | hype: 0.400
+
+episode: 28200 | round: 1 | strat: exploit | valution: 0.765 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0146 | hype: 0.000
+episode: 28200 | round: 2 | strat: exploit | valution: 0.765 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0146 | hype: 0.000
+episode: 28200 | round: 3 | strat: exploit | valution: 0.765 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0146 | hype: 0.200
+episode: 28200 | round: 4 | strat: exploit | valution: 0.765 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0146 | hype: 0.400
+episode: 28200 | round: 5 | strat: exploit | valution: 0.765 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.5847 | epsilon: 0.0146 | hype: 0.600
+
+episode: 28300 | round: 1 | strat: exploit | valution: 0.671 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0144 | hype: 0.000
+episode: 28300 | round: 2 | strat: exploit | valution: 0.671 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0144 | hype: 0.000
+episode: 28300 | round: 3 | strat: exploit | valution: 0.671 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0144 | hype: 0.000
+episode: 28300 | round: 4 | strat: exploit | valution: 0.671 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0144 | hype: 0.000
+episode: 28300 | round: 5 | strat: exploit | valution: 0.671 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4906 | epsilon: 0.0144 | hype: 0.200
+
+episode: 28400 | round: 1 | strat: exploit | valution: 0.285 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0141 | hype: 0.000
+episode: 28400 | round: 2 | strat: exploit | valution: 0.285 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0141 | hype: 0.000
+episode: 28400 | round: 3 | strat: exploit | valution: 0.285 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0141 | hype: 0.200
+episode: 28400 | round: 4 | strat: exploit | valution: 0.285 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0141 | hype: 0.400
+episode: 28400 | round: 5 | strat: exploit | valution: 0.285 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.1052 | epsilon: 0.0141 | hype: 0.600
+
+episode: 28500 | round: 1 | strat: exploit | valution: 0.292 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0139 | hype: 0.000
+episode: 28500 | round: 2 | strat: exploit | valution: 0.292 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0139 | hype: 0.000
+episode: 28500 | round: 3 | strat: exploit | valution: 0.292 | bid: 0.180 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0100 | epsilon: 0.0139 | hype: 0.180
+episode: 28500 | round: 4 | strat: exploit | valution: 0.292 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0100 | epsilon: 0.0139 | hype: 0.360
+episode: 28500 | round: 5 | strat: explore | valution: 0.292 | bid: 0.110 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: -0.0700 | epsilon: 0.0139 | hype: 0.540
+
+episode: 28600 | round: 1 | strat: exploit | valution: 0.845 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0137 | hype: 0.000
+episode: 28600 | round: 2 | strat: exploit | valution: 0.845 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0137 | hype: 0.000
+episode: 28600 | round: 3 | strat: exploit | valution: 0.845 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0137 | hype: 0.200
+episode: 28600 | round: 4 | strat: exploit | valution: 0.845 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0137 | hype: 0.400
+episode: 28600 | round: 5 | strat: exploit | valution: 0.845 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.6646 | epsilon: 0.0137 | hype: 0.600
+
+episode: 28700 | round: 1 | strat: exploit | valution: 0.553 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0135 | hype: 0.000
+episode: 28700 | round: 2 | strat: exploit | valution: 0.553 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0135 | hype: 0.000
+episode: 28700 | round: 3 | strat: exploit | valution: 0.553 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0135 | hype: 0.000
+episode: 28700 | round: 4 | strat: exploit | valution: 0.553 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0135 | hype: 0.200
+episode: 28700 | round: 5 | strat: exploit | valution: 0.553 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.3731 | epsilon: 0.0135 | hype: 0.400
+
+episode: 28800 | round: 1 | strat: exploit | valution: 0.794 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0133 | hype: 0.000
+episode: 28800 | round: 2 | strat: exploit | valution: 0.794 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0133 | hype: 0.000
+episode: 28800 | round: 3 | strat: exploit | valution: 0.794 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0133 | hype: 0.000
+episode: 28800 | round: 4 | strat: exploit | valution: 0.794 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0133 | hype: 0.200
+episode: 28800 | round: 5 | strat: exploit | valution: 0.794 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.6143 | epsilon: 0.0133 | hype: 0.400
+
+episode: 28900 | round: 1 | strat: exploit | valution: 0.096 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0131 | hype: 0.000
+episode: 28900 | round: 2 | strat: exploit | valution: 0.096 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0131 | hype: 0.000
+episode: 28900 | round: 3 | strat: exploit | valution: 0.096 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0131 | hype: 0.000
+episode: 28900 | round: 4 | strat: exploit | valution: 0.096 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0131 | hype: 0.000
+episode: 28900 | round: 5 | strat: exploit | valution: 0.096 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0131 | hype: 0.190
+
+episode: 29000 | round: 1 | strat: exploit | valution: 0.664 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0129 | hype: 0.000
+episode: 29000 | round: 2 | strat: exploit | valution: 0.664 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0129 | hype: 0.000
+episode: 29000 | round: 3 | strat: exploit | valution: 0.664 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0129 | hype: 0.000
+episode: 29000 | round: 4 | strat: exploit | valution: 0.664 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0129 | hype: 0.200
+episode: 29000 | round: 5 | strat: exploit | valution: 0.664 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4839 | epsilon: 0.0129 | hype: 0.400
+
+episode: 29100 | round: 1 | strat: exploit | valution: 0.087 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0127 | hype: 0.000
+episode: 29100 | round: 2 | strat: exploit | valution: 0.087 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0127 | hype: 0.000
+episode: 29100 | round: 3 | strat: exploit | valution: 0.087 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0127 | hype: 0.000
+episode: 29100 | round: 4 | strat: exploit | valution: 0.087 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0127 | hype: 0.000
+episode: 29100 | round: 5 | strat: exploit | valution: 0.087 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0127 | hype: 0.190
+
+episode: 29200 | round: 1 | strat: exploit | valution: 0.072 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0125 | hype: 0.000
+episode: 29200 | round: 2 | strat: exploit | valution: 0.072 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0125 | hype: 0.000
+episode: 29200 | round: 3 | strat: exploit | valution: 0.072 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0125 | hype: 0.000
+episode: 29200 | round: 4 | strat: exploit | valution: 0.072 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0125 | hype: 0.000
+episode: 29200 | round: 5 | strat: exploit | valution: 0.072 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0125 | hype: 0.190
+
+episode: 29300 | round: 1 | strat: exploit | valution: 0.674 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0124 | hype: 0.000
+episode: 29300 | round: 2 | strat: exploit | valution: 0.674 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0124 | hype: 0.000
+episode: 29300 | round: 3 | strat: exploit | valution: 0.674 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0124 | hype: 0.000
+episode: 29300 | round: 4 | strat: exploit | valution: 0.674 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0200 | epsilon: 0.0124 | hype: 0.200
+episode: 29300 | round: 5 | strat: exploit | valution: 0.674 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.4937 | epsilon: 0.0124 | hype: 0.400
+
+episode: 29400 | round: 1 | strat: exploit | valution: 0.842 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0122 | hype: 0.000
+episode: 29400 | round: 2 | strat: exploit | valution: 0.842 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0122 | hype: 0.000
+episode: 29400 | round: 3 | strat: exploit | valution: 0.842 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0122 | hype: 0.000
+episode: 29400 | round: 4 | strat: exploit | valution: 0.842 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0122 | hype: 0.000
+episode: 29400 | round: 5 | strat: exploit | valution: 0.842 | bid: 0.200 | opps: ['0.000', '0.000', '0.000'] | won: True | reward: 0.6618 | epsilon: 0.0122 | hype: 0.200
+
+episode: 29500 | round: 1 | strat: exploit | valution: 0.134 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0120 | hype: 0.000
+episode: 29500 | round: 2 | strat: exploit | valution: 0.134 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0120 | hype: 0.000
+episode: 29500 | round: 3 | strat: exploit | valution: 0.134 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0120 | hype: 0.000
+episode: 29500 | round: 4 | strat: exploit | valution: 0.134 | bid: 0.000 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0000 | epsilon: 0.0120 | hype: 0.000
+episode: 29500 | round: 5 | strat: exploit | valution: 0.134 | bid: 0.190 | opps: ['0.000', '0.000', '0.000'] | won: False | reward: 0.0150 | epsilon: 0.0120 | hype: 0.190

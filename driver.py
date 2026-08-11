@@ -13,8 +13,6 @@ REIMBURSEMENT_RATES = [0.15, 0.5, 0.5, 0.5, 0.5] * NUM_ROUNDS # one per round, m
 BID_COST = 0.08
 
 SIGNAL_NOISE = 0.1 # fixed
-VALUATION_WEIGHT = 0.5 # fixed for now
-LOSS_ADDITION = 0.1 # fixed and for opponents
 
 # agent -- fixing for now
 LEARNING_RATE = 0.0005
@@ -40,14 +38,21 @@ revenue_log = []
 hype_log = [] # hype per episode--hype per round is in google sheet
 
 agent = Distinguished_agent(LEARNING_RATE, DISCOUNT_RATE, REPLAY_BUFF_SIZE, BATCH_PULL_SIZE, NUM_AVAILABLE_BIDS, OBS_SIZE)
-env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, VALUATION_WEIGHT, OBS_SIZE, LOSS_ADDITION)
+env = Apra_env(NUM_ROUNDS, NUM_OPPONENTS, RESERVE_PRICE, REIMBURSEMENT_RATES, BID_COST, SIGNAL_NOISE, OBS_SIZE)
 
 # LOOP PORTION
 
 with open("training_log.txt", "w") as f:
 
-    # logs for loss tracking
+    # logs for plotting
     losses = []
+    bids = []
+    vals = []
+
+    rewards = []
+    wins = []
+    revenues = []
+    
     agg_round = 0
 
     for episode in range(1, NUM_EPISODES + 1):
@@ -66,7 +71,7 @@ with open("training_log.txt", "w") as f:
             action_raw_index = agent.choose_action(observation)
             action_discrete = action_raw_index / (NUM_AVAILABLE_BIDS - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
 
-            next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]), round_num)
+            next_observation, reward, terminated, truncated = env.step(np.array([action_discrete]))
             agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
 
             loss = agent.update_policy() # able to be called with unfull buffer, because the agent class handles it
@@ -78,12 +83,14 @@ with open("training_log.txt", "w") as f:
             agg_round += 1
             if agg_round >= BATCH_PULL_SIZE: # only want to check loss once it begins to get calculated
                 losses.append(loss.item()) 
+                bids.append(action_discrete)
+                vals.append(env.age_val)
 
             if terminated:
                 won = env.agent_max_bid_holder and env.max_bid >= RESERVE_PRICE # only check win/loss at end of auction
 
             if episode >= 20000 and episode % 100 == 0:
-                opp_str = [f"{b:.3f}" if b is not None else "None" for b in env.opponents]
+                opp_str = [f"{b:.3f}" if b is not None else "None" for b in env.opp_bid_vals]
                 f.write(f"episode: {episode} | round: {round_num + 1} | strat: {agent.strat} | valution: {env.age_val:.3f} | bid: {action_discrete:.3f} | opps: {opp_str} | won: {won} | reward: {total_reward:.4f} | epsilon: {agent.epsilon:.4f} | hype: {hype:.3f}\n")
 
         revenue += env.max_bid - env.total_reimbursement # max bid at time of last round is the winning bid
@@ -97,11 +104,22 @@ with open("training_log.txt", "w") as f:
             win_log.append(won)
             reward_log.append(total_reward)
 
+            # for plotting
+            rewards.append(total_reward)
+            wins.append(won)
+            revenues.append(revenue)
+
+
         if episode % TARGET_UPDATE_FREQ == 0:
             agent.decay_eps(decay = EPS_DECAY) # only decays after warmup (agent class handles this)
             agent.update_target()
 
-    plots.plot_loss(losses)
+    # 1500 and 100 arbitrarily chosen
+    plots.windowed_metric(losses, 1500, "Average Loss")
+    plots.windowed_metric(rewards, 100, "Average Reward")
+    plots.windowed_metric(wins, 100, "Win Rate")
+    plots.windowed_metric(revenues, 100, "Average Revenue")
+    plots.bid_ratio_round(bids, vals, NUM_ROUNDS, 100)
 
     print(f"Avg. Win Rate: {np.mean(win_log):.4f}")
     print(f"Avg. Reward: {np.mean(reward_log):.4f}")

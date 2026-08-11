@@ -1,17 +1,41 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def plot_loss(losses): # can parameterize this
+def windowed_metric(data, window_size, y_axis):
 
-    step_range = [i for i in range(0, len(losses), 1500)]
+    x_intervals = [i for i in range(0, len(data), window_size)] # note that the x for an interval will only show up as the starting value (purely display)
 
-    windowed_losses = []
-    for i in range(0, len(losses), 1500): 
-        windowed_losses.append(np.mean(losses[i:i+1500])) # average over blocks of size 100 here
+    windowed_data = []
+    for i in range(0, len(data), window_size): 
+        windowed_data.append(np.mean(data[i:i+window_size])) # windowed averages of the value
 
-    plt.plot(step_range, windowed_losses) 
+    plt.plot(x_intervals, windowed_data) 
     plt.xlabel("Step Range")
-    plt.ylabel("Average Loss")
+    plt.ylabel(y_axis)
+    plt.show()
+    plt.close()
+
+def bid_ratio_round(bids, vals, num_rounds, window_size): # window_size is also arbitrary
+
+    by_round_bids = [bids[i::num_rounds] for i in range(num_rounds)] # look up syntax, but sorts into a list of 5 lists (one per round) beautifully
+    by_round_vals = [vals[i::num_rounds] for i in range(num_rounds)]
+
+    for i in range(num_rounds):
+        
+        step_range = [k for k in range(0, len(by_round_bids[i]), window_size)]
+
+        windowed_bids = []
+        windowed_vals = []
+        for j in range(0, len(by_round_bids[i]), window_size):
+            windowed_bids.append(np.mean(by_round_bids[i][j:j+window_size]))
+            windowed_vals.append(np.mean(by_round_vals[i][j:j+window_size]))
+
+        ratios = [b / v for b, v in zip(windowed_bids, windowed_vals)] # finding ratio for every windowed bid and valuation pair
+        plt.plot(step_range, ratios, label = f"Round {i + 1}") 
+        
+    plt.xlabel("Step Range")
+    plt.ylabel("Bid Ratio")
+    plt.legend()
     plt.show()
     plt.close()
 
