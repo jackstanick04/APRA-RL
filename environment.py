@@ -1,10 +1,10 @@
 import numpy as np
 import gymnasium as gym
-from gymnasium import spaces
+
 
 class Apra_env(gym.Env):
-    
-    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise, obs_size):
+
+    def __init__(self, num_rounds, num_opponents, reserve_price, reimbursement_rates, bid_cost, signal_noise):
         super().__init__()
 
         # auction parameters (fixed)
@@ -14,47 +14,37 @@ class Apra_env(gym.Env):
         self.reimbursement_rates = reimbursement_rates
         self.bid_cost = bid_cost
         self.signal_noise = signal_noise
-        self.obs_size = obs_size
         self.opp_bid_vals = []
 
         # auction states (reset per episode)
         self.current_round = 0
         self.max_bid = 0.0
-        self.max_bid_index = -1
         self.agent_max_bid_holder = False
         self.agent_signal = 0.0
         self.opp_signals = np.zeros(self.num_opponents)
         self.total_reimbursement = 0.0
-        self.opponents = [] # for debugging
-        self.age_val = 0.0 # for debugging
-
-        # Box spaces ensure that all observation and action values are in [0,1] range
-        self.action_space = spaces.Box(low = 0.0, high = 1.0, shape = (1,), dtype = np.float32) # action: bid
-        self.observation_space = spaces.Box(low = 0.0, high = 1.0, shape = (self.obs_size,), dtype = np.float32) # observation: agent_signal, max_bid, agent_max_bid_holder, round_num (gets scaled to [0,1])
+        self.age_val = 0.0
 
     def reset(self, seed = None, options = None):
 
         # only auction state variables reset
         self.current_round = 0
         self.max_bid = 0.0
-        self.max_bid_index = -1
         self.agent_max_bid_holder = False
         self.total_reimbursement = 0.0
-        self.opp_bid_vals = [] # for debugging
+        self.opp_bid_vals = []
         super().reset(seed = seed) # seed for agent signal debugging
 
         # make a base value, then add some noise to each person (keep between 0 and 1)
         true_value = self.np_random.uniform(0.0, 1.0)
         self.opp_signals = np.clip(true_value + self.np_random.standard_normal(self.num_opponents) * self.signal_noise, 0.0, 1.0)
-        # check if special fixed signal for agent (for debugging)
         if options and options.get("fixed_signal") is not None:
             self.agent_signal = options["fixed_signal"]
-        else: 
+        else:
             self.agent_signal = np.clip(true_value + self.np_random.standard_normal() * self.signal_noise, 0.0, 1.0)
 
-        observation = np.array([self.agent_signal, self.max_bid,float(self.agent_max_bid_holder), 0.0], dtype = np.float32)
+        observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), 0.0], dtype = np.float32)
 
-        # extra info for debugging
         info = {
             "agent_signal": self.agent_signal,
             "opp_signals": self.opp_signals
@@ -63,14 +53,14 @@ class Apra_env(gym.Env):
         return observation, info
 
     def step(self, action):
-        
+
         agent_bid = None if action[0] < 0.01 else action[0]
         self.age_val = self.valuation()
 
         self.opp_bid_vals = self.opp_bids()
         all_bids = [agent_bid] + self.opp_bid_vals
         round_max_bid = max((bid for bid in all_bids if bid is not None), default = 0.0)
-        round_max_bid_index_list = [i for i, bid in enumerate(all_bids) if bid == round_max_bid and round_max_bid is not None] 
+        round_max_bid_index_list = [i for i, bid in enumerate(all_bids) if bid == round_max_bid]
 
         reimburse = 0
         age_reimburse = 0
@@ -83,13 +73,12 @@ class Apra_env(gym.Env):
             self.total_reimbursement += reimburse
 
             self.max_bid = round_max_bid
-            self.max_bid_index = winning_index
             self.agent_max_bid_holder = winning_index == 0 # only max_bid_holder if randomly chosen out of the max bidders
 
         last_round = self.current_round + 1 == self.num_rounds # because we increment at the end anyway
         won = last_round and (self.max_bid >= self.reserve_price)
         agent_won = won and self.agent_max_bid_holder
-        
+
         # only agent's reward, because the opponents aren't learning
         reward = self.reward(agent_won, agent_bid, self.max_bid, self.age_val, age_reimburse)
 
@@ -97,40 +86,18 @@ class Apra_env(gym.Env):
         observation = np.array([self.agent_signal, self.max_bid, float(self.agent_max_bid_holder), std_round], dtype = np.float32)
 
         self.current_round += 1
-        
+
         return observation, reward, last_round, False # false is truncated
-    
-    def valuation(self): 
+
+    def valuation(self):
         return self.agent_signal
-    
+
     def reward(self, agent_won, agent_bid, winning_bid, agent_valuation, reimbursement):
         win_bonus = agent_valuation - winning_bid if agent_won else 0 # if the agent wins, winning_bid = agent_bid
 
         if agent_bid is not None:
             return win_bonus + reimbursement - self.bid_cost
         return win_bonus # abstention gives 0 unless it's the last round and agent won
-    
+
     def opp_bids(self): # placeholder signature for now
         return [0] * self.num_opponents
-    
-
-                
-
-    
-
-    
-
-    
-
-
-
-
-
-
-
-
-        
-
-        
-
-
