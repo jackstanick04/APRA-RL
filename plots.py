@@ -40,3 +40,34 @@ def bid_ratio_round(bids, vals, num_rounds, window_size): # window_size is also 
     plt.legend()
     plt.show()
     plt.close()
+
+def one_metric_sweep(data, x_axis, y_axis):
+
+    avg_data = [np.mean(val) for val in data.values()]
+    plt.plot(list(data.keys()), avg_data)
+    plt.xlabel(x_axis)
+    plt.ylabel(y_axis)
+    plt.show()
+    plt.close
+
+# generalize better after working
+def bid_val_round_per_reimburse(bids, vals, num_rounds):
+
+    for r in bids.keys():
+
+        sorted_bids = [np.mean(bids[r][i::num_rounds]) for i in range(num_rounds)]
+        sorted_vals = [np.mean(vals[r][i::num_rounds]) for i in range(num_rounds)]
+        ratios = [b / v for b, v in zip(sorted_bids, sorted_vals)]
+
+        plt.plot(range(1, num_rounds + 1), ratios, label = f"Reimbursement Rate: {r}")
+
+    plt.xlabel("Round")
+    plt.ylabel("Bid Ratio")
+    plt.legend()
+    plt.show()
+    plt.close()
+
+
+
+
+
