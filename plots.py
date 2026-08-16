@@ -16,6 +16,14 @@ def windowed_metric(data, window_size, y_axis):
     plt.show()
     plt.close()
 
+def one_metric_sweep(data, x_axis, y_axis):
+
+    avg_data = [np.mean(val) for val in data.values()]
+    plt.plot(list(data.keys()), avg_data)
+    plt.xlabel(x_axis)
+    plt.ylabel(y_axis)
+    plt.show()
+    plt.close
 
 def bid_ratio_round(bids, vals, num_rounds, window_size): # window_size is also arbitrary
 
@@ -41,17 +49,7 @@ def bid_ratio_round(bids, vals, num_rounds, window_size): # window_size is also 
     plt.show()
     plt.close()
 
-def one_metric_sweep(data, x_axis, y_axis):
-
-    avg_data = [np.mean(val) for val in data.values()]
-    plt.plot(list(data.keys()), avg_data)
-    plt.xlabel(x_axis)
-    plt.ylabel(y_axis)
-    plt.show()
-    plt.close
-
-# generalize better after working
-def bid_val_round_per_reimburse(bids, vals, num_rounds):
+def bid_val_round_per_reimburse(bids, vals, num_rounds): # bid to val ratio per round, with a new line for each reimbursement rate
 
     for r in bids.keys():
 
@@ -63,6 +61,20 @@ def bid_val_round_per_reimburse(bids, vals, num_rounds):
 
     plt.xlabel("Round")
     plt.ylabel("Bid Ratio")
+    plt.legend()
+    plt.show()
+    plt.close()
+
+def rev_max_bid_per_reimburse(revenues, max_bids):
+
+    avg_revs = {r: np.mean(revenues[r]) for r in list(revenues.keys())}
+    avg_max_bids = {r: np.mean(max_bids[r]) for r in list(max_bids.keys())}
+
+    plt.plot(list(avg_revs.keys()), list(avg_revs.values()), label = "Average Revenue")
+    plt.plot(list(avg_max_bids.keys()), list(avg_max_bids.values()), label ="Average Max Bid")
+
+    plt.xlabel("Reimbursement Rate")
+    plt.ylabel("Value")
     plt.legend()
     plt.show()
     plt.close()
