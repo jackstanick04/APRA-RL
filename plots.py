@@ -1,85 +1,52 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# NEED MORE GRAPHS TO IMPLEMENT
 
-def windowed_metric(data, window_size, y_axis):
+def _compute_window(data, window_size):
+    return [np.mean(data[i:window_size + i]) for i in range(0, len(data), window_size)]
 
-    x_intervals = [i for i in range(0, len(data), window_size)] # note that the x for an interval will only show up as the starting value (purely display)
+# for non sweep calls
+def windowed_metric(logs, window_size, y_axis):
+    fig, ax = plt.subplots()
+    ax.plot(_compute_window(logs[y_axis], window_size))
+    ax.set_xlabel(f"Episode (windowed, size={window_size})")
+    ax.set_ylabel(y_axis.replace("_", " ").title())
+    ax.set_title(f"{y_axis.replace("_", " ").title()} v. Episode")
+    return fig
 
-    windowed_data = []
-    for i in range(0, len(data), window_size):
-        windowed_data.append(np.mean(data[i:i+window_size]))
+# does the plotting for both sweep types
+def _plot_sweep_line(ax, logs, window_size, y_axis, label):
+    ax.plot(_compute_window(logs[y_axis], window_size), label = label)
 
-    plt.plot(x_intervals, windowed_data)
-    plt.xlabel("Step Range")
-    plt.ylabel(y_axis)
-    plt.show()
-    plt.close()
+def windowed_metric_one_sweep(results, param, window_size, y_axis):
+    fig, ax = plt.subplots()
+    for config, logs in results:
+        _plot_sweep_line(ax, logs, window_size, y_axis, str(getattr(config, param)))
 
-def one_metric_sweep(data, x_axis, y_axis):
+    ax.set_xlabel(f"Episode (windowed, size={window_size})")
+    ax.set_ylabel(y_axis.replace("_", " ").title())
+    ax.set_title(f"{y_axis.replace("_", " ").title()} v. Episode swept, over {param.replace("_", " ").title()}")
+    ax.legend(title = param)
+    return fig
 
-    avg_data = [np.mean(val) for val in data.values()]
-    plt.plot(list(data.keys()), avg_data)
-    plt.xlabel(x_axis)
-    plt.ylabel(y_axis)
-    plt.show()
-    plt.close
+def windowed_metric_two_sweep(results, param_one, param_two, window_size, y_axis):
 
-def bid_ratio_round(bids, vals, num_rounds, window_size): # window_size is also arbitrary
+    param_one_vals = sorted({getattr(config, param_one) for config, _ in results})
+    fig, axes = plt.subplots(1, len(param_one_vals), sharex = True, sharey = True)
 
-    by_round_bids = [bids[i::num_rounds] for i in range(num_rounds)] # sorts into a list of num_rounds lists, one per round
-    by_round_vals = [vals[i::num_rounds] for i in range(num_rounds)]
+    for ax, a_val in zip(axes, param_one_vals): # structure is len(param_a) graphs with len(param_b) lines on them
+        param_two_vals_per_one = [(config, logs) for config, logs in results if getattr(config, param_one) == a_val] # set of all config and logs where param_two varies and param_one is constant
+        for config, logs in param_two_vals_per_one:
+            _plot_sweep_line(ax, logs, window_size, y_axis, str(getattr(config, param_two)))
+        ax.set_title(f"{param_one.replace("_", " ").title()}: {a_val}")
 
-    for i in range(num_rounds):
+    axes[0].legend(title = param_two.replace("_", " ").title())
+    axes[0].set_ylabel(y_axis.replace("_", " ").title())
 
-        step_range = [k for k in range(0, len(by_round_bids[i]), window_size)]
-
-        windowed_bids = []
-        windowed_vals = []
-        for j in range(0, len(by_round_bids[i]), window_size):
-            windowed_bids.append(np.mean(by_round_bids[i][j:j+window_size]))
-            windowed_vals.append(np.mean(by_round_vals[i][j:j+window_size]))
-
-        ratios = [b / v for b, v in zip(windowed_bids, windowed_vals)]
-        plt.plot(step_range, ratios, label = f"Round {i + 1}")
-
-    plt.xlabel("Step Range")
-    plt.ylabel("Bid Ratio")
-    plt.legend()
-    plt.show()
-    plt.close()
-
-def bid_val_round_per_reimburse(bids, vals, num_rounds): # bid to val ratio per round, with a new line for each reimbursement rate
-
-    for r in bids.keys():
-
-        sorted_bids = [np.mean(bids[r][i::num_rounds]) for i in range(num_rounds)]
-        sorted_vals = [np.mean(vals[r][i::num_rounds]) for i in range(num_rounds)]
-        ratios = [b / v for b, v in zip(sorted_bids, sorted_vals)]
-
-        plt.plot(range(1, num_rounds + 1), ratios, label = f"Reimbursement Rate: {r}")
-
-    plt.xlabel("Round")
-    plt.ylabel("Bid Ratio")
-    plt.legend()
-    plt.show()
-    plt.close()
-
-def rev_max_bid_per_reimburse(revenues, max_bids):
-
-    avg_revs = {r: np.mean(revenues[r]) for r in list(revenues.keys())}
-    avg_max_bids = {r: np.mean(max_bids[r]) for r in list(max_bids.keys())}
-
-    plt.plot(list(avg_revs.keys()), list(avg_revs.values()), label = "Average Revenue")
-    plt.plot(list(avg_max_bids.keys()), list(avg_max_bids.values()), label ="Average Max Bid")
-
-    plt.xlabel("Reimbursement Rate")
-    plt.ylabel("Value")
-    plt.legend()
-    plt.show()
-    plt.close()
-
-
+    fig.supxlabel(f"Episode (windowed, size={window_size})")
+    fig.suptitle(f"{y_axis.replace('_', ' ').title()} v. Episode swept, over {param_one.replace("_", " ").title()} and {param_two.replace("_", " ").title()}")
+    return fig
 
 
 

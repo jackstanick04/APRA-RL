@@ -88,16 +88,5 @@ def run_trial(config):
 
     return logs
 
-# # 1500 and 100 arbitrarily chosen
-# plots.windowed_metric(losses, 1500, "Average Loss")
-# plots.windowed_metric(reward_log, 100, "Average Reward")
-# plots.windowed_metric(win_log, 100, "Win Rate")
-# plots.windowed_metric(revenue_log, 100, "Average Revenue")
-# plots.bid_ratio_round(bids, vals, NUM_ROUNDS, 100)
-
-# plots.one_metric_sweep(hypes_per_reimburse, "Reimbursement Rate", "Average Hype")
-# plots.bid_val_round_per_reimburse(bids_per_reimburse, vals_per_reimburse, NUM_ROUNDS)
-# plots.rev_max_bid_per_reimburse(revenues_per_reimburse, max_bids_per_reimburse)
-
 
 
