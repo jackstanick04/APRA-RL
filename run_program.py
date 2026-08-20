@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # SAMPLE PLOTTING EXAMPLES JUST TO VERIFY IT WORKS
 
-type = "two_d_sweep"
+type = "one_d_sweep"
 
 base_config = Configuration()
 
