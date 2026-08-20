@@ -8,17 +8,19 @@ from collections import deque
 
 class QNetwork(nn.Module):
 
-    def __init__(self, input_size, output_size):
+    def __init__(self, input_size, output_size, hidden_layer_size, hidden_layer_amount): # makes parameterized NN skeleton
         super().__init__()
 
-        # hardcoding architecture for now
-        self.network = nn.Sequential(
-            nn.Linear(input_size, 64),
-            nn.ReLU(),
-            nn.Linear(64, 64),
-            nn.ReLU(),
-            nn.Linear(64, output_size)
-        )
+        layers = []
+        prev_size = input_size
+
+        for _ in range(hidden_layer_amount):
+            layers.append(nn.Linear(prev_size, hidden_layer_size))
+            layers.append(nn.ReLU())
+            prev_size = hidden_layer_size
+        layers.append(nn.Linear(prev_size, output_size))
+
+        self.network = nn.Sequential(*layers)
 
     def forward(self, inputs):
         return self.network(inputs)
@@ -26,7 +28,7 @@ class QNetwork(nn.Module):
 
 class Distinguished_agent:
 
-    def __init__(self, learning_rate, discount_future_rate, replay_buff_size, batch_pull_size, num_bid_options, obs_size):
+    def __init__(self, hidden_layer_size, hidden_layer_amount, learning_rate, discount_future_rate, replay_buff_size, batch_pull_size, num_bid_options, obs_size):
         self.discount_future_rate = discount_future_rate
         self.batch_pull_size = batch_pull_size
         self.action_size = num_bid_options
@@ -34,8 +36,8 @@ class Distinguished_agent:
         self.replay_buffer = deque(maxlen=replay_buff_size)
         self.strat = "" # debugging exploration v. exploitation
 
-        self.policy_net = QNetwork(obs_size, self.action_size)
-        self.target_net = QNetwork(obs_size, self.action_size)
+        self.policy_net = QNetwork(obs_size, self.action_size, hidden_layer_size, hidden_layer_amount)
+        self.target_net = QNetwork(obs_size, self.action_size, hidden_layer_size, hidden_layer_amount)
         self.target_net.load_state_dict(self.policy_net.state_dict()) # target starts as copy
 
         # only have the policy network learn, as we manually update the more-static target

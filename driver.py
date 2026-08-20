@@ -18,6 +18,8 @@ def run_trial(config):
     )
 
     agent = Distinguished_agent(
+        hidden_layer_size = config.hidden_layer_size,
+        hidden_layer_amount = config.hidden_layer_amount,
         learning_rate = config.learning_rate,
         discount_future_rate = config.discount_rate,
         replay_buff_size = config.replay_buff_size,
@@ -28,10 +30,11 @@ def run_trial(config):
 
     agg_round = 0
     logs = {
-        # per round (handled in plotting)
+        # per round
         "losses": [],
-        "bids": [],
-        "vals": [],
+        # list per round number
+        "bids": [[] for _ in range(config.num_rounds)],
+        "vals": [[] for _ in range(config.num_rounds)],
         # per episode 
         "max_bids": [],
         "revenues": [],
@@ -51,7 +54,7 @@ def run_trial(config):
         for round_num in range(config.num_rounds):
 
             action_raw_index = agent.choose_action(observation)
-            action_discrete = action_raw_index / (config.num_available_bids - 1) # index is the nueron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
+            action_discrete = action_raw_index / (config.num_available_bids - 1) # index is the neuron number. we need to get it to a float [0,1); -1 is so that it isn't 1. ex. index 37 / 40 bid options would be high percentile bid
 
             next_observation, reward, terminated, _ = env.step(np.array([action_discrete]))
             agent.store_transition(observation, action_raw_index, reward, next_observation, terminated)
@@ -68,8 +71,8 @@ def run_trial(config):
             if agg_round >= config.num_rounds * warmup_episodes: 
                 if round_num == config.num_rounds - 1: 
                     logs["max_bids"].append(env.max_bid)
-                logs["bids"].append(action_discrete)
-                logs["vals"].append(env.age_val)
+                logs["bids"][round_num].append(action_discrete)
+                logs["vals"][round_num].append(env.age_val)
 
             if terminated:
                 won = env.agent_max_bid_holder and env.max_bid >= config.reserve_price # only check win/loss at end of auction
