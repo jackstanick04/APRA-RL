@@ -12,7 +12,6 @@ def one_d_sweep(base_config, param_name, values):
 
     return results
 
-# same logic as above function
 def two_d_sweep(base_config, param_one, param_two, values_one, values_two):
 
     results = []
